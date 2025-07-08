@@ -3,7 +3,7 @@ public class HolaMundo {
 	
 	public static void main (String [] args ) {
 		
-		System.out.println("Hola Mundo");
+		System.out.println("Holi git");
 		
 		//Declarar una variable
 		//Indico el tipo y el nombre de la variable(notación camelCase)
@@ -20,7 +20,7 @@ public class HolaMundo {
 		 * Comentario de bloque
 		 */
 		
-		
+		System.out.println(" git");		
 		
 	}
 

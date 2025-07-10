@@ -12,29 +12,52 @@ public class Ejercicio4String {
 		System.out.println("Escribe lo que quieras y te digo cual es la palabra más larga:");
 		String texto = scan.nextLine();
 		int contadorLetras= 0;
-		int inicioLetras = 0;
+		int mayorValor = 0;
+		StringBuilder palabra = new StringBuilder();
+		String palabraMayor = null;
+
 
 		for (int i = 0; i < texto.length(); i++) {
 			char letra = texto.charAt(i);
 			String letraString = String.valueOf(letra);
-			System.out.println(letra);
-			if(letraString.isBlank() == true) {
+			
+			if(letraString.isBlank() != true) {
 				
-				//Usa el index del espacio en blanco -1 para cortar la palabra
-				System.out.println(contadorLetras);
+				//Si no es blanco suma el caracter y guardalo
 				
-				String palabra = texto.substring(inicioLetras, contadorLetras);
+				contadorLetras++;			
+				palabra.append(letraString);
+
+				if(i == texto.length()-1) {
+					System.out.println(palabra);
+					System.out.println("Tiene "+contadorLetras+" letras");
+					if (contadorLetras>mayorValor) {
+						palabraMayor = palabra.toString();
+						mayorValor=contadorLetras;
+					}
+				}
+					
+				
+			} else if (letraString.isBlank() == true) {
+
+					
 				System.out.println(palabra);
-				inicioLetras = contadorLetras+1;
-				contadorLetras++;
+				System.out.println("Tiene "+contadorLetras+" letras");
 				
-			} else {
+				if (contadorLetras>mayorValor) {
+					
+					palabraMayor = palabra.toString();
+					mayorValor=contadorLetras;
+				}
 				
-				contadorLetras++;
-				
+				contadorLetras=0;
+				palabra = new StringBuilder();
+					
 			}
 			
 		}
+		
+		System.out.println("La palabra más grande es: "+palabraMayor);
 	}
 
 }

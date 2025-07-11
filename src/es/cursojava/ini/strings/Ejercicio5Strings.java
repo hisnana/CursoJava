@@ -55,14 +55,13 @@ public class Ejercicio5Strings {
 			}
 			
 			if (letraString.equals("@") && email.substring(i,tamanoMax).contains(".") && arroba<2 ) {
-				int puntoIndex = email.substring(i,tamanoMax).indexOf(".");
+				int puntoIndex = email.substring(i,tamanoMax).lastIndexOf(".");
 				int arrobaIndex = email.substring(i,tamanoMax).indexOf("@");
 				String cadena = email.substring(i,tamanoMax);
 				int tamanoCadena = cadena.length();
 				String cadenaArroba = email.substring(i,tamanoMax).substring(arrobaIndex,puntoIndex);
 				String cadenaPunto = cadena.substring(puntoIndex,tamanoCadena);
-				System.out.println(cadenaArroba);
-				System.out.println(cadenaPunto);
+
 				if(cadenaArroba.length()<3) {
 					System.out.println("Faltan caracteres entre la @ y el .");
 					valido3=false;
@@ -70,12 +69,10 @@ public class Ejercicio5Strings {
 					valido3 = true;
 				}
 				
-				if (cadenaPunto.length()<2 && cadenaPunto.length()>6) {
+				if (cadenaPunto.length()<3 || cadenaPunto.length()>6) {
 					System.out.println("Despues del punto tiene que haber en 2 y 6 caracteres");
 					valido3=false;
-				} else {
-					valido3 = true;
-				}
+				} 
 				
 			} else if (letraString.equals("@") && !email.substring(i,tamanoMax).contains(".") && arroba<2) {
 				System.out.println("Falta el punto despues del @");

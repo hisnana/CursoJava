@@ -20,7 +20,7 @@ public class Ejercicio5Strings {
 		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Dime tu email");
-		String email = scan.nextLine();
+		String email = scan.nextLine().strip();
 		int arroba = 0;
 		int tamanoMax = email.length();
 		
@@ -28,17 +28,20 @@ public class Ejercicio5Strings {
 		boolean valido2= false;
 		boolean valido3 = false;
 		
+		if (email.isEmpty() == true) {
+			System.out.println("El email no puede estar vacio");
+			valido1= false;
+		}
 		
-		for (int i = 0; i<tamanoMax;i++) {
+		for (int i = 0; i<tamanoMax;i++) { //No es necesario hacer un for para mirar caracter por caracter
 			char letra = email.charAt(i);
 			String letraString = String.valueOf(letra);
 			
-			if (letraString.isBlank() == true || email.isEmpty() == true) {
-					System.out.println("Tu email contiene un espacio en blanco o esta vacio");
+			if (letraString.isBlank() == true) {
+					System.out.println("Tu email contiene un espacio en blanco");
 					valido1= false;
-			} else {
-				valido1 = true;
 			}
+				
 			
 			if (letraString.equals("@")) {
 				arroba++;
@@ -52,6 +55,8 @@ public class Ejercicio5Strings {
 					valido2=false;
 				}
 					
+			} else {
+				 
 			}
 			
 			if (letraString.equals("@") && email.substring(i,tamanoMax).contains(".") && arroba<2 ) {
@@ -69,7 +74,7 @@ public class Ejercicio5Strings {
 					valido3 = true;
 				}
 				
-				if (cadenaPunto.length()<3 || cadenaPunto.length()>6) {
+				if (cadenaPunto.length()<3 || cadenaPunto.length()>7) {
 					System.out.println("Despues del punto tiene que haber en 2 y 6 caracteres");
 					valido3=false;
 				} 
@@ -84,6 +89,7 @@ public class Ejercicio5Strings {
 		if (valido1==true&&valido2==true&&valido3==true) {
 			
 			System.out.println("Tu email es valido");
+			System.out.println(email);
 			
 		}
 	}

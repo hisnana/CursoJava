@@ -19,7 +19,7 @@ public class Ejercicio3Arrays {
 			int num = scan.nextInt(); 
 		
 			if (num==1) {
-				
+				boolean completo = false;
 				for (int i = 0 ; i<array.length; i++) {
 					for (int j = 0;j<array[0].length;j++) {
 						if (array[i][j]==null) {
@@ -27,16 +27,21 @@ public class Ejercicio3Arrays {
 							System.out.println("Dime el nombre del Alumno de la clase "+(i+1)+" del puesto "+(j+1));
 							String nombre = scan.nextLine().toLowerCase().strip();
 							array[i][j] = nombre;
+							completo = true;
 							if (nombre.isEmpty()) {
 								System.out.println("No puedes guardar un Alumno vacio");
 								break;
 							}
-						} else {
-							System.out.println("El puesto "+(j+1)+" de la clase "+(i+1)+" no esta disponible");
-						}
+					} 
+//						else {
+//							System.out.println("El puesto "+(j+1)+" de la clase "+(i+1)+" no esta disponible");
+//						}
 
 					}
 					
+				}
+				if (!completo) {
+					System.out.println("Los aulas estan completos");
 				}
 				
 			} else if(num==2) {
@@ -79,11 +84,11 @@ public class Ejercicio3Arrays {
 				for (int i = 0 ; i<array.length; i++) {
 					for (int j = 0;j<array[0].length;j++) {
 						
-						if (array[i][j]!=null && array[i][j].contains(nombre)) {
+						if (array[i][j]!=null && array[i][j].contains(nombre)) {//Deberia haberlo hecho con un equals
 							resultado+=("Se ha borrado el alumno "+array[i][j]+" de la clase "+(i+1)+" en el puesto "+(j+1)+"\n");
 							array[i][j]=null;
 						} else {
-							continue;
+							 ;
 						}
 
 					}

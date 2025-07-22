@@ -1,1 +1,37 @@
 Apuntes del curso sobre Java
+IDE : INTEGRATED DEVELOPMENT ENVIROMENT
+  ejemplos de IDEs: eclipse,visual studio code, net beans, intellij
+
+# Distribuciones Java
+
+---
+
+## JSE (Java Standard Edition)
+
+- **Descripción:** Plataforma básica de Java para desarrollar aplicaciones de escritorio y consola.  
+- **Uso:** Aplicaciones estándar en computadoras personales y servidores simples.  
+- **Incluye:** Librerías básicas, JVM, API para GUI, manejo de datos, redes, etc.
+
+---
+
+## JEE (Java Enterprise Edition) — ahora Jakarta EE
+
+- **Descripción:** Extensión de JSE para aplicaciones empresariales y web a gran escala.  
+- **Uso:** Desarrollo de aplicaciones distribuidas, web, servicios REST/SOAP, aplicaciones empresariales.  
+- **Incluye:** Servlets, JSP, EJB, JPA, JMS, seguridad, transacciones, entre otros.
+
+---
+
+## JME (Java Micro Edition)
+
+- **Descripción:** Versión reducida de Java para dispositivos con recursos limitados.  
+- **Uso:** Aplicaciones para dispositivos embebidos, móviles antiguos, IoT, sistemas con poca memoria.  
+- **Incluye:** APIs específicas para hardware limitado y interfaces reducidas.
+
+---
+
+> 📌 *Cada edición está orientada a diferentes tipos de dispositivos y necesidades de desarrollo.*
+
+
+  
+

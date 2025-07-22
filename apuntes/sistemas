@@ -1,5 +1,4 @@
-Gracias por compartir que usas **Ubuntu 24.04.2 LTS (noble)**.
-Aquí tienes un **paso a paso con todos los comandos necesarios** para instalar **Git**, **Java (OpenJDK 17 o 21)** y **Docker** en tu sistema.
+INSTALACION GIT,JAVA Y DOCKER EN UBUNTU SERVER.
 
 ---
 
@@ -47,7 +46,7 @@ Verifica la instalación:
 java -version
 ```
 
-Otra forma
+Otra forma de instalar java
 ==============================================
 Ve a la página oficial:
 https://www.oracle.com/java/technologies/javase-downloads.html
@@ -68,39 +67,113 @@ sudo update-alternatives --install /usr/bin/javac javac /opt/jdk-21/bin/javac 1
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
 
-(Opcional) Añade al perfil de usuario (~/.bashrc o ~/.profile):
+        Para añadir el **`JAVA_HOME` y el `PATH` de Java en Linux**, sigue estos pasos, que funcionan para la mayoría de distribuciones (como Ubuntu, Debian, CentOS, etc.).
+        
+        ---
+        
+        ## ✅ 1. Verifica dónde está instalado Java
+        
+        Ejecuta:
+        
+        ```bash
+        readlink -f $(which java)
+        ```
+        
+        Esto te devolverá una ruta como:
+        
+        ```
+        /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+        ```
+        
+        La ruta base del JDK (sin `/bin/java`) es la que necesitas para `JAVA_HOME`:
+        
+        ```
+        /usr/lib/jvm/java-21-openjdk-amd64
+        ```
+        
+        ---
+        
+        ## ✅ 2. Edita tu archivo de configuración de entorno
+        
+        Depende de si quieres configurarlo para **tu usuario** o **todo el sistema**:
+        
+        ### 🧍 Opción A: Solo para tu usuario
+        
+        Edita tu archivo `.bashrc` o `.zshrc` (según el shell que uses):
+        
+        ```bash
+        nano ~/.bashrc
+        ```
+        
+        Al final del archivo, añade:
+        
+        ```bash
+        export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+        export PATH=$JAVA_HOME/bin:$PATH
+        ```
+        
+        Guarda y cierra (`Ctrl+O`, `Enter`, `Ctrl+X`).
+        
+        Luego, recarga el archivo:
+        
+        ```bash
+        source ~/.bashrc
+        ```
+        
+        ---
+        
+        ### 🖥️ Opción B: Para todos los usuarios
+        
+        Edita o crea el archivo:
+        
+        ```bash
+        sudo nano /etc/profile.d/java.sh
+        ```
+        
+        Añade:
+        
+        ```bash
+        export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+        export PATH=$JAVA_HOME/bin:$PATH
+        ```
+        
+        Hazlo ejecutable:
+        
+        ```bash
+        sudo chmod +x /etc/profile.d/java.sh
+        ```
+        
+        ---
+        
+        ## ✅ 3. Verifica que esté bien configurado
+        
+        Cierra y vuelve a abrir la terminal (o usa `source ~/.bashrc`), luego verifica:
+        
+        ```bash
+        echo $JAVA_HOME
+        ```
+        
+        Y:
+        
+        ```bash
+        java -version
+        ```
+        
+        ---
+        
+        ## 🧠 Tip: ¿No estás seguro de la carpeta exacta de Java?
+        
+        Puedes listar todas las instalaciones disponibles con:
+        
+        ```bash
+        sudo update-alternatives --list java
+        ```
+        
+        Y usar el directorio padre de esa ruta como `JAVA_HOME`.
+        
+        ---
 
-/*comprobamos que esta vacio*/
-echo $JAVA_HOME
 
-export JAVA_HOME=/opt/jdk-21
-
-/*comprobamos que se ha grabado*/
-echo $JAVA_HOME
-
-/*comprobamos que solo se habia grabado grabado para la sesion, al hacer un logout login o logearnos en otra sesion ya no estaba*/
-
-/*hemos abierto bashrc y editado los alias, hemos añadido el siguiente*/
-
-alias lt='ls -ltr'
-
-/*refrescado
-
-source ~/.bashrc
-
-/*comprobado
-
-/*de nuevo en bashrc añadimos*/
-echo $JAVA_HOME
-export PATH=$JAVA_HOME/bin:$PATH
-
-/*refrescado
-
-source ~/.bashrc
-
-/*comprobado
-
-echo $JAVA_HOME
 
 Comprobar instalación
 java -version

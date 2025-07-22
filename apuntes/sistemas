@@ -1,0 +1,148 @@
+Gracias por compartir que usas **Ubuntu 24.04.2 LTS (noble)**.
+Aquí tienes un **paso a paso con todos los comandos necesarios** para instalar **Git**, **Java (OpenJDK 17 o 21)** y **Docker** en tu sistema.
+
+---
+
+## ✅ Paso 1: Actualiza tu sistema
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+---
+
+## ✅ Paso 2: Instalar **Git**
+
+```bash
+sudo apt install git -y
+```
+
+Verifica la instalación:
+
+```bash
+git --version
+```
+
+---
+
+## ✅ Paso 3: Instalar **Java (OpenJDK)**
+
+Ubuntu 24.04 incluye versiones actualizadas de OpenJDK.
+
+Instalar **OpenJDK 17** (estable y compatible con la mayoría de proyectos):
+
+```bash
+sudo apt install openjdk-17-jdk -y
+```
+
+O si necesitas **OpenJDK 21** (última LTS):
+
+```bash
+sudo apt install openjdk-21-jdk -y
+```
+
+Verifica la instalación:
+
+```bash
+java -version
+```
+
+Otra forma
+==============================================
+Ve a la página oficial:
+https://www.oracle.com/java/technologies/javase-downloads.html
+
+Descarga la versión que desees (por ejemplo, .tar.gz para Linux).
+
+Extrae y mueve el JDK a una carpeta del sistema:
+
+
+tar -xvf jdk-21_linux-x64_bin.tar.gz
+sudo mv jdk-21 /opt/
+Configura las variables de entorno:
+
+/*nos permitiria si tuvieramos varias instaladas las 2 lineas siguientes serian la opcion 1 a usar si tuvieramos varias instaldas*/
+sudo update-alternatives --install /usr/bin/java java /opt/jdk-21/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /opt/jdk-21/bin/javac 1
+
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+(Opcional) Añade al perfil de usuario (~/.bashrc o ~/.profile):
+
+/*comprobamos que esta vacio*/
+echo $JAVA_HOME
+
+export JAVA_HOME=/opt/jdk-21
+
+/*comprobamos que se ha grabado*/
+echo $JAVA_HOME
+
+/*comprobamos que solo se habia grabado grabado para la sesion, al hacer un logout login o logearnos en otra sesion ya no estaba*/
+
+/*hemos abierto bashrc y editado los alias, hemos añadido el siguiente*/
+
+alias lt='ls -ltr'
+
+/*refrescado
+
+source ~/.bashrc
+
+/*comprobado
+
+/*de nuevo en bashrc añadimos*/
+echo $JAVA_HOME
+export PATH=$JAVA_HOME/bin:$PATH
+
+/*refrescado
+
+source ~/.bashrc
+
+/*comprobado
+
+echo $JAVA_HOME
+
+Comprobar instalación
+java -version
+javac -version
+
+## ✅ Paso 4: Instalar **Docker** (usando el script oficial, ya que la versión noble aún no está en los repos de Docker)
+
+### 4.1 Instalar dependencias necesarias:
+
+```bash
+sudo apt install ca-certificates curl gnupg lsb-release -y
+```
+
+### 4.2 Descargar y ejecutar el script de instalación oficial de Docker:
+
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+### 4.3 Verifica que Docker se instaló correctamente:
+
+```bash
+docker --version
+```
+
+### 4.4 (Opcional) Usar Docker sin `sudo`:
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+⚠️ Después de esto, **debes cerrar sesión y volver a iniciarla** o reiniciar tu máquina para que surta efecto.
+
+---
+
+## ✅ Paso final: Verificar todo
+
+```bash
+git --version
+java -version
+docker --version
+```
+
+---

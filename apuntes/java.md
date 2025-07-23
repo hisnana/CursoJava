@@ -170,9 +170,6 @@ Persona persona = new Persona();
 🔹 Inmutables
 Una vez creado, su valor no puede cambiar. Las operaciones crean nuevos objetos.
 
-java
-Copiar
-Editar
 String a = "Hola";
 a = a + " mundo"; // Se crea un nuevo String
 🔹 Son objetos (no tipos primitivos)
@@ -244,5 +241,90 @@ tipoRetorno: tipo de dato que devuelve el método (int, String, void si no devue
 nombreMetodo: nombre para llamar al método.
 
 parámetros: datos que recibe, separados por comas.
-  
+
+Método sin parámetros y sin retorno
+
+public void saludar() {
+    System.out.println("Hola!");
+}
+Método con parámetros y sin retorno
+
+public void saludarPersona(String nombre) {
+    System.out.println("Hola, " + nombre + "!");
+}
+Método con parámetros y con retorno
+
+public int sumar(int a, int b) {
+    return a + b;
+}
+Método estático
+
+public static double calcularAreaCirculo(double radio) {
+    return Math.PI * radio * radio;
+}
+
+# 📚 Ejemplos de Métodos Más Conocidos en Java
+
+---
+
+## 1. Métodos de la clase `String`
+
+| Método              | Descripción                     | Ejemplo                             | Resultado                |
+|---------------------|---------------------------------|-----------------------------------|--------------------------|
+| `length()`          | Devuelve la longitud del texto  | `"Hola".length()`                  | `4`                      |
+| `charAt(int)`       | Caracter en índice dado         | `"Hola".charAt(1)`                 | `'o'`                    |
+| `substring(int)`    | Subcadena desde índice          | `"Hola".substring(2)`              | `"la"`                   |
+| `toUpperCase()`     | Convierte a mayúsculas          | `"java".toUpperCase()`             | `"JAVA"`                 |
+| `equals(String)`    | Compara contenido (sensible)   | `"hola".equals("Hola")`            | `false`                  |
+| `equalsIgnoreCase()`| Compara ignorando mayúsculas   | `"hola".equalsIgnoreCase("Hola")` | `true`                   |
+| `contains(String)`  | Verifica si contiene subcadena | `"Java es genial".contains("gen")`| `true`                   |
+
+---
+
+## 2. Métodos de la clase `Math`
+
+| Método               | Descripción                    | Ejemplo                        | Resultado          |
+|----------------------|-------------------------------|--------------------------------|--------------------|
+| `abs(int)`           | Valor absoluto                | `Math.abs(-5)`                 | `5`                |
+| `max(int, int)`      | Devuelve el mayor             | `Math.max(3, 7)`               | `7`                |
+| `min(int, int)`      | Devuelve el menor             | `Math.min(3, 7)`               | `3`                |
+| `sqrt(double)`       | Raíz cuadrada                 | `Math.sqrt(16)`                | `4.0`              |
+| `pow(double, double)`| Potencia                     | `Math.pow(2, 3)`               | `8.0`              |
+| `random()`           | Número aleatorio (0.0-1.0)   | `Math.random()`                | `0.0 <= x < 1.0`   |
+
+---
+
+## 3. Métodos de la clase `ArrayList` (en `java.util`)
+
+| Método               | Descripción                       | Ejemplo                         |
+|----------------------|----------------------------------|--------------------------------|
+| `add(E e)`           | Añade elemento                   | `lista.add("Hola")`             |
+| `get(int index)`     | Obtiene elemento                 | `lista.get(0)`                  |
+| `size()`             | Tamaño de la lista               | `lista.size()`                  |
+| `remove(int index)`  | Elimina elemento por índice      | `lista.remove(0)`               |
+| `contains(Object o)` | Verifica si contiene elemento   | `lista.contains("Hola")`        |
+| `clear()`            | Limpia todos los elementos      | `lista.clear()`                 |
+
+---
+
+## 4. Métodos de la clase `System`
+
+| Método             | Descripción                      | Ejemplo                       |
+|--------------------|---------------------------------|-------------------------------|
+| `out.println()`    | Imprime en consola              | `System.out.println("Hola");`  |
+| `currentTimeMillis()` | Tiempo actual en milisegundos  | `System.currentTimeMillis()`   |
+| `exit(int)`         | Termina programa con código     | `System.exit(0)`               |
+
+---
+
+## 5. Otros métodos comunes
+
+| Clase         | Método               | Descripción                | Ejemplo                    |
+|---------------|----------------------|----------------------------|----------------------------|
+| `Scanner`     | `nextLine()`         | Leer línea de entrada      | `scanner.nextLine()`        |
+| `Scanner`     | `nextInt()`          | Leer entero                | `scanner.nextInt()`         |
+| `StringBuilder` | `append(String)`    | Añade texto                | `sb.append("texto")`        |
+| `Collections` | `sort(List<T>)`      | Ordena lista               | `Collections.sort(lista)`   |
+
+---
 

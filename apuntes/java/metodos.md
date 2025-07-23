@@ -1,7 +1,5 @@
 
 
-
-
 ## 🛠️ Métodos comunes de `String` en Java (ampliado)
 
 | Método                      | Descripción                                                    | Ejemplo de uso                               | Resultado                  |

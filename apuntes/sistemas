@@ -1,0 +1,221 @@
+INSTALACION GIT,JAVA Y DOCKER EN UBUNTU SERVER.
+
+---
+
+## ✅ Paso 1: Actualiza tu sistema
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+---
+
+## ✅ Paso 2: Instalar **Git**
+
+```bash
+sudo apt install git -y
+```
+
+Verifica la instalación:
+
+```bash
+git --version
+```
+
+---
+
+## ✅ Paso 3: Instalar **Java (OpenJDK)**
+
+Ubuntu 24.04 incluye versiones actualizadas de OpenJDK.
+
+Instalar **OpenJDK 17** (estable y compatible con la mayoría de proyectos):
+
+```bash
+sudo apt install openjdk-17-jdk -y
+```
+
+O si necesitas **OpenJDK 21** (última LTS):
+
+```bash
+sudo apt install openjdk-21-jdk -y
+```
+
+Verifica la instalación:
+
+```bash
+java -version
+```
+
+Otra forma de instalar java
+==============================================
+Ve a la página oficial:
+https://www.oracle.com/java/technologies/javase-downloads.html
+
+Descarga la versión que desees (por ejemplo, .tar.gz para Linux).
+
+Extrae y mueve el JDK a una carpeta del sistema:
+
+
+tar -xvf jdk-21_linux-x64_bin.tar.gz
+sudo mv jdk-21 /opt/
+Configura las variables de entorno:
+
+/*nos permitiria si tuvieramos varias instaladas las 2 lineas siguientes serian la opcion 1 a usar si tuvieramos varias instaldas*/
+sudo update-alternatives --install /usr/bin/java java /opt/jdk-21/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /opt/jdk-21/bin/javac 1
+
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+        Para añadir el **`JAVA_HOME` y el `PATH` de Java en Linux**, sigue estos pasos, que funcionan para la mayoría de distribuciones (como Ubuntu, Debian, CentOS, etc.).
+        
+        ---
+        
+        ## ✅ 1. Verifica dónde está instalado Java
+        
+        Ejecuta:
+        
+        ```bash
+        readlink -f $(which java)
+        ```
+        
+        Esto te devolverá una ruta como:
+        
+        ```
+        /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+        ```
+        
+        La ruta base del JDK (sin `/bin/java`) es la que necesitas para `JAVA_HOME`:
+        
+        ```
+        /usr/lib/jvm/java-21-openjdk-amd64
+        ```
+        
+        ---
+        
+        ## ✅ 2. Edita tu archivo de configuración de entorno
+        
+        Depende de si quieres configurarlo para **tu usuario** o **todo el sistema**:
+        
+        ### 🧍 Opción A: Solo para tu usuario
+        
+        Edita tu archivo `.bashrc` o `.zshrc` (según el shell que uses):
+        
+        ```bash
+        nano ~/.bashrc
+        ```
+        
+        Al final del archivo, añade:
+        
+        ```bash
+        export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+        export PATH=$JAVA_HOME/bin:$PATH
+        ```
+        
+        Guarda y cierra (`Ctrl+O`, `Enter`, `Ctrl+X`).
+        
+        Luego, recarga el archivo:
+        
+        ```bash
+        source ~/.bashrc
+        ```
+        
+        ---
+        
+        ### 🖥️ Opción B: Para todos los usuarios
+        
+        Edita o crea el archivo:
+        
+        ```bash
+        sudo nano /etc/profile.d/java.sh
+        ```
+        
+        Añade:
+        
+        ```bash
+        export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+        export PATH=$JAVA_HOME/bin:$PATH
+        ```
+        
+        Hazlo ejecutable:
+        
+        ```bash
+        sudo chmod +x /etc/profile.d/java.sh
+        ```
+        
+        ---
+        
+        ## ✅ 3. Verifica que esté bien configurado
+        
+        Cierra y vuelve a abrir la terminal (o usa `source ~/.bashrc`), luego verifica:
+        
+        ```bash
+        echo $JAVA_HOME
+        ```
+        
+        Y:
+        
+        ```bash
+        java -version
+        ```
+        
+        ---
+        
+        ## 🧠 Tip: ¿No estás seguro de la carpeta exacta de Java?
+        
+        Puedes listar todas las instalaciones disponibles con:
+        
+        ```bash
+        sudo update-alternatives --list java
+        ```
+        
+        Y usar el directorio padre de esa ruta como `JAVA_HOME`.
+        
+        ---
+
+
+
+Comprobar instalación
+java -version
+javac -version
+
+## ✅ Paso 4: Instalar **Docker** (usando el script oficial, ya que la versión noble aún no está en los repos de Docker)
+
+### 4.1 Instalar dependencias necesarias:
+
+```bash
+sudo apt install ca-certificates curl gnupg lsb-release -y
+```
+
+### 4.2 Descargar y ejecutar el script de instalación oficial de Docker:
+
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+### 4.3 Verifica que Docker se instaló correctamente:
+
+```bash
+docker --version
+```
+
+### 4.4 (Opcional) Usar Docker sin `sudo`:
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+⚠️ Después de esto, **debes cerrar sesión y volver a iniciarla** o reiniciar tu máquina para que surta efecto.
+
+---
+
+## ✅ Paso final: Verificar todo
+
+```bash
+git --version
+java -version
+docker --version
+```
+
+---

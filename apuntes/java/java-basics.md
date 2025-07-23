@@ -110,4 +110,38 @@ UNA LIBRERIA CONTIENE .JAR > UN .JAR CONTIENE .CLASS
 
 JAR - JAVA ARCHIVE -> contiene los class
 
+# ¿Qué es `java.lang` en Java?
+
+---
+
+## Definición
+
+- `java.lang` es un **paquete fundamental** del lenguaje Java.
+- Contiene las **clases básicas esenciales** que forman la base del lenguaje.
+- Está **importado automáticamente** en todos los programas Java, por lo que no es necesario importarlo manualmente.
+
+---
+
+## Clases más importantes en `java.lang`
+
+| Clase           | Descripción                                      |
+|-----------------|-------------------------------------------------|
+| `Object`        | Clase raíz de todas las clases en Java           |
+| `String`        | Manejo de cadenas de texto                        |
+| `Math`          | Funciones matemáticas estáticas                   |
+| `System`        | Variables y métodos relacionados con el sistema  |
+| `Thread`        | Para manejar hilos de ejecución                    |
+| `Integer`, `Double`, `Boolean`, ... | Clases envolventes (wrapper) para tipos primitivos |
+| `Exception` y subclases | Manejo de excepciones y errores                 |
+
+---
+
+## Importancia
+
+- Proporciona las **funciones básicas** para manipular datos, control del programa, y operaciones comunes.
+- Todas las clases en Java heredan de `java.lang.Object`.
+- Permite trabajar con tipos primitivos a través de sus clases envolventes (`Integer`, `Double`, etc.).
+
+---
+
 

@@ -96,6 +96,7 @@ Tu repositorio de GitHub ahora está clonado y abierto en Eclipse. Puedes ver el
 🔄 Flujo de trabajo con Git en Eclipse + repositorio local
 
 Vamos a dividirlo en pasos clave:
+
 🟡 1. Clonar o crear el repositorio en Eclipse
 
     Si ya clonaste un repositorio desde GitHub → ya tienes una copia local en Eclipse.

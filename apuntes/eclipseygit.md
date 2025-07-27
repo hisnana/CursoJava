@@ -93,4 +93,58 @@ Tu repositorio de GitHub ahora está clonado y abierto en Eclipse. Puedes ver el
 
 ---
 
+🔄 Flujo de trabajo con Git en Eclipse + repositorio local
+
+Vamos a dividirlo en pasos clave:
+🟡 1. Clonar o crear el repositorio en Eclipse
+
+    Si ya clonaste un repositorio desde GitHub → ya tienes una copia local en Eclipse.
+
+    Si creas un proyecto nuevo en Eclipse, puedes inicializarlo como repositorio Git con:
+
+        Botón derecho sobre el proyecto → Team > Share Project... → selecciona Git.
+
+🔵 2. Hacer cambios en tu proyecto
+
+Modifica tu código normalmente: archivos .java, archivos de configuración, etc.
+🟣 3. Agregar archivos al staging area
+
+Antes de guardar los cambios en el historial de Git (commit), debes añadir los archivos modificados:
+
+    Botón derecho en el proyecto → Team > Add to Index
+    (O desde la vista Git Staging, arrastras los archivos a la sección Staged Changes)
+
+Esto es como decir: “estos archivos quiero incluirlos en el próximo commit”.
+🔴 4. Hacer un commit
+
+Una vez tengas los cambios preparados:
+
+    Abre la vista Git Staging (si no la ves, ve a Window > Show View > Other > Git > Git Staging).
+
+    Escribe un mensaje de commit en el campo superior.
+
+    Haz clic en Commit (o Commit and Push si ya quieres subirlo a GitHub directamente).
+
+Esto guarda tus cambios en el repositorio local.
+🔁 5. Sincronizar con GitHub
+🔼 Subir tus cambios (Push)
+
+    Team > Push to Upstream
+
+    Esto envía tus commits locales al repositorio remoto (GitHub).
+
+🔽 Traer cambios del remoto (Pull)
+
+    Si estás trabajando con otras personas (o desde otro ordenador), debes hacer:
+
+        Team > Pull para traer los últimos cambios del repositorio remoto y fusionarlos con los tuyos.
+
+🧭 Flujo típico diario:
+
+[1] Pull  → Traes lo nuevo de GitHub
+[2] Trabajas en tu código
+[3] Add   → Preparas los cambios
+[4] Commit → Guardas los cambios localmente
+[5] Push  → Subes tus cambios a GitHub
+
 

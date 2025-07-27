@@ -63,6 +63,11 @@ IDE : INTEGRATED DEVELOPMENT ENVIROMENT
 > - **JVM:** Ejecuta el código Java.  
 > - **JRE:** Proporciona el entorno para ejecutar Java.  
 > - **JDK:** Contiene todo lo necesario para desarrollar y ejecutar Java.
+>
+   JDK
+    └── incluye → JRE
+                  └── incluye → JVM
+
 
 # Características de Java
 
@@ -148,5 +153,6 @@ JAR - JAVA ARCHIVE -> contiene los class
 IMPORTANTE 
 
 CLASES EN METODO UPPER CAMEL CASE
-METODOS EN CAMEL CASE
+
+METODOS y VARIABLES EN CAMEL CASE
 

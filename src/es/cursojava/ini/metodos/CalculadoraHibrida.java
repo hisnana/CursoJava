@@ -36,7 +36,7 @@ public class CalculadoraHibrida {
 	}
 	
 	public static void multiplicadora2 (int num,int num2) {
-		if(num<=num2) { //como simplificar esto sin usar dos for
+		if(num<=num2) { //Se podria simprificar usando el metodo multiplicadora
 			for(int j= num ; j<=num2 ; j++) {
 				System.out.println("TABLA DEL "+j);
 				for (int i=0 ; i<=10 ;i++ ) {

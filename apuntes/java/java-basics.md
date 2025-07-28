@@ -156,3 +156,31 @@ CLASES EN METODO UPPER CAMEL CASE
 
 METODOS y VARIABLES EN CAMEL CASE
 
+🛡️## Modificadores de Acceso en Java
+
+| Modificador | Clase | Mismo paquete | Subclase (otro paquete) | Cualquier lugar |
+| ----------- | :---: | :-----------: | :---------------------: | :-------------: |
+| `public`    |   ✅   |       ✅       |            ✅            |        ✅        |
+| `protected` |   ✅   |       ✅       |            ✅            |        ❌        |
+| *(default)* |   ✅   |       ✅       |            ❌            |        ❌        |
+| `private`   |   ✅   |       ❌       |            ❌            |        ❌        |
+
+📌 Descripción de cada modificador
+public: Accesible desde cualquier parte del programa.
+protected: Accesible dentro del mismo paquete y por subclases en otros paquetes.
+(default): Accesible solo dentro del mismo paquete.
+private: Accesible solo dentro de la misma clase.
+
+
+STATIC
+
+🔸 void (sin retorno)
+El método no devuelve ningún valor.
+
+Se usa solo para realizar acciones (como imprimir, modificar datos, etc.).
+
+🔸 Tipos con retorno
+El método devuelve un valor del tipo indicado (int, String, boolean, etc.).
+
+Se usa return para devolver ese valor.
+

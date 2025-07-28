@@ -19,46 +19,74 @@ public class Ahorcado {
 			    "una manzana", "la casa", "el coche", "una canción", "el jardín", "la calle",
 			    "el balón", "un sombrero", "la ventana", "la lámpara", "el periódico", "el fuego"
 			};
-			int numAleatorio = (int) Math.random();
+			int numAleatorio = (int) (Math.random()*12);
 			Scanner scan = new Scanner(System.in);
 			System.out.println("Introduce tu nombre de jugador");
 			String name = scan.nextLine();
 			String fraseAleatoria = sujetos[numAleatorio]+" "+verbos[numAleatorio]+" "+complementos[numAleatorio];
+			String fraseOculta = "";
 			for (int i = 0 ; i < fraseAleatoria.length(); i++) {
 				
 				if (fraseAleatoria.substring(i, i+1).isBlank()) {
-					System.out.print(" ");
+					
+					fraseOculta += " ";
 				}else {
-					System.out.print("_");
+					
+					fraseOculta += "_";
 				}
+			
 				
 			}
+			System.out.println(fraseOculta);
 			int contador = 0;
+			
 			do {
-				System.out.println();
-				System.out.println(fraseAleatoria);
-				System.out.println("Introduce una letra");
-				scan = new Scanner(System.in);
-				String letra = scan.nextLine();
-				
-				for (int i = 0 ; i < fraseAleatoria.length(); i++) {
-					
-					if (fraseAleatoria.substring(i, i+1).isBlank()) {
-						System.out.print(" ");
-					} else if (fraseAleatoria.substring(i, i+1).contentEquals(letra)) {
-						System.out.print(letra);
-					} else {
-						System.out.print("_");
-					}
-					
-				}
+				String letra=pideLetra(fraseAleatoria);
+				comprobarLetra(fraseAleatoria,letra,fraseOculta);
 				contador++;
-				System.out.println("Te quedan "+contador+" intentos");
+				System.out.println("Llevas "+contador+" intentos de 6");
 				
-			} while(fraseAleatoria.contains(letra)&&contador<6);
+			} while(contador<6);
 			
 
 			
+	}
+	
+	public static String pideLetra (String fraseAleatoria) {
+		System.out.println();
+		System.out.println(fraseAleatoria);
+		System.out.println("Introduce una letra");
+		Scanner scan = new Scanner(System.in);
+		scan = new Scanner(System.in);
+		String letra = scan.nextLine();
+		return letra;
+		
+	}
+	
+	private static void comprobarLetra (String fraseAleatoria,String letra,String fraseOculta) {
+		
+//		if (fraseAleatoria.contains(letra)) {
+//			fraseOculta.replace("_", letra);
+//		}
+//		System.out.println(fraseOculta);
+		
+		for (int i = 0 ; i < fraseAleatoria.length(); i++) {
+			fraseOculta = "";
+			if (fraseAleatoria.substring(i, i+1).isBlank()) {
+				
+				fraseOculta += " ";
+			} else if (fraseAleatoria.substring(i, i+1).toLowerCase().equalsIgnoreCase(letra)) {
+				
+				fraseOculta += letra;
+			} else {
+				
+				fraseOculta += "_";
+			}
+			
+		}
+		System.out.println(fraseOculta);
+		System.out.println();
+		
 	}
 
 }

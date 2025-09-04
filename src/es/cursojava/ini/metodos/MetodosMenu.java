@@ -1,3 +1,4 @@
+
 package es.cursojava.ini.metodos;
 
 import java.util.Scanner;

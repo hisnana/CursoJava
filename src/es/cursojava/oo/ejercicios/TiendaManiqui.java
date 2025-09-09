@@ -3,9 +3,7 @@ package es.cursojava.oo.ejercicios;
 public class TiendaManiqui {
 	private String nombre;
 	private double precioTotal;
-	private int totalManiquies;
-	
-	
+
 
 	public TiendaManiqui(String nombre) {
 		this.nombre = nombre;
@@ -29,7 +27,6 @@ public class TiendaManiqui {
 		Boton boton1 = new Boton("Azul","Pequeño","Redondo");
 		Boton boton2 = new Boton("Rosa","Grande","Rombo");
 		Boton[] botones = {boton1,boton2};
-		
 		Pantalon pantalon1 = new Pantalon("Azul",29,"L",boton2);
 		Camisa camisa1 = new Camisa("Blanca",12,"S",botones);
 		Vestido vestido1 = new Vestido("Amarillo",20,"L");

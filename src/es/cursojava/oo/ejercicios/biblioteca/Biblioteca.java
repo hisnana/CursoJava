@@ -1,5 +1,4 @@
-package es.cursojava.oo.ejercicios;
-
+package es.cursojava.oo.ejercicios.biblioteca;
 
 public class Biblioteca {
 	

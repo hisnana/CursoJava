@@ -1,4 +1,6 @@
-package es.cursojava.oo.ejercicios;
+package es.cursojava.oo.ejercicios.tiendaManiqui;
+
+import es.cursojava.oo.ejercicios.tienda.Producto;
 
 public class UtilidadesTienda {
 	

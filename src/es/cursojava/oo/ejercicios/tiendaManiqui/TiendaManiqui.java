@@ -1,4 +1,4 @@
-package es.cursojava.oo.ejercicios;
+package es.cursojava.oo.ejercicios.tiendaManiqui;
 
 public class TiendaManiqui {
 	private String nombre;

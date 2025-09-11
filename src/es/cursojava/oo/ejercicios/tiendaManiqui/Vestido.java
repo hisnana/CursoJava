@@ -1,4 +1,4 @@
-package es.cursojava.oo.ejercicios;
+package es.cursojava.oo.ejercicios.tiendaManiqui;
 
 public class Vestido {
 	private String color;

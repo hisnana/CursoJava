@@ -225,3 +225,66 @@ private void metodoInterno() {
 | Con parámetros     | Puede    | Objeto/Clase   | Opcional       |
 | Privado            | Puede    | Solo clase     | Opcional       |
 
+# 📘 ¿Java pasa por valor o por referencia?
+
+## ✅ Resumen corto
+Java **siempre pasa por valor**, incluso cuando se trata de objetos.
+
+> 🔹 Si pasas un tipo primitivo → se pasa **una copia del valor**.  
+> 🔹 Si pasas un objeto → se pasa **una copia de la referencia al objeto**.
+
+Esto significa que **puedes modificar el contenido del objeto**, pero **no puedes cambiar la referencia original** dentro del método.
+
+---
+
+## 📦 Analogía: Caja y etiqueta
+
+- Imagina un objeto como una **caja**.
+- Una variable es como una **etiqueta** pegada a esa caja.
+- En Java, cuando pasas un objeto a un método, lo que se copia es **la etiqueta**, no la caja.
+
+Por eso:
+- Puedes cambiar lo que hay dentro de la caja (modificar el objeto).
+- Pero si cambias la etiqueta (la referencia), solo afecta a la copia local, no a la original.
+
+---
+
+## 🔍 Tabla comparativa
+
+| Tipo de dato    | ¿Qué se pasa al método?         | ¿Se puede modificar el valor original? |
+|-----------------|----------------------------------|-----------------------------------------|
+| Primitivo       | Copia del valor                 | ❌ No                                   |
+| Objeto          | Copia de la referencia           | ✅ El contenido sí, la referencia no     |
+
+---
+
+## 🧪 Ejemplo en Java
+
+```java
+class Persona {
+    String nombre;
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Persona p = new Persona();
+        p.nombre = "Ana";
+
+        cambiarNombre(p);
+        System.out.println(p.nombre); // Imprime "Luis"
+
+        reasignarReferencia(p);
+        System.out.println(p.nombre); // Imprime "Luis", no "Carlos"
+    }
+
+    static void cambiarNombre(Persona persona) {
+        persona.nombre = "Luis"; // ✅ Modifica el contenido del objeto
+    }
+
+    static void reasignarReferencia(Persona persona) {
+        persona = new Persona();    // ❌ Solo cambia la copia de la referencia
+        persona.nombre = "Carlos";
+    }
+}
+
+

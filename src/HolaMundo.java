@@ -31,7 +31,7 @@ public class HolaMundo {
 		
 		System.out.println(" git");		
 		
-		log.warn("Hola");
+		log.info("Hola");
 		
 	}
 

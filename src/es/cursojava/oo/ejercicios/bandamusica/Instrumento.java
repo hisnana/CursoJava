@@ -10,12 +10,15 @@ public class Instrumento {
 	
 	public boolean afinar(Instrumento intrumento, Logger log) {
 		log.info("Afinando instrumento "+this.nombre);
-		int num = (int)Math.random()*10;
-		if (num > 5) {
+		this.afinado=Math.random()>0.4;
+		
+		if (afinado) {
 			afinado = true;
+			log.info("El instrumento  "+this.nombre+" esta afinado");
 			
 		} else  {
 			afinado = false;
+			log.info("El instrumento  "+this.nombre+" no esta afinado");
 		}
 		return afinado;
 	}

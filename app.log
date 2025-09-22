@@ -29,3 +29,151 @@
 20:55:18.945 [main] INFO  BandaMusica - Afinando instrumento Piano1
 20:55:18.945 [main] INFO  BandaMusica - Afinando Piano
 20:55:18.945 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+17:05:44.263 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+17:05:44.267 [main] INFO  BandaMusica - Afinando guitarra
+17:05:44.267 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+17:05:44.267 [main] INFO  BandaMusica - Afinando guitarra
+17:05:44.267 [main] INFO  BandaMusica - Afinando instrumento Piano1
+17:05:44.268 [main] INFO  BandaMusica - Afinando Piano
+17:05:44.268 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+17:14:28.220 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+17:14:28.223 [main] INFO  BandaMusica - El instrumento  Guitarra1 no esta afinado
+17:14:28.223 [main] INFO  BandaMusica - Afinando guitarra
+17:14:28.223 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+17:14:28.223 [main] INFO  BandaMusica - El instrumento  Guitar2 no esta afinado
+17:14:28.223 [main] INFO  BandaMusica - Afinando guitarra
+17:14:28.223 [main] INFO  BandaMusica - Afinando instrumento Piano1
+17:14:28.223 [main] INFO  BandaMusica - El instrumento  Piano1 no esta afinado
+17:14:28.223 [main] INFO  BandaMusica - Afinando Piano
+17:14:28.223 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+17:14:28.223 [main] INFO  BandaMusica - El instrumento  Tambor1 no esta afinado
+17:14:54.492 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+17:14:54.496 [main] INFO  BandaMusica - El instrumento  Guitarra1 no esta afinado
+17:14:54.496 [main] INFO  BandaMusica - Afinando guitarra
+17:14:54.496 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+17:14:54.496 [main] INFO  BandaMusica - El instrumento  Guitar2 no esta afinado
+17:14:54.496 [main] INFO  BandaMusica - Afinando guitarra
+17:14:54.496 [main] INFO  BandaMusica - Afinando instrumento Piano1
+17:14:54.496 [main] INFO  BandaMusica - El instrumento  Piano1 no esta afinado
+17:14:54.496 [main] INFO  BandaMusica - Afinando Piano
+17:14:54.496 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+17:14:54.496 [main] INFO  BandaMusica - El instrumento  Tambor1 no esta afinado
+17:16:14.844 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+17:16:14.848 [main] INFO  BandaMusica - El instrumento  Guitarra1 esta afinado
+17:16:14.848 [main] INFO  BandaMusica - Afinando guitarra
+17:16:14.848 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+17:16:14.848 [main] INFO  BandaMusica - El instrumento  Guitar2 esta afinado
+17:16:14.848 [main] INFO  BandaMusica - Afinando guitarra
+17:16:14.848 [main] INFO  BandaMusica - Afinando instrumento Piano1
+17:16:14.849 [main] INFO  BandaMusica - El instrumento  Piano1 no esta afinado
+17:16:14.849 [main] INFO  BandaMusica - Afinando Piano
+17:16:14.849 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+17:16:14.849 [main] INFO  BandaMusica - El instrumento  Tambor1 esta afinado
+17:45:56.737 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+17:45:56.741 [main] INFO  BandaMusica - El instrumento  Guitarra1 esta afinado
+17:45:56.741 [main] INFO  BandaMusica - Afinando guitarra
+17:45:56.741 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+17:45:56.742 [main] INFO  BandaMusica - El instrumento  Guitar2 no esta afinado
+17:45:56.742 [main] INFO  BandaMusica - Afinando guitarra
+17:45:56.742 [main] INFO  BandaMusica - Afinando instrumento Piano1
+17:45:56.742 [main] INFO  BandaMusica - El instrumento  Piano1 esta afinado
+17:45:56.742 [main] INFO  BandaMusica - Afinando Piano
+17:45:56.742 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+17:45:56.742 [main] INFO  BandaMusica - El instrumento  Tambor1 no esta afinado
+17:45:56.742 [main] INFO  BandaMusica - Tocando instrumento Guitarra1
+17:45:56.742 [main] INFO  BandaMusica - Tocando instrumento Guitar2
+17:45:56.742 [main] INFO  BandaMusica - Tocando instrumento Piano1
+17:45:56.742 [main] INFO  BandaMusica - Aporreando Tambor
+17:45:56.742 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+17:45:56.742 [main] INFO  BandaMusica - El instrumento  Guitarra1 esta afinado
+17:45:56.742 [main] INFO  BandaMusica - Afinando guitarra
+17:45:56.742 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+17:45:56.742 [main] INFO  BandaMusica - El instrumento  Guitar2 no esta afinado
+17:45:56.742 [main] INFO  BandaMusica - Afinando guitarra
+17:45:56.742 [main] INFO  BandaMusica - La banda suena mal
+17:45:56.742 [main] INFO  BandaMusica - Afinando instrumento Piano1
+17:45:56.742 [main] INFO  BandaMusica - El instrumento  Piano1 esta afinado
+17:45:56.742 [main] INFO  BandaMusica - Afinando Piano
+17:45:56.742 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+17:45:56.742 [main] INFO  BandaMusica - El instrumento  Tambor1 no esta afinado
+18:07:26.043 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+18:07:26.046 [main] INFO  BandaMusica - El instrumento  Guitarra1 no esta afinado
+18:07:26.046 [main] INFO  BandaMusica - Afinando guitarra
+18:07:26.046 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+18:07:26.046 [main] INFO  BandaMusica - El instrumento  Guitar2 esta afinado
+18:07:26.046 [main] INFO  BandaMusica - Afinando guitarra
+18:07:26.048 [main] INFO  BandaMusica - Afinando instrumento Piano1
+18:07:26.048 [main] INFO  BandaMusica - El instrumento  Piano1 no esta afinado
+18:07:26.048 [main] INFO  BandaMusica - Afinando Piano
+18:07:26.048 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+18:07:26.048 [main] INFO  BandaMusica - El instrumento  Tambor1 esta afinado
+18:07:26.048 [main] INFO  BandaMusica - Tocando instrumento Guitarra1
+18:07:26.048 [main] INFO  BandaMusica - Tocando instrumento Guitar2
+18:07:26.048 [main] INFO  BandaMusica - Tocando instrumento Piano1
+18:07:26.048 [main] INFO  BandaMusica - Aporreando Tambor
+18:07:26.048 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+18:07:26.048 [main] INFO  BandaMusica - El instrumento  Guitarra1 esta afinado
+18:07:26.048 [main] INFO  BandaMusica - Afinando guitarra
+18:07:26.048 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+18:07:26.048 [main] INFO  BandaMusica - El instrumento  Guitar2 esta afinado
+18:07:26.048 [main] INFO  BandaMusica - Afinando guitarra
+18:07:26.048 [main] INFO  BandaMusica - Afinando instrumento Piano1
+18:07:26.048 [main] INFO  BandaMusica - El instrumento  Piano1 no esta afinado
+18:07:26.048 [main] INFO  BandaMusica - Afinando Piano
+18:07:26.048 [main] INFO  BandaMusica - La banda suena mal
+18:07:26.048 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+18:07:26.048 [main] INFO  BandaMusica - El instrumento  Tambor1 esta afinado
+18:09:57.045 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+18:09:57.049 [main] INFO  BandaMusica - El instrumento  Guitarra1 esta afinado
+18:09:57.049 [main] INFO  BandaMusica - Afinando guitarra
+18:09:57.049 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+18:09:57.049 [main] INFO  BandaMusica - El instrumento  Guitar2 no esta afinado
+18:09:57.049 [main] INFO  BandaMusica - Afinando guitarra
+18:09:57.049 [main] INFO  BandaMusica - Afinando instrumento Piano1
+18:09:57.049 [main] INFO  BandaMusica - El instrumento  Piano1 esta afinado
+18:09:57.049 [main] INFO  BandaMusica - Afinando Piano
+18:09:57.049 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+18:09:57.049 [main] INFO  BandaMusica - El instrumento  Tambor1 esta afinado
+18:09:57.049 [main] INFO  BandaMusica - Tocando instrumento Guitarra1
+18:09:57.049 [main] INFO  BandaMusica - Tocando instrumento Guitar2
+18:09:57.049 [main] INFO  BandaMusica - Tocando instrumento Piano1
+18:09:57.049 [main] INFO  BandaMusica - Aporreando Tambor
+18:09:57.049 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+18:09:57.049 [main] INFO  BandaMusica - El instrumento  Guitarra1 no esta afinado
+18:09:57.050 [main] INFO  BandaMusica - Afinando guitarra
+18:09:57.050 [main] INFO  BandaMusica - La banda suena mal
+18:09:57.050 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+18:09:57.050 [main] INFO  BandaMusica - El instrumento  Guitar2 esta afinado
+18:09:57.050 [main] INFO  BandaMusica - Afinando guitarra
+18:09:57.050 [main] INFO  BandaMusica - Afinando instrumento Piano1
+18:09:57.050 [main] INFO  BandaMusica - El instrumento  Piano1 esta afinado
+18:09:57.050 [main] INFO  BandaMusica - Afinando Piano
+18:09:57.050 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+18:09:57.050 [main] INFO  BandaMusica - El instrumento  Tambor1 esta afinado
+18:10:28.771 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+18:10:28.775 [main] INFO  BandaMusica - El instrumento  Guitarra1 no esta afinado
+18:10:28.775 [main] INFO  BandaMusica - Afinando guitarra
+18:10:28.775 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+18:10:28.775 [main] INFO  BandaMusica - El instrumento  Guitar2 esta afinado
+18:10:28.775 [main] INFO  BandaMusica - Afinando guitarra
+18:10:28.775 [main] INFO  BandaMusica - Afinando instrumento Piano1
+18:10:28.775 [main] INFO  BandaMusica - El instrumento  Piano1 esta afinado
+18:10:28.775 [main] INFO  BandaMusica - Afinando Piano
+18:10:28.775 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+18:10:28.775 [main] INFO  BandaMusica - El instrumento  Tambor1 esta afinado
+18:10:28.775 [main] INFO  BandaMusica - Tocando instrumento Guitarra1
+18:10:28.775 [main] INFO  BandaMusica - Tocando instrumento Guitar2
+18:10:28.775 [main] INFO  BandaMusica - Tocando instrumento Piano1
+18:10:28.775 [main] INFO  BandaMusica - Aporreando Tambor
+18:10:28.775 [main] INFO  BandaMusica - Afinando instrumento Guitarra1
+18:10:28.775 [main] INFO  BandaMusica - El instrumento  Guitarra1 esta afinado
+18:10:28.775 [main] INFO  BandaMusica - Afinando guitarra
+18:10:28.775 [main] INFO  BandaMusica - Afinando instrumento Guitar2
+18:10:28.775 [main] INFO  BandaMusica - El instrumento  Guitar2 esta afinado
+18:10:28.775 [main] INFO  BandaMusica - Afinando guitarra
+18:10:28.775 [main] INFO  BandaMusica - Afinando instrumento Piano1
+18:10:28.775 [main] INFO  BandaMusica - El instrumento  Piano1 no esta afinado
+18:10:28.775 [main] INFO  BandaMusica - Afinando Piano
+18:10:28.776 [main] INFO  BandaMusica - La banda suena mal
+18:10:28.776 [main] INFO  BandaMusica - Afinando instrumento Tambor1
+18:10:28.776 [main] INFO  BandaMusica - El instrumento  Tambor1 no esta afinado

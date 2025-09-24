@@ -1,0 +1,101 @@
+## Docker instalación en la maquina virtual de Linux
+
+✅ Paso 4: Instalar Docker (usando el script oficial, ya que la versión noble aún no está en los repos de Docker)
+
+> [!note]
+> Es el paso 4 porque es la continuación de las instrucciones de configuración de la maquina virtual
+
+### 4.1 Instalar dependencias necesarias:
+sudo apt install ca-certificates curl gnupg lsb-release -y
+
+### 4.2 Descargar y ejecutar el script de instalación oficial de Docker:
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+### 4.3 Verifica que Docker se instaló correctamente:
+docker --version
+
+### 4.4 (Opcional) Usar Docker sin sudo:
+sudo usermod -aG docker $USER
+
+⚠️ Después de esto, debes cerrar sesión y volver a iniciarla o reiniciar tu máquina para que surta efecto.
+
+---
+
+
+## https://hub.docker.com/
+
+Repositorio de imagenes
+
+Hemos filtrado por Docker Official image
+
+## Docker en maquina virtual
+
+Hemos ejecutado los siguientes pasos
+sudo docker run hello-world
+
+es típicamente el primer comando que se ejecuta para verificar que Docker esté instalado y funcionando correctamente en tu sistema.
+sudo docker image ls
+
+(o también puedes usar `sudo docker images`) se usa para listar todas las imágenes Docker que tienes descargadas localmente en tu sistema.
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    1b44b5a3e06a   6 weeks ago   10.1kB
+
+sudo docker container ls -a
+
+(o también `sudo docker ps -a`) se usa para listar todos los contenedores Docker en tu sistema, incluyendo los que están en ejecución y los que están detenidos.
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+efd326c90e6f   hello-world   "/hello"   4 minutes ago   Exited (0) 4 minutes ago             mystifying_swanson
+
+ sudo docker pull ubuntu
+ 
+se utiliza para descargar la imagen oficial de Ubuntu desde Docker Hub (el repositorio público de imágenes Docker).
+# Contenedor 1: "ubuntu-dev"
+docker run -d --name ubuntu-dev \
+  --hostname devbox \
+  -e MODE=dev -e TZ=Europe/Madrid \
+  -v ./devdata:/data \
+  --cpus="1.0" --memory="1g" \
+  ubuntu:22.04
+
+# Contenedor 2: "ubuntu-test"
+docker run -d --name ubuntu-test \
+  --hostname testbox \
+  -e MODE=test \
+  -v ./testdata:/data \
+  --cpus="0.5" --memory="512m" \
+  ubuntu:22.04
+
+Hemos creado estos 2 contenedores de Ubuntu.
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS                      PORTS     NAMES
+2da272b0fdf4   ubuntu:22.04   "/bin/bash"   8 seconds ago    Exited (0) 7 seconds ago              ubuntu-test
+0aabebca4817   ubuntu:22.04   "/bin/bash"   4 minutes ago    Exited (0) 4 minutes ago              ubuntu-dev
+efd326c90e6f   hello-world    "/hello"      24 minutes ago   Exited (0) 24 minutes ago             mystifying_swanson
+
+El profesor ha cambiado los comandos y nos ha pedido que ejecutemos este (sin destruir aun los anteriores 2 containers que hemos creado).
+# Contenedor 1: "ubuntu-dev"
+docker run -d --name ubuntu-dev2 \
+  --hostname devbox \
+  -e MODE=dev -e TZ=Europe/Madrid \
+  -v ./devdata:/data \
+  --cpus="1.0" --memory="1g" \
+  ubuntu:22.04 sleep infinity
+
+- sleep infinity es un comando que hace que el proceso duerma para siempre.
+- Esto mantiene el contenedor en ejecución indefinidamente mientras no lo detengas.
+- Así el contenedor no se cierra automáticamente después de iniciarse.
+- Esto es útil para:
+        - Contenedores en los que quieres entrar (con `docker exec`) y hacer tareas manuales.
+        - Contenedores que deben estar “vivos” esperando que hagas algo dentro.
+        - Desarrollo o testing interactivo.
+        -
+
+sudo docker container ls
+
+Que muestra solo los containers running
+CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS          PORTS     NAMES
+85e4daae6a28   ubuntu:22.04   "sleep infinity"   15 seconds ago   Up 14 seconds             ubuntu-dev2
+
+docker exec -it ubuntu-dev2 bash
+
+- `docker exec`: Ejecuta un comando dentro de un contenedor ya en funcionamiento.

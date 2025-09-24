@@ -1,0 +1,467 @@
+## Docker instalación en la maquina virtual de Linux
+
+✅ Paso 4: Instalar Docker (usando el script oficial, ya que la versión noble aún no está en los repos de Docker)
+
+> [!note]
+> Es el paso 4 porque es la continuación de las instrucciones de configuración de la maquina virtual
+
+### 4.1 Instalar dependencias necesarias:
+sudo apt install ca-certificates curl gnupg lsb-release -y
+
+### 4.2 Descargar y ejecutar el script de instalación oficial de Docker:
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+### 4.3 Verifica que Docker se instaló correctamente:
+docker --version
+
+### 4.4 (Opcional) Usar Docker sin sudo:
+sudo usermod -aG docker $USER
+
+⚠️ Después de esto, debes cerrar sesión y volver a iniciarla o reiniciar tu máquina para que surta efecto.
+
+---
+
+
+## https://hub.docker.com/
+
+Repositorio de imagenes
+
+Hemos filtrado por Docker Official image
+
+## Docker en maquina virtual
+
+Hemos ejecutado los siguientes pasos
+sudo docker run hello-world
+
+es típicamente el primer comando que se ejecuta para verificar que Docker esté instalado y funcionando correctamente en tu sistema.
+sudo docker image ls
+
+(o también puedes usar `sudo docker images`) se usa para listar todas las imágenes Docker que tienes descargadas localmente en tu sistema.
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    1b44b5a3e06a   6 weeks ago   10.1kB
+
+sudo docker container ls -a
+
+(o también `sudo docker ps -a`) se usa para listar todos los contenedores Docker en tu sistema, incluyendo los que están en ejecución y los que están detenidos.
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+efd326c90e6f   hello-world   "/hello"   4 minutes ago   Exited (0) 4 minutes ago             mystifying_swanson
+
+ sudo docker pull ubuntu
+ 
+se utiliza para descargar la imagen oficial de Ubuntu desde Docker Hub (el repositorio público de imágenes Docker).
+# Contenedor 1: 
+
+## Crear contenedor Docker de Ubuntu con configuración personalizada
+
+Puedes usar el siguiente comando para crear y ejecutar un contenedor de **Ubuntu 22.04** con configuración personalizada:
+
+```bash
+docker run -d --name ubuntu-dev --hostname devbox -e MODE=dev -e TZ=Europe/Madrid -v ./devdata:/data --cpus="1.0" --memory="1g" ubuntu:22.04
+### 🔍 Desglose de parámetros
+
+| Opción                   | Descripción                                                        |
+|--------------------------|--------------------------------------------------------------------|
+| `-d`                     | Ejecuta el contenedor en segundo plano (*detached*)               |
+| `--name ubuntu-dev`      | Nombre del contenedor                                              |
+| `--hostname devbox`      | Nombre del host dentro del contenedor                              |
+| `-e MODE=dev`            | Variable de entorno personalizada (`MODE`)                         |
+| `-e TZ=Europe/Madrid`    | Zona horaria configurada a Madrid                                  |
+| `-v ./devdata:/data`     | Monta el directorio local `./devdata` en `/data` dentro del contenedor |
+| `--cpus="1.0"`           | Limita el contenedor a 1 CPU                                       |
+| `--memory="1g"`          | Limita el contenedor a 1 GB de RAM                                 |
+| `ubuntu:22.04`           | Imagen base utilizada                                              |
+
+
+# Contenedor 2: 
+docker run -d --name ubuntu-test --hostname testbox -e MODE=test -v ./testdata:/data --cpus="0.5" --memory="512m" ubuntu:22.04
+### 🔍 Desglose de parámetros
+
+| Opción                   | Descripción                                                        |
+|--------------------------|--------------------------------------------------------------------|
+| `-d`                     | Ejecuta el contenedor en segundo plano (*detached*)               |
+| `--name ubuntu-test`     | Nombre del contenedor                                              |
+| `--hostname testbox`     | Nombre del host dentro del contenedor                              |
+| `-e MODE=test`           | Variable de entorno personalizada (`MODE`)                         |
+| `-v ./testdata:/data`    | Monta el directorio local `./testdata` en `/data` dentro del contenedor |
+| `--cpus="0.5"`           | Limita el contenedor a medio CPU                                   |
+| `--memory="512m"`        | Limita el contenedor a 512 MB de RAM                               |
+| `ubuntu:22.04`           | Imagen base utilizada                                              |
+
+
+Hemos creado estos 2 contenedores de Ubuntu.
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS                      PORTS     NAMES
+2da272b0fdf4   ubuntu:22.04   "/bin/bash"   8 seconds ago    Exited (0) 7 seconds ago              ubuntu-test
+0aabebca4817   ubuntu:22.04   "/bin/bash"   4 minutes ago    Exited (0) 4 minutes ago              ubuntu-dev
+efd326c90e6f   hello-world    "/hello"      24 minutes ago   Exited (0) 24 minutes ago             mystifying_swanson
+
+El profesor ha cambiado los comandos y nos ha pedido que ejecutemos este (sin destruir aun los anteriores 2 containers que hemos creado).
+# Contenedor 1: 
+
+docker run -d --name ubuntu-dev2 --hostname devbox -e MODE=dev -e TZ=Europe/Madrid -v ./devdata:/data --cpus="1.0" --memory="1g" ubuntu:22.04 sleep infinity
+
+
+- sleep infinity es un comando que hace que el proceso duerma para siempre.
+- Esto mantiene el contenedor en ejecución indefinidamente mientras no lo detengas.
+- Así el contenedor no se cierra automáticamente después de iniciarse.
+- Esto es útil para:
+        - Contenedores en los que quieres entrar (con `docker exec`) y hacer tareas manuales.
+        - Contenedores que deben estar “vivos” esperando que hagas algo dentro.
+        - Desarrollo o testing interactivo.
+        -
+
+sudo docker container ls
+
+Que muestra solo los containers running
+CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS          PORTS     NAMES
+85e4daae6a28   ubuntu:22.04   "sleep infinity"   15 seconds ago   Up 14 seconds             ubuntu-dev2
+
+docker exec -it ubuntu-dev2 bash
+
+- `docker exec`: Ejecuta un comando dentro de un contenedor ya en funcionamiento.- `-it`: Abre una sesión interactiva con terminal (te permite usar el bash como si fuera una shell normal).
+- `ubuntu-dev2`: Nombre del contenedor donde quieres entrar.
+- `bash`: El comando que quieres ejecutar dentro del contenedor (una shell Bash).
+
+Resultado:
+
+Entras interactivamente al contenedor ubuntu-dev2 y puedes ejecutar comandos dentro de su sistema operativo Ubuntu.
+root@devbox:/#
+
+Para salir de un contenedor:
+exit
+
+Para eliminar uno hay que tenerlo parado (aqui eliminamos el contenedor ubuntu-dev)
+docker container rm ubuntu-dev
+
+(aqui eliminamos el contenedor ubuntu-test)
+sudo docker container rm ubuntu-test
+
+## Docker Oracle XE
+
+La imagen que usaremos es una de un usuario, pero teoricamente podriamos configurarlo con la original
+docker run -d -p 1521:1521 --name oracle-xe -e ORACLE_PASSWORD=password -v oracle-volume:/opt/oracle/oradata gvenzl/oracle-xe
+
+### 🔍 Desglose de parámetros
+
+| Opción                        | Descripción                                                                                          |
+|------------------------------|----------------------------------------------------------------------------------------------------|
+| `docker run`                 | Comando para ejecutar un contenedor nuevo                                                          |
+| `-d`                         | Ejecuta el contenedor en segundo plano (*detached*)                                               |
+| `-p 1521:1521`               | Mapea el puerto 1521 del contenedor al host, que es el puerto por defecto de Oracle                 |
+| `--name oracle-xe`           | Asigna el nombre `oracle-xe` al contenedor                                                         |
+| `-e ORACLE_PASSWORD=password`| Establece la contraseña del usuario admin/oracle (reemplaza `"password"` por una contraseña segura en producción) |
+| `-v oracle-volume:/opt/oracle/oradata` | Monta un volumen persistente para guardar los datos de Oracle (en `/opt/oracle/oradata`)         |
+| `gvenzl/oracle-xe`           | Imagen utilizada, que contiene Oracle XE                                                           |
+
+
+instalada
+ubuntu@Ubuntu-Server-24:~$ sudo docker container ls
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+3fd74949a770   gvenzl/oracle-xe   "container-entrypoin…"   6 minutes ago    Up 6 minutes    0.0.0.0:1521->1521/tcp, [::]:1521->1521/tcp   oracle-xe
+85e4daae6a28   ubuntu:22.04       "sleep infinity"         28 minutes ago   Up 28 minutes
+
+comprobado que jecuta
+docker exec -it oracle-xe bash
+
+accedemos
+sqlplus system/password@localhost:1521/XEPDB1
+
+es para conectarte a una base de datos Oracle usando SQL*Plus, el cliente de línea de comandos de Oracle.
+SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE = 'ADMIN_DB';
+
+Te devolverá todas las filas que muestran qué roles han sido otorgados a 'ADMIN_DB'.
+no rows selected
+
+significa que el usuario o rol `ADMIN_DB` no tiene roles asignados (no se le ha otorgado ningún rol).
+CREATE USER getafe IDENTIFIED BY password;
+
+- Crea un nuevo usuario llamado getafe en la base de datos Oracle.
+- Le asigna la contraseña password para que pueda iniciar sesión.
+
+Solo crear el usuario no le da permisos para hacer nada. Por ejemplo, no podrá conectarse ni crear objetos hasta que le otorgues privilegios.
+GRANT DBA TO getafe;
+
+hace que el usuario getafe obtenga el rol DBA, que es el rol con privilegios administrativos máximos en Oracle.
+
+sudo docker container stop oracle-xe
+
+Detiene el contenedor llamado oracle-xe. Lo apaga de forma ordenada, pero no lo elimina; queda en estado detenido.
+sudo docker container start oracle-xe
+
+Inicia el contenedor oracle-xe si estaba detenido, volviéndolo a poner en ejecución con su configuración previa.
+## Oracle SQL Developer
+
+Hemos instalado lo siguiente en Windows:
+
+sqldeveloper-24.3.1.347.1826-x64
+
+- Es una herramienta gratuita de Oracle para trabajar con bases de datos Oracle.
+- Permite:
+    - Conectarte a bases de datos Oracle.
+    - Ejecutar consultas SQL y scripts.
+    - Administrar usuarios, tablas, índices, etc.
+    - Visualizar datos y diseñar esquemas.
+- Tiene interfaz gráfica, muy usada para desarrollo y administración.
+
+- Hemos hecho click en el + de Nueva Conexión
+- Nombre: oracle_xe
+- Tipo de base de datos: Oracle
+- Tipo de autenticación: Por defecto
+- Usuario: getafe
+- Contraseña: password
+> - Tal y como creamos con CREATE USER getafe IDENTIFIED BY password;
+- Detalles:
+- Nombre de puerto: localhost
+- Puerto: 1521
+- SID : xe
+- Nombre del servicio: XEPDB1
+- [note] Seleccionar Nombre del servicio en lugar de SID
+En la maquina Virtual mapeamos (Selección Maquina Virtual > Configuración > Red > Reenvio de Puertos ):
+Nombre: oraclexe
+Tipo: TPC
+Puerto Anfitrión: 1521
+Puerto Invitado: 1521
+
+
+## Bases de Datos
+
+Las bases de datos que mas se utilizan son las relacionales.
+
+Oracles, SQL server, Posgre son relacionales.
+
+Aqui hay una lista de todos los tipos y sus ranking https://db-engines.com/en/ranking
+
+SQL (Structured Query Language) es un lenguaje estándar para gestionar y manipular bases de datos relacionales y esto es lo que vamos a estudiar.
+
+Nota: Quiza sea interesante profesionalmente ver Snowflake, relacional y no a la vez y en la nube. Cada vez mas usada.
+
+Todas estas son SQL:
+https://t.me/c/2813936991/332- Oracle Database    
+- MySQL    
+- PostgreSQL    
+- Microsoft SQL Server    
+- SQLite    
+- MariaDB    
+- IBM Db2    
+- SAP HANA
+
+En una base de datos relacional los datos se almacenan en tablas
+
+| ID  | N1      | N2          | N3   | N4       |
+| --- | ------- | ----------- | ---- | -------- |
+| 0   | Nombre1 | Appellidos1 | DNI1 | 22/04/98 |
+| 1   | Nombre2 | Appellidos3 | DNI2 | 23/09/89 |
+
+# Bases de Datos Relacionales
+
+## ¿Qué es una Base de Datos Relacional?
+
+Una **base de datos relacional** es un sistema para almacenar y gestionar datos estructurados, donde la información se organiza en **tablas** que tienen filas y columnas. 
+
+- Cada tabla representa una entidad o concepto (por ejemplo, `Clientes` o `Productos`).
+- Las filas son registros individuales.
+- Las columnas son atributos o campos de esos registros.
+- Las tablas pueden relacionarse entre sí mediante claves primarias y foráneas, lo que permite mantener la integridad y coherencia de los datos.
+
+Este modelo facilita consultas complejas mediante el lenguaje SQL (Structured Query Language).
+
+---
+
+## Tipos de Bases de Datos Relacionales
+
+Existen varios sistemas de gestión de bases de datos relacionales (RDBMS), entre los más populares están:
+
+| Sistema               | Características principales                                    |
+|-----------------------|----------------------------------------------------------------|
+| **MySQL**             | Muy popular, de código abierto, ampliamente usado en web       |
+| **PostgreSQL**        | Open source, muy robusto, con soporte avanzado de SQL          |
+| **Oracle Database**   | Comercial, muy utilizado en grandes empresas y entornos críticos|
+| **Microsoft SQL Server** | Comercial, integración con productos Microsoft                |
+| **SQLite**            | Ligero, embebido, ideal para aplicaciones móviles y escritorio |
+
+---
+
+## Ventajas de las Bases de Datos Relacionales
+
+- **Estructura clara:** datos organizados en tablas.
+- **Integridad:** uso de claves y restricciones.
+- **Consultas complejas:** mediante SQL.
+- **Escalabilidad y seguridad:** para grandes volúmenes de datos.
+
+---
+
+Cada vez que creas una tabla en una base de datos relacional, debes definir:
+
+1. El nombre de la tabla — para identificarla.    
+2. Las columnas (campos) — con un nombre para cada una.    
+3. El tipo de dato de cada columna — para especificar qué tipo de información va a contener (números, texto, fechas, etc.).
+
+Los registros son las filas de una tabla en una base de datos relacional.
+
+Cada celda (la intersección de una fila y una columna) contiene un valor específico para ese campo dentro de ese registro.
+
+Las restricciones en bases de datos son reglas que se aplican a las tablas para asegurar la integridad y validez de los datos.
+
+Las bases de datos relacionales son poderosas porque permiten conectar tablas entre sí, lo que ayuda a reducir la duplicación de datos y mantener la información organizada y consistente.
+
+Para relacionar la de clientes con contratos usamos foreign key y primary key.
+
+| ContratoID | ClienteID | FechaInicio | FechaFin   | TipoContrato |
+| ---------- | --------- | ----------- | ---------- | ------------ |
+| 101        | 0         | 01/01/2023  | 31/12/2023 | Renovable    |
+| 103        | 0         | 01/05/2024  | 30/04/2025 | Temporal     |
+| 102        | 1         | 15/02/2023  | 14/02/2024 | Permanente   |
+- ContratoID es la clave primaria de la tabla Contratos: identifica de forma única cada contrato.  
+- ClienteID es la clave foránea en la tabla Contratos: referencia el ID de la tabla Clientes, estableciendo la relación entre contratos y clientes.
+
+### Primary Key
+
+- Unicidad:  
+    Cada valor en la clave primaria debe ser único; no puede haber dos filas con el mismo valor.  
+- No puede ser NULL:  
+    La clave primaria siempre debe tener un valor válido; no acepta valores nulos.    
+- Identifica de forma única cada registro:  
+    Sirve para distinguir un registro de otro dentro de una tabla.
+
+#### Restriccion
+
+- PRIMARY KEY: Identifica de forma única cada registro en una tabla. No puede haber dos filas con el mismo valor en esta columna y no puede ser nula.
+
+
+### Foreign Key
+
+- Referencia a otra tabla:  
+    Apunta a la Primary Key (o a una clave única) de otra tabla, estableciendo una relación entre ambas.
+-  Mantiene la integridad referencial:  
+    Garantiza que los valores en la columna de clave foránea existan en la tabla referenciada, evitando referencias “huérfanas”.
+
+#### Restriccion
+
+- FOREIGN KEY: Garantiza que un valor en una columna coincida con un valor existente en otra tabla, para mantener relaciones entre tablas.
+## Principios ACID
+
+ACID es un conjunto de propiedades que garantizan la fiabilidad y consistencia de las transacciones en bases de datos.
+
+1. Atomicidad (Atomicity):  
+    Toda la operación o conjunto de operaciones de una transacción se ejecutan por completo o no se ejecutan en absoluto. No hay estados intermedios.
+   
+    Ejemplo:  
+    En un cajero automático, si quieres retirar dinero:
+   
+    - Se verifica saldo.        
+    - Se debita el monto.        
+    - Se registra la operación.  
+        Si falla alguna de estas etapas (por ejemplo, no se puede registrar la operación), toda la transacción se cancela y no se debita dinero ni se entrega efectivo.        
+
+2. Consistencia (Consistency):  
+    La base de datos pasa de un estado válido a otro estado válido, respetando todas las reglas y restricciones (como integridad referencial, tipos de datos, claves únicas, etc.).
+   
+    Ejemplo:  
+    Si tienes una tabla que no permite duplicados en el número de cuenta, al insertar una nueva transacción con un número repetido, la base de datos rechazará el cambio para mantener la consistencia.
+   
+
+3. Aislamiento (Isolation):
+
+Las transacciones concurrentes se ejecutan como si fueran secuenciales, evitando que interfieran entre sí y generen resultados incorrectos.
+   
+    Ejemplo:  
+    Dos personas intentan transferir dinero al mismo tiempo desde una misma cuenta. Gracias al aislamiento, cada transacción ve el estado de la cuenta sin interferencias, evitando que ambas retiren más dinero del disponible.
+   
+
+4. Durabilidad (Durability):  
+    Una vez que una transacción es confirmada (commit), sus cambios se guardan de forma permanente, incluso si hay una falla en el sistema después.
+   
+    Ejemplo:  
+    Después de que una transferencia bancaria se confirma, aunque el servidor se caiga o se reinicie, el cambio en el saldo permanecerá guardado sin pérdida.
+
+
+Hay bases de datos que no tienen restricciones, como MongoDB.
+### Ventajas de no tener restricciones
+
+- Más flexibilidad para insertar datos sin reglas rígidas.    
+- Inserciones más rápidas por menos validaciones.    
+- Esquema fácil de modificar sin migraciones complejas.    
+- Ideal para datos no estructurados o cambiantes.    
+
+### Bases de datos NoSQL
+
+- No tienen esquema fijo (schema-less), permiten datos variados.    
+- Escalan fácilmente en muchos servidores (horizontalmente).    
+- Modelos diversos: documentos, clave-valor, columnas, grafos.    
+- Prioridad en velocidad y disponibilidad, a veces sacrificando consistencia inmediata.
+
+
+# Otros Tipos de Bases de Datos
+
+Además de las bases de datos relacionales, existen otros tipos de bases de datos que se adaptan a diferentes necesidades y estructuras de datos:
+
+---
+
+## 1. Bases de Datos No Relacionales (NoSQL)
+
+Diseñadas para manejar grandes volúmenes de datos no estructurados o semi-estructurados. No usan tablas tradicionales ni SQL.
+
+### Tipos principales:
+
+| Tipo           | Descripción                                     | Ejemplos populares          |
+|----------------|------------------------------------------------|----------------------------|
+| **Documentales** | Almacenan datos en documentos tipo JSON o BSON | MongoDB, CouchDB           |
+| **Clave-Valor**  | Almacenan pares clave-valor simples            | Redis, DynamoDB            |
+| **Columnas**     | Almacenan datos en columnas en lugar de filas  | Apache Cassandra, HBase    |
+| **Grafos**       | Modelan datos en nodos y relaciones (grafos)   | Neo4j, Amazon Neptune      |
+
+---
+
+## 2. Bases de Datos en Memoria
+
+Almacenan datos principalmente en la memoria RAM para un acceso ultrarrápido.
+
+- Ejemplo: Redis, Memcached
+
+---
+
+## 3. Bases de Datos Orientadas a Objetos
+
+Almacenan datos como objetos, similar a la programación orientada a objetos.
+
+- Ejemplo: db4o, ObjectDB
+
+---
+
+## 4. Bases de Datos Distribuidas
+
+Distribuyen los datos en múltiples servidores para escalabilidad y alta disponibilidad.
+
+- Ejemplo: Google Spanner, Apache Cassandra
+
+---
+
+## 5. Bases de Datos en la Nube
+
+Servicios de bases de datos gestionados y escalables en la nube.
+
+- Ejemplo: Amazon RDS, Google Cloud SQL, Azure SQL Database
+
+---
+
+## Resumen rápido
+
+| Tipo                  | Uso principal                                  |
+|-----------------------|------------------------------------------------|
+| Relacional            | Datos estructurados, integridad y consultas SQL |
+| NoSQL                 | Datos no estructurados, escalabilidad horizontal |
+| En memoria            | Acceso ultra rápido, caching                    |
+| Orientada a objetos   | Modelado orientado a objetos                     |
+| Distribuida           | Alta disponibilidad y escalabilidad             |
+| En la nube            | Servicios gestionados y escalables               |
+
+---
+
+
+
+
+
+
+
+
+

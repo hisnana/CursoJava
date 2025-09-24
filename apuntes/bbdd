@@ -98,4 +98,234 @@ CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS        
 
 docker exec -it ubuntu-dev2 bash
 
-- `docker exec`: Ejecuta un comando dentro de un contenedor ya en funcionamiento.
+						- `docker exec`: Ejecuta un comando dentro de un contenedor ya en funcionamiento.- `-it`: Abre una sesión interactiva con terminal (te permite usar el bash como si fuera una shell normal).
+- `ubuntu-dev2`: Nombre del contenedor donde quieres entrar.
+- `bash`: El comando que quieres ejecutar dentro del contenedor (una shell Bash).
+
+Resultado:
+
+Entras interactivamente al contenedor ubuntu-dev2 y puedes ejecutar comandos dentro de su sistema operativo Ubuntu.
+root@devbox:/#
+
+Para salir de un contenedor:
+exit
+
+Para eliminar uno hay que tenerlo parado (aqui eliminamos el contenedor ubuntu-dev)
+docker container rm ubuntu-dev
+
+(aqui eliminamos el contenedor ubuntu-test)
+sudo docker container rm ubuntu-test
+
+## Docker Oracle XE
+
+La imagen que usaremos es una de un usuario, pero teoricamente podriamos configurarlo con la original
+docker run -d -p 1521:1521 --name oracle-xe -e ORACLE_PASSWORD=password -v oracle-volume:/opt/oracle/oradata gvenzl/oracle-xe
+
+instalada
+ubuntu@Ubuntu-Server-24:~$ sudo docker container ls
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+3fd74949a770   gvenzl/oracle-xe   "container-entrypoin…"   6 minutes ago    Up 6 minutes    0.0.0.0:1521->1521/tcp, [::]:1521->1521/tcp   oracle-xe
+85e4daae6a28   ubuntu:22.04       "sleep infinity"         28 minutes ago   Up 28 minutes
+
+comprobado que jecuta
+docker exec -it oracle-xe bash
+
+accedemos
+sqlplus system/password@localhost:1521/XEPDB1
+
+es para conectarte a una base de datos Oracle usando SQL*Plus, el cliente de línea de comandos de Oracle.
+SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE = 'ADMIN_DB';
+
+Te devolverá todas las filas que muestran qué roles han sido otorgados a 'ADMIN_DB'.
+no rows selected
+
+significa que el usuario o rol `ADMIN_DB` no tiene roles asignados (no se le ha otorgado ningún rol).
+CREATE USER getafe IDENTIFIED BY password;
+
+- Crea un nuevo usuario llamado getafe en la base de datos Oracle.
+- Le asigna la contraseña password para que pueda iniciar sesión.
+
+Solo crear el usuario no le da permisos para hacer nada. Por ejemplo, no podrá conectarse ni crear objetos hasta que le otorgues privilegios.
+GRANT DBA TO getafe;
+
+hace que el usuario getafe obtenga el rol DBA, que es el rol con privilegios administrativos máximos en Oracle.
+
+sudo docker container stop oracle-xe
+
+Detiene el contenedor llamado oracle-xe. Lo apaga de forma ordenada, pero no lo elimina; queda en estado detenido.
+sudo docker container start oracle-xe
+
+Inicia el contenedor oracle-xe si estaba detenido, volviéndolo a poner en ejecución con su configuración previa.
+## Oracle SQL Developer
+
+Hemos instalado lo siguiente en Windows:
+
+sqldeveloper-24.3.1.347.1826-x64
+
+- Es una herramienta gratuita de Oracle para trabajar con bases de datos Oracle.
+- Permite:
+    - Conectarte a bases de datos Oracle.
+    - Ejecutar consultas SQL y scripts.
+    - Administrar usuarios, tablas, índices, etc.
+    - Visualizar datos y diseñar esquemas.
+- Tiene interfaz gráfica, muy usada para desarrollo y administración.
+
+- Hemos hecho click en el + de Nueva Conexión
+- Nombre: oracle_xe
+- Tipo de base de datos: Oracle
+- Tipo de autenticación: Por defecto
+- Usuario: getafe
+- Contraseña: password
+> - Tal y como creamos con CREATE USER getafe IDENTIFIED BY password;
+- Detalles:
+- Nombre de puerto: localhost
+- Puerto: 1521
+- SID : xe
+- Nombre del servicio: XEPDB
+- [note] Seleccionar Nombre del servicio en lugar de SID
+En la maquina Virtual mapeamos (Selección Maquina Virtual > Configuración > Red > Reenvio de Puertos ):
+Nombre: oraclexe
+Tipo: TPC
+Puerto Anfitrión: 1521
+Puerto Invitado: 1521
+
+
+## Bases de Datos
+
+Las bases de datos que mas se utilizan son las relacionales.
+
+Oracles, SQL server, Posgre son relacionales.
+
+Aqui hay una lista de todos los tipos y sus ranking https://db-engines.com/en/ranking
+
+SQL (Structured Query Language) es un lenguaje estándar para gestionar y manipular bases de datos relacionales y esto es lo que vamos a estudiar.
+
+Nota: Quiza sea interesante profesionalmente ver Snowflake, relacional y no a la vez y en la nube. Cada vez mas usada.
+
+Todas estas son SQL:
+https://t.me/c/2813936991/332- Oracle Database    
+- MySQL    
+- PostgreSQL    
+- Microsoft SQL Server    
+- SQLite    
+- MariaDB    
+- IBM Db2    
+- SAP HANA
+
+En una base de datos relacional los datos se almacenan en tablas
+
+| ID  | N1      | N2          | N3   | N4       |
+| --- | ------- | ----------- | ---- | -------- |
+| 0   | Nombre1 | Appellidos1 | DNI1 | 22/04/98 |
+| 1   | Nombre2 | Appellidos3 | DNI2 | 23/09/89 |
+
+Cada vez que creas una tabla en una base de datos relacional, debes definir:
+
+1. El nombre de la tabla — para identificarla.    
+2. Las columnas (campos) — con un nombre para cada una.    
+3. El tipo de dato de cada columna — para especificar qué tipo de información va a contener (números, texto, fechas, etc.).
+
+Los registros son las filas de una tabla en una base de datos relacional.
+
+Cada celda (la intersección de una fila y una columna) contiene un valor específico para ese campo dentro de ese registro.
+
+Las restricciones en bases de datos son reglas que se aplican a las tablas para asegurar la integridad y validez de los datos.
+
+Las bases de datos relacionales son poderosas porque permiten conectar tablas entre sí, lo que ayuda a reducir la duplicación de datos y mantener la información organizada y consistente.
+
+Para relacionar la de clientes con contratos usamos foreign key y primary key.
+
+| ContratoID | ClienteID | FechaInicio | FechaFin   | TipoContrato |
+| ---------- | --------- | ----------- | ---------- | ------------ |
+| 101        | 0         | 01/01/2023  | 31/12/2023 | Renovable    |
+| 103        | 0         | 01/05/2024  | 30/04/2025 | Temporal     |
+| 102        | 1         | 15/02/2023  | 14/02/2024 | Permanente   |
+- ContratoID es la clave primaria de la tabla Contratos: identifica de forma única cada contrato.  
+- ClienteID es la clave foránea en la tabla Contratos: referencia el ID de la tabla Clientes, estableciendo la relación entre contratos y clientes.
+
+### Primary Key
+
+- Unicidad:  
+    Cada valor en la clave primaria debe ser único; no puede haber dos filas con el mismo valor.  
+- No puede ser NULL:  
+    La clave primaria siempre debe tener un valor válido; no acepta valores nulos.    
+- Identifica de forma única cada registro:  
+    Sirve para distinguir un registro de otro dentro de una tabla.
+
+#### Restriccion
+
+- PRIMARY KEY: Identifica de forma única cada registro en una tabla. No puede haber dos filas con el mismo valor en esta columna y no puede ser nula.
+
+
+### Foreign Key
+
+- Referencia a otra tabla:  
+    Apunta a la Primary Key (o a una clave única) de otra tabla, estableciendo una relación entre ambas.
+-  Mantiene la integridad referencial:  
+    Garantiza que los valores en la columna de clave foránea existan en la tabla referenciada, evitando referencias “huérfanas”.
+
+#### Restriccion
+
+- FOREIGN KEY: Garantiza que un valor en una columna coincida con un valor existente en otra tabla, para mantener relaciones entre tablas.
+## Principios ACID
+
+ACID es un conjunto de propiedades que garantizan la fiabilidad y consistencia de las transacciones en bases de datos.
+
+1. Atomicidad (Atomicity):  
+    Toda la operación o conjunto de operaciones de una transacción se ejecutan por completo o no se ejecutan en absoluto. No hay estados intermedios.
+   
+    Ejemplo:  
+    En un cajero automático, si quieres retirar dinero:
+   
+    - Se verifica saldo.        
+    - Se debita el monto.        
+    - Se registra la operación.  
+        Si falla alguna de estas etapas (por ejemplo, no se puede registrar la operación), toda la transacción se cancela y no se debita dinero ni se entrega efectivo.        
+
+2. Consistencia (Consistency):  
+    La base de datos pasa de un estado válido a otro estado válido, respetando todas las reglas y restricciones (como integridad referencial, tipos de datos, claves únicas, etc.).
+   
+    Ejemplo:  
+    Si tienes una tabla que no permite duplicados en el número de cuenta, al insertar una nueva transacción con un número repetido, la base de datos rechazará el cambio para mantener la consistencia.
+   
+
+3. Aislamiento (Isolation):
+
+Las transacciones concurrentes se ejecutan como si fueran secuenciales, evitando que interfieran entre sí y generen resultados incorrectos.
+   
+    Ejemplo:  
+    Dos personas intentan transferir dinero al mismo tiempo desde una misma cuenta. Gracias al aislamiento, cada transacción ve el estado de la cuenta sin interferencias, evitando que ambas retiren más dinero del disponible.
+   
+
+4. Durabilidad (Durability):  
+    Una vez que una transacción es confirmada (commit), sus cambios se guardan de forma permanente, incluso si hay una falla en el sistema después.
+   
+    Ejemplo:  
+    Después de que una transferencia bancaria se confirma, aunque el servidor se caiga o se reinicie, el cambio en el saldo permanecerá guardado sin pérdida.
+
+
+Hay bases de datos que no tienen restricciones, como MongoDB.
+### Ventajas de no tener restricciones
+
+- Más flexibilidad para insertar datos sin reglas rígidas.    
+- Inserciones más rápidas por menos validaciones.    
+- Esquema fácil de modificar sin migraciones complejas.    
+- Ideal para datos no estructurados o cambiantes.    
+
+### Bases de datos NoSQL
+
+- No tienen esquema fijo (schema-less), permiten datos variados.    
+- Escalan fácilmente en muchos servidores (horizontalmente).    
+- Modelos diversos: documentos, clave-valor, columnas, grafos.    
+- Prioridad en velocidad y disponibilidad, a veces sacrificando consistencia inmediata.
+
+
+
+
+
+
+
+
+
+
+

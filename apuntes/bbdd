@@ -50,21 +50,44 @@ efd326c90e6f   hello-world   "/hello"   4 minutes ago   Exited (0) 4 minutes ago
  sudo docker pull ubuntu
  
 se utiliza para descargar la imagen oficial de Ubuntu desde Docker Hub (el repositorio público de imágenes Docker).
-# Contenedor 1: "ubuntu-dev"
-docker run -d --name ubuntu-dev \
-  --hostname devbox \
-  -e MODE=dev -e TZ=Europe/Madrid \
-  -v ./devdata:/data \
-  --cpus="1.0" --memory="1g" \
-  ubuntu:22.04
+# Contenedor 1: 
 
-# Contenedor 2: "ubuntu-test"
-docker run -d --name ubuntu-test \
-  --hostname testbox \
-  -e MODE=test \
-  -v ./testdata:/data \
-  --cpus="0.5" --memory="512m" \
-  ubuntu:22.04
+## Crear contenedor Docker de Ubuntu con configuración personalizada
+
+Puedes usar el siguiente comando para crear y ejecutar un contenedor de **Ubuntu 22.04** con configuración personalizada:
+
+```bash
+docker run -d --name ubuntu-dev --hostname devbox -e MODE=dev -e TZ=Europe/Madrid -v ./devdata:/data --cpus="1.0" --memory="1g" ubuntu:22.04
+### 🔍 Desglose de parámetros
+
+| Opción                   | Descripción                                                        |
+|--------------------------|--------------------------------------------------------------------|
+| `-d`                     | Ejecuta el contenedor en segundo plano (*detached*)               |
+| `--name ubuntu-dev`      | Nombre del contenedor                                              |
+| `--hostname devbox`      | Nombre del host dentro del contenedor                              |
+| `-e MODE=dev`            | Variable de entorno personalizada (`MODE`)                         |
+| `-e TZ=Europe/Madrid`    | Zona horaria configurada a Madrid                                  |
+| `-v ./devdata:/data`     | Monta el directorio local `./devdata` en `/data` dentro del contenedor |
+| `--cpus="1.0"`           | Limita el contenedor a 1 CPU                                       |
+| `--memory="1g"`          | Limita el contenedor a 1 GB de RAM                                 |
+| `ubuntu:22.04`           | Imagen base utilizada                                              |
+
+
+# Contenedor 2: 
+docker run -d --name ubuntu-test --hostname testbox -e MODE=test -v ./testdata:/data --cpus="0.5" --memory="512m" ubuntu:22.04
+### 🔍 Desglose de parámetros
+
+| Opción                   | Descripción                                                        |
+|--------------------------|--------------------------------------------------------------------|
+| `-d`                     | Ejecuta el contenedor en segundo plano (*detached*)               |
+| `--name ubuntu-test`     | Nombre del contenedor                                              |
+| `--hostname testbox`     | Nombre del host dentro del contenedor                              |
+| `-e MODE=test`           | Variable de entorno personalizada (`MODE`)                         |
+| `-v ./testdata:/data`    | Monta el directorio local `./testdata` en `/data` dentro del contenedor |
+| `--cpus="0.5"`           | Limita el contenedor a medio CPU                                   |
+| `--memory="512m"`        | Limita el contenedor a 512 MB de RAM                               |
+| `ubuntu:22.04`           | Imagen base utilizada                                              |
+
 
 Hemos creado estos 2 contenedores de Ubuntu.
 CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS                      PORTS     NAMES
@@ -73,13 +96,10 @@ CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS             
 efd326c90e6f   hello-world    "/hello"      24 minutes ago   Exited (0) 24 minutes ago             mystifying_swanson
 
 El profesor ha cambiado los comandos y nos ha pedido que ejecutemos este (sin destruir aun los anteriores 2 containers que hemos creado).
-# Contenedor 1: "ubuntu-dev"
-docker run -d --name ubuntu-dev2 \
-  --hostname devbox \
-  -e MODE=dev -e TZ=Europe/Madrid \
-  -v ./devdata:/data \
-  --cpus="1.0" --memory="1g" \
-  ubuntu:22.04 sleep infinity
+# Contenedor 1: 
+
+docker run -d --name ubuntu-dev2 --hostname devbox -e MODE=dev -e TZ=Europe/Madrid -v ./devdata:/data --cpus="1.0" --memory="1g" ubuntu:22.04 sleep infinity
+
 
 - sleep infinity es un comando que hace que el proceso duerma para siempre.
 - Esto mantiene el contenedor en ejecución indefinidamente mientras no lo detengas.
@@ -98,7 +118,7 @@ CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS        
 
 docker exec -it ubuntu-dev2 bash
 
-						- `docker exec`: Ejecuta un comando dentro de un contenedor ya en funcionamiento.- `-it`: Abre una sesión interactiva con terminal (te permite usar el bash como si fuera una shell normal).
+- `docker exec`: Ejecuta un comando dentro de un contenedor ya en funcionamiento.- `-it`: Abre una sesión interactiva con terminal (te permite usar el bash como si fuera una shell normal).
 - `ubuntu-dev2`: Nombre del contenedor donde quieres entrar.
 - `bash`: El comando que quieres ejecutar dentro del contenedor (una shell Bash).
 
@@ -120,6 +140,19 @@ sudo docker container rm ubuntu-test
 
 La imagen que usaremos es una de un usuario, pero teoricamente podriamos configurarlo con la original
 docker run -d -p 1521:1521 --name oracle-xe -e ORACLE_PASSWORD=password -v oracle-volume:/opt/oracle/oradata gvenzl/oracle-xe
+
+### 🔍 Desglose de parámetros
+
+| Opción                        | Descripción                                                                                          |
+|------------------------------|----------------------------------------------------------------------------------------------------|
+| `docker run`                 | Comando para ejecutar un contenedor nuevo                                                          |
+| `-d`                         | Ejecuta el contenedor en segundo plano (*detached*)                                               |
+| `-p 1521:1521`               | Mapea el puerto 1521 del contenedor al host, que es el puerto por defecto de Oracle                 |
+| `--name oracle-xe`           | Asigna el nombre `oracle-xe` al contenedor                                                         |
+| `-e ORACLE_PASSWORD=password`| Establece la contraseña del usuario admin/oracle (reemplaza `"password"` por una contraseña segura en producción) |
+| `-v oracle-volume:/opt/oracle/oradata` | Monta un volumen persistente para guardar los datos de Oracle (en `/opt/oracle/oradata`)         |
+| `gvenzl/oracle-xe`           | Imagen utilizada, que contiene Oracle XE                                                           |
+
 
 instalada
 ubuntu@Ubuntu-Server-24:~$ sudo docker container ls
@@ -181,7 +214,7 @@ sqldeveloper-24.3.1.347.1826-x64
 - Nombre de puerto: localhost
 - Puerto: 1521
 - SID : xe
-- Nombre del servicio: XEPDB
+- Nombre del servicio: XEPDB1
 - [note] Seleccionar Nombre del servicio en lugar de SID
 En la maquina Virtual mapeamos (Selección Maquina Virtual > Configuración > Red > Reenvio de Puertos ):
 Nombre: oraclexe
@@ -218,6 +251,44 @@ En una base de datos relacional los datos se almacenan en tablas
 | --- | ------- | ----------- | ---- | -------- |
 | 0   | Nombre1 | Appellidos1 | DNI1 | 22/04/98 |
 | 1   | Nombre2 | Appellidos3 | DNI2 | 23/09/89 |
+
+# Bases de Datos Relacionales
+
+## ¿Qué es una Base de Datos Relacional?
+
+Una **base de datos relacional** es un sistema para almacenar y gestionar datos estructurados, donde la información se organiza en **tablas** que tienen filas y columnas. 
+
+- Cada tabla representa una entidad o concepto (por ejemplo, `Clientes` o `Productos`).
+- Las filas son registros individuales.
+- Las columnas son atributos o campos de esos registros.
+- Las tablas pueden relacionarse entre sí mediante claves primarias y foráneas, lo que permite mantener la integridad y coherencia de los datos.
+
+Este modelo facilita consultas complejas mediante el lenguaje SQL (Structured Query Language).
+
+---
+
+## Tipos de Bases de Datos Relacionales
+
+Existen varios sistemas de gestión de bases de datos relacionales (RDBMS), entre los más populares están:
+
+| Sistema               | Características principales                                    |
+|-----------------------|----------------------------------------------------------------|
+| **MySQL**             | Muy popular, de código abierto, ampliamente usado en web       |
+| **PostgreSQL**        | Open source, muy robusto, con soporte avanzado de SQL          |
+| **Oracle Database**   | Comercial, muy utilizado en grandes empresas y entornos críticos|
+| **Microsoft SQL Server** | Comercial, integración con productos Microsoft                |
+| **SQLite**            | Ligero, embebido, ideal para aplicaciones móviles y escritorio |
+
+---
+
+## Ventajas de las Bases de Datos Relacionales
+
+- **Estructura clara:** datos organizados en tablas.
+- **Integridad:** uso de claves y restricciones.
+- **Consultas complejas:** mediante SQL.
+- **Escalabilidad y seguridad:** para grandes volúmenes de datos.
+
+---
 
 Cada vez que creas una tabla en una base de datos relacional, debes definir:
 
@@ -320,6 +391,71 @@ Hay bases de datos que no tienen restricciones, como MongoDB.
 - Prioridad en velocidad y disponibilidad, a veces sacrificando consistencia inmediata.
 
 
+# Otros Tipos de Bases de Datos
+
+Además de las bases de datos relacionales, existen otros tipos de bases de datos que se adaptan a diferentes necesidades y estructuras de datos:
+
+---
+
+## 1. Bases de Datos No Relacionales (NoSQL)
+
+Diseñadas para manejar grandes volúmenes de datos no estructurados o semi-estructurados. No usan tablas tradicionales ni SQL.
+
+### Tipos principales:
+
+| Tipo           | Descripción                                     | Ejemplos populares          |
+|----------------|------------------------------------------------|----------------------------|
+| **Documentales** | Almacenan datos en documentos tipo JSON o BSON | MongoDB, CouchDB           |
+| **Clave-Valor**  | Almacenan pares clave-valor simples            | Redis, DynamoDB            |
+| **Columnas**     | Almacenan datos en columnas en lugar de filas  | Apache Cassandra, HBase    |
+| **Grafos**       | Modelan datos en nodos y relaciones (grafos)   | Neo4j, Amazon Neptune      |
+
+---
+
+## 2. Bases de Datos en Memoria
+
+Almacenan datos principalmente en la memoria RAM para un acceso ultrarrápido.
+
+- Ejemplo: Redis, Memcached
+
+---
+
+## 3. Bases de Datos Orientadas a Objetos
+
+Almacenan datos como objetos, similar a la programación orientada a objetos.
+
+- Ejemplo: db4o, ObjectDB
+
+---
+
+## 4. Bases de Datos Distribuidas
+
+Distribuyen los datos en múltiples servidores para escalabilidad y alta disponibilidad.
+
+- Ejemplo: Google Spanner, Apache Cassandra
+
+---
+
+## 5. Bases de Datos en la Nube
+
+Servicios de bases de datos gestionados y escalables en la nube.
+
+- Ejemplo: Amazon RDS, Google Cloud SQL, Azure SQL Database
+
+---
+
+## Resumen rápido
+
+| Tipo                  | Uso principal                                  |
+|-----------------------|------------------------------------------------|
+| Relacional            | Datos estructurados, integridad y consultas SQL |
+| NoSQL                 | Datos no estructurados, escalabilidad horizontal |
+| En memoria            | Acceso ultra rápido, caching                    |
+| Orientada a objetos   | Modelado orientado a objetos                     |
+| Distribuida           | Alta disponibilidad y escalabilidad             |
+| En la nube            | Servicios gestionados y escalables               |
+
+---
 
 
 

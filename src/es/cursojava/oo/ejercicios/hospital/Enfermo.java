@@ -6,7 +6,7 @@ public class Enfermo extends Persona {
 	private String enfermedad;
 	
 	private void comer(Logger log,Enfermo enfermo) {
-		log.info("El enfermo "+enfermo.getNombre()+" esta comiendo.");
+		log.info("El enfermo "+enfermo.getNombre()+" esta comiendo en la habitación.");
 	}
 	
 	public Enfermo() {
@@ -24,6 +24,11 @@ public class Enfermo extends Persona {
 
 	public void setEnfermedad(String enfermedad) {
 		this.enfermedad = enfermedad;
+	}
+
+	@Override
+	public String toString() {
+		return "Enfermo [enfermedad=" + enfermedad + ", getNombre()=" + getNombre() + ", getEdad()=" + getEdad() + "]";
 	}
 
 

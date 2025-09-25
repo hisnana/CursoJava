@@ -1,5 +1,7 @@
 package es.cursojava.oo.ejercicios.hospital;
 
+import org.slf4j.Logger;
+
 public class Doctor extends EmpleadosHospital {
 	
 	private String especialidad;
@@ -17,18 +19,21 @@ public class Doctor extends EmpleadosHospital {
 		this.especialidad = especialidad;
 	}
 	
-	public Enfermo diagnosticarPaciente(Persona paciente) {
+	public boolean diagnosticarPaciente(Logger log,Paciente paciente) {
 		boolean enfermedad = Math.random()>0.8;
-		Enfermo enfermo = new Enfermo();
+		boolean enfermo = false;
 		if(enfermedad) {
-			//Se crea un enfermo con datos si hay habitaciones libres
-			enfermo = new Enfermo(paciente.getNombre(),paciente.getEdad(),"Alergia al lunes");
+			log.info("El paciente "+paciente.getNombre()+" esta enfermo.");
+			enfermo = true;
 			
 		} else {
-			enfermo = new Enfermo();
+			log.info("El paciente "+paciente.getNombre()+" NO esta enfermo.");
 		}
-		
 		return enfermo;
+	}
+	
+	public void comer() {
+		
 	}
 
 }

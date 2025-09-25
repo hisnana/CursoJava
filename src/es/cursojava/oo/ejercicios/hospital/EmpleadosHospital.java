@@ -1,9 +1,8 @@
 package es.cursojava.oo.ejercicios.hospital;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class EmpleadosHospital extends Persona {
+public abstract class EmpleadosHospital extends Persona {
 	private String turno;
 
 	public EmpleadosHospital(String nombre, int edad, String turno) {
@@ -25,11 +24,12 @@ public class EmpleadosHospital extends Persona {
 		
 	}
 	
-	private void comer(Logger log,EmpleadosHospital empleado) {
-		log.info("El empleado "+empleado.getNombre()+" esta comiendo.");
+	@Override
+	public void comer (Logger log,Persona persona) {
+		log.info("El empleado "+persona.getNombre()+" esta comiendo.");
 	}
 	
-	
+	public abstract void comer();
 	
 
 }

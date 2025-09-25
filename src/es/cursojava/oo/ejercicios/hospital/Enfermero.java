@@ -1,13 +1,16 @@
 package es.cursojava.oo.ejercicios.hospital;
 
+import org.slf4j.Logger;
+
 public class Enfermero  extends EmpleadosHospital {
 	
 	private int planta;
 
-	private Paciente atenderPaciente(Paciente paciente) {
+	public void atenderPaciente(Logger log,Paciente paciente) {
+		
+		log.info("El enfermero esta atendiendo al paciente "+paciente.getNombre());
 		
 		
-		return paciente;
 	}
 
 	public Enfermero(String nombre, int edad, String especialidad, int planta) {
@@ -23,6 +26,8 @@ public class Enfermero  extends EmpleadosHospital {
 		this.planta = planta;
 	}
 	
-	
+	public void comer() {
+		
+	}
 
 }

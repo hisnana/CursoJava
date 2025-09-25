@@ -4,10 +4,9 @@ public class Habitacion {
 	private int numero;
 	private Enfermo enfermo;
 	
-	public Habitacion(int numero, Enfermo enfermo) {
+	public Habitacion(int numero) {
 		super();
 		this.numero = numero;
-		this.enfermo = enfermo;
 	}
 	public int getNumero() {
 		return numero;

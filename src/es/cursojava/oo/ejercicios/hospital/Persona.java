@@ -1,13 +1,13 @@
 package es.cursojava.oo.ejercicios.hospital;
 
+import org.slf4j.Logger;
 
-
-public class Persona {
+public abstract class Persona {
 	private String nombre;
 	private int edad;
 	
 	
-	public void comer () {
+	public void comer (Logger log,Persona persona) {
 		
 		
 	}

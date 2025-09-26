@@ -674,5 +674,62 @@ class Pajaro implements Volador {
 
 
 
+# ¿Para qué se usan las Interfaces en Java?
+
+Las **interfaces en Java** se usan principalmente para:
+
+## 1. Definir contratos o comportamientos comunes
+- Una interfaz especifica un conjunto de métodos que una clase debe implementar.
+- Permite asegurar que diferentes clases cumplan con un mismo contrato, sin importar cómo lo hagan internamente.
+
+## 2. Facilitar la herencia múltiple de tipos
+- Java no permite que una clase herede de más de una clase, pero **sí puede implementar múltiples interfaces**.
+- Esto permite que una clase comparta comportamientos de distintas fuentes.
+
+## 3. Desacoplar el código
+- Al programar contra interfaces en lugar de clases concretas, el código es más flexible y fácil de mantener.
+- Cambiar la implementación sin afectar al resto del sistema es más sencillo.
+
+## 4. Soportar la programación orientada a interfaces (polimorfismo)
+- Puedes tratar objetos de distintas clases que implementan la misma interfaz de manera uniforme.
+- Por ejemplo, si varias clases implementan la interfaz `Imprimible`, puedes pasar cualquiera a un método que reciba un `Imprimible`.
+
+---
+
+## Ejemplo sencillo:
+
+```java
+interface Volador {
+    void volar();
+}
+
+class Pajaro implements Volador {
+    public void volar() {
+        System.out.println("El pájaro vuela");
+    }
+}
+
+class Avion implements Volador {
+    public void volar() {
+        System.out.println("El avión vuela");
+    }
+}
+
+public class Test {
+    public static void hacerVolaraTodos(Volador v) {
+        v.volar();
+    }
+
+    public static void main(String[] args) {
+        Pajaro p = new Pajaro();
+        Avion a = new Avion();
+
+        hacerVolaraTodos(p);
+        hacerVolaraTodos(a);
+    }
+}
+````
+
+
 
 

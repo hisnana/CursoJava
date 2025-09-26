@@ -578,6 +578,99 @@ Una vez realizados los ejercicios y pruebas, se eliminará la tabla.
 
 DROP TABLE productos;
 
+26/09/2025
+
+# 🧠 Resumen: Métodos, Clases Abstractas e Interfaces en Java
+
+---
+
+## 📌 1. Clases Abstractas
+
+- Son clases que **no se pueden instanciar**.
+- Se utilizan como **base para otras clases**.
+- Pueden tener:
+  - Métodos abstractos (sin implementación).
+  - Métodos con implementación (comunes para las subclases).
+  - Atributos, constructores y bloques estáticos.
+
+### 🛠️ Sintaxis:
+
+```java
+abstract class Animal {
+    abstract void hacerSonido(); // método abstracto
+
+    void dormir() {
+        System.out.println("Zzz...");
+    }
+}
+````
+### ✔️ Características de las Clases Abstractas:
+
+- Puede tener **atributos y métodos concretos**.
+- Una subclase debe **implementar los métodos abstractos** o también ser abstracta.
+
+---
+
+## 📌 2. Métodos Abstractos
+
+- Se definen **sin cuerpo** (solo la firma).
+- Obligan a las subclases a proporcionar una implementación.
+- Solo pueden existir dentro de una **clase abstracta**.
+
+```java
+abstract void hacerSonido(); // no tiene cuerpo
+````
+
+### ✔️ Características de los Métodos Abstractos
+
+- Definen un **contrato** que deben cumplir las subclases.
+- No pueden tener implementación en la clase abstracta que los define.
+
+---
+
+## 📌 3. Interfaces
+
+- Representan un **contrato** que una clase se compromete a cumplir.
+- Se definen con la palabra clave `interface`.
+- Variables estaticas y finales sin tenes que especificarlas.
+
+### 🛠️ Sintaxis
+
+```java
+interface Volador {
+    void volar();
+}
+````
+### ✔️ Características
+
+- Todos los métodos son **públicos y abstractos por defecto** (en versiones anteriores a Java 8).
+- Desde **Java 8**, pueden incluir:
+  - Métodos `default` (con implementación).
+  - Métodos `static`.
+- Una clase puede **implementar múltiples interfaces** (herencia múltiple).
+
+---
+
+### 🧪 Ejemplo
+
+```java
+class Pajaro implements Volador {
+    public void volar() {
+        System.out.println("El pájaro vuela");
+    }
+}
+````
+
+### 🆚 Diferencias Principales
+
+| Característica             | Clase Abstracta                      | Interface                                   |
+|----------------------------|--------------------------------------|---------------------------------------------|
+| Instanciación              | ❌ No                                 | ❌ No                                        |
+| Métodos con implementación | ✅ Sí                                 | ✅ Desde Java 8 (`default`, `static`)        |
+| Atributos                  | ✅ Sí                                 | 🔒 Solo constantes (`public static final`)   |
+| Herencia múltiple          | ❌ No                                 | ✅ Sí                                        |
+| Uso                        | Base con lógica parcial              | Contrato a seguir                           |
+
 
 
 

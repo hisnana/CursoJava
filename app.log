@@ -1,13 +1,40 @@
-18:01:59.481 [main] INFO  Hospital - El paciente Paciente1 esta comiendo en la cafetería.
-18:01:59.485 [main] INFO  Hospital - El paciente Paciente2 esta comiendo en la cafetería.
-18:01:59.485 [main] INFO  Hospital - El paciente Paciente3 esta comiendo en la cafetería.
-18:01:59.485 [main] INFO  Hospital - El empleado Enfermero1 esta fichando.
-18:01:59.485 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente1
-18:01:59.485 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente2
-18:01:59.485 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente3
-18:01:59.485 [main] INFO  Hospital - El empleado Enfermero1 esta comiendo.
-18:01:59.485 [main] INFO  Hospital - El empleado Doctor1 esta fichando.
-18:01:59.485 [main] INFO  Hospital - El paciente Paciente1 NO esta enfermo.
-18:01:59.493 [main] INFO  Hospital - El paciente Paciente2 esta enfermo.
-18:01:59.493 [main] INFO  Hospital - El paciente Paciente3 NO esta enfermo.
-18:01:59.493 [main] INFO  Hospital - El empleado Doctor1 esta comiendo.
+
+18:02:16.178 [main] INFO  Hospital - El paciente Paciente1 esta comiendo en la cafetería.
+18:02:16.182 [main] INFO  Hospital - El paciente Paciente2 esta comiendo en la cafetería.
+18:02:16.182 [main] INFO  Hospital - El paciente Paciente3 esta comiendo en la cafetería.
+18:02:16.182 [main] INFO  Hospital - El empleado Enfermero1 esta fichando.
+18:02:16.182 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente1
+18:02:16.182 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente2
+18:02:16.182 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente3
+18:02:16.182 [main] INFO  Hospital - El empleado Enfermero1 esta comiendo.
+18:02:16.182 [main] INFO  Hospital - El empleado Doctor1 esta fichando.
+18:02:16.182 [main] INFO  Hospital - El paciente Paciente1 NO esta enfermo.
+18:02:16.183 [main] INFO  Hospital - El paciente Paciente2 NO esta enfermo.
+18:02:16.183 [main] INFO  Hospital - El paciente Paciente3 NO esta enfermo.
+18:02:16.183 [main] INFO  Hospital - El empleado Doctor1 esta comiendo.
+18:21:24.918 [main] INFO  Hospital - El paciente Paciente1 esta comiendo en la cafetería.
+18:21:24.921 [main] INFO  Hospital - El paciente Paciente2 esta comiendo en la cafetería.
+18:21:24.921 [main] INFO  Hospital - El paciente Paciente3 esta comiendo en la cafetería.
+18:21:24.922 [main] INFO  Hospital - El empleado Enfermero1 esta fichando.
+18:21:24.922 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente1
+18:21:24.922 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente2
+18:21:24.922 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente3
+18:21:24.922 [main] INFO  Hospital - El empleado Enfermero1 esta comiendo.
+18:21:24.922 [main] INFO  Hospital - El empleado Doctor1 esta fichando.
+18:21:24.922 [main] INFO  Hospital - El paciente Paciente1 esta enfermo.
+18:21:24.923 [main] INFO  Hospital - El paciente Paciente2 NO esta enfermo.
+18:21:24.923 [main] INFO  Hospital - El paciente Paciente3 NO esta enfermo.
+18:21:24.923 [main] INFO  Hospital - El empleado Doctor1 esta comiendo.
+18:28:26.328 [main] INFO  Hospital - El paciente Paciente1 esta comiendo en la cafetería.
+18:28:26.332 [main] INFO  Hospital - El paciente Paciente2 esta comiendo en la cafetería.
+18:28:26.332 [main] INFO  Hospital - El paciente Paciente3 esta comiendo en la cafetería.
+18:28:26.332 [main] INFO  Hospital - El empleado Enfermero1 esta fichando.
+18:28:26.332 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente1
+18:28:26.332 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente2
+18:28:26.333 [main] INFO  Hospital - El enfermero esta atendiendo al paciente Paciente3
+18:28:26.333 [main] INFO  Hospital - El empleado Enfermero1 esta comiendo.
+18:28:26.333 [main] INFO  Hospital - El empleado Doctor1 esta fichando.
+18:28:26.333 [main] INFO  Hospital - El paciente Paciente1 NO esta enfermo.
+18:28:26.334 [main] INFO  Hospital - El paciente Paciente2 NO esta enfermo.
+18:28:26.334 [main] INFO  Hospital - El paciente Paciente3 NO esta enfermo.
+18:28:26.334 [main] INFO  Hospital - El empleado Doctor1 esta comiendo.

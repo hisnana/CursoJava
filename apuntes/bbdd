@@ -544,6 +544,8 @@ CREATE TABLE productos (
 - `fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP`  
   Fecha y hora de registro, con valor por defecto la fecha actual.
 
+fecha_registro DATE DEFAULT SYSDATE; --valor por defecto fecha
+
 - `descuento NUMBER CHECK (descuento BETWEEN 0 AND 100)`  
   Porcentaje de descuento, validado para estar entre 0 y 100.
 
@@ -577,6 +579,10 @@ MODIFY descripcion VARCHAR2(500);
 Una vez realizados los ejercicios y pruebas, se eliminará la tabla.
 
 DROP TABLE productos;
+
+29/09/2025
+
+
 
 
 

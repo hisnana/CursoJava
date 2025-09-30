@@ -38,3 +38,15 @@
 18:28:26.334 [main] INFO  Hospital - El paciente Paciente2 NO esta enfermo.
 18:28:26.334 [main] INFO  Hospital - El paciente Paciente3 NO esta enfermo.
 18:28:26.334 [main] INFO  Hospital - El empleado Doctor1 esta comiendo.
+2025-09-30 17:39:08 [INFO]: Test
+2025-09-30 17:54:00 [INFO]: Da comienzo la creación de productos
+2025-09-30 18:12:38 [INFO] (Main): Da comienzo la creación de productos
+2025-09-30 18:22:18 [INFO] (Main): Da comienzo la creación de productos
+2025-09-30 18:22:19 [INFO] (Main): El producto class es.cursojava.oo.ejercicios.productos.Ordenador se va ha encender.
+2025-09-30 18:22:19 [INFO] (Main): El producto class es.cursojava.oo.ejercicios.productos.Coche se va ha encender.
+2025-09-30 18:24:03 [INFO] (Main): Da comienzo la creación de productos
+2025-09-30 18:24:03 [INFO] (Main): El producto Ordenador se va ha encender.
+2025-09-30 18:24:03 [INFO] (Main): El producto Coche se va ha encender.
+2025-09-30 18:27:51 [INFO] (Main): Da comienzo la creación de productos
+2025-09-30 18:27:51 [INFO] (Ordenador): El producto Ordenador se va ha encender.
+2025-09-30 18:27:51 [INFO] (Coche): El producto Coche se va ha encender.

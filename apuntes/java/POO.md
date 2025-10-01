@@ -438,3 +438,29 @@ public class Test {
 }
 ````
 
+# Modificadores de Acceso en Java (por nivel de restricción)
+
+Ordenados desde el más restrictivo al menos restrictivo:
+
+1. **private**
+   - Accesible **solo dentro de la misma clase**.
+   - No es visible para subclases ni clases del mismo paquete.
+   
+2. **(default)** _(sin modificador, también llamado package-private)_
+   - Accesible **dentro del mismo paquete**, pero **no desde otras clases fuera del paquete**, incluso si son subclases.
+   - Si no se especifica ningún modificador, este es el nivel de acceso por defecto.
+
+3. **protected**
+   - Accesible **dentro del mismo paquete** y también **por subclases**, incluso si están en otros paquetes.
+
+4. **public**
+   - Accesible **desde cualquier parte**, sin importar el paquete o clase.
+
+## Tabla Resumen
+
+| Modificador  | Misma clase | Mismo paquete | Subclases (otro paquete) | Cualquier clase |
+|--------------|-------------|---------------|---------------------------|-----------------|
+| `private`    | ✅          | ❌            | ❌                        | ❌              |
+| _(default)_  | ✅          | ✅            | ❌                        | ❌              |
+| `protected`  | ✅          | ✅            | ✅                        | ❌              |
+| `public`     | ✅          | ✅            | ✅                        | ✅              |

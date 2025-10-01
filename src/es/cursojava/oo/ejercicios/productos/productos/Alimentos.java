@@ -1,6 +1,8 @@
-package es.cursojava.oo.ejercicios.productos;
+package es.cursojava.oo.ejercicios.productos.productos;
 
 import java.util.Date;
+
+import es.cursojava.oo.ejercicios.productos.interfaces.Consultable;
 
 public abstract class Alimentos extends Producto implements Consultable  {
 	

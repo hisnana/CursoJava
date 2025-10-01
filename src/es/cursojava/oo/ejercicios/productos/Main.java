@@ -1,5 +1,16 @@
 package es.cursojava.oo.ejercicios.productos;
 
+import es.cursojava.oo.ejercicios.productos.interfaces.Apagable;
+import es.cursojava.oo.ejercicios.productos.interfaces.Encendible;
+import es.cursojava.oo.ejercicios.productos.productos.Alimentos;
+import es.cursojava.oo.ejercicios.productos.productos.Chocolate;
+import es.cursojava.oo.ejercicios.productos.productos.Helado;
+import es.cursojava.oo.ejercicios.productos.productos.Ordenador;
+import es.cursojava.oo.ejercicios.productos.productos.ProductosElectronicos;
+import es.cursojava.oo.ejercicios.productos.vehiculos.Bicicleta;
+import es.cursojava.oo.ejercicios.productos.vehiculos.Coche;
+import es.cursojava.oo.ejercicios.productos.vehiculos.Vehiculo;
+import es.cursojava.oo.ejercicios.productos.vehiculos.VehiculoMotorizado;
 import es.cursojava.utils.MiLogger;
 
 public class Main {

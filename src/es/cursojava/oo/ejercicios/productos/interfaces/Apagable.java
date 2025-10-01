@@ -1,4 +1,4 @@
-package es.cursojava.oo.ejercicios.productos;
+package es.cursojava.oo.ejercicios.productos.interfaces;
 
 public interface Apagable {
 	

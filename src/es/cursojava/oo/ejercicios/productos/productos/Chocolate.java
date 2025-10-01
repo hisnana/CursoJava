@@ -1,4 +1,4 @@
-package es.cursojava.oo.ejercicios.productos;
+package es.cursojava.oo.ejercicios.productos.productos;
 
 public class Chocolate extends Alimentos {
 	

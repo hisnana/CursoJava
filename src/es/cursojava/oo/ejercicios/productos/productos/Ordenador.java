@@ -1,5 +1,7 @@
-package es.cursojava.oo.ejercicios.productos;
+package es.cursojava.oo.ejercicios.productos.productos;
 
+import es.cursojava.oo.ejercicios.productos.interfaces.Apagable;
+import es.cursojava.oo.ejercicios.productos.interfaces.Encendible;
 import es.cursojava.utils.MiLogger;
 
 public class Ordenador extends ProductosElectronicos implements Apagable,Encendible {
@@ -31,6 +33,24 @@ public class Ordenador extends ProductosElectronicos implements Apagable,Encendi
 	public void apagar(Apagable apagable) {
 		// TODO Auto-generated method stub
 		MiLogger.info("El producto "+apagable.getClass().getSimpleName()+" se va ha apagar.");
+	}
+
+	@Override
+	public void select(Alimentos alimento) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insert() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

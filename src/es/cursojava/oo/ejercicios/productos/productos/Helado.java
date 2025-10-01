@@ -1,4 +1,4 @@
-package es.cursojava.oo.ejercicios.productos;
+package es.cursojava.oo.ejercicios.productos.productos;
 
 import es.cursojava.utils.MiLogger;
 

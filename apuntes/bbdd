@@ -580,7 +580,19 @@ Una vez realizados los ejercicios y pruebas, se eliminará la tabla.
 
 DROP TABLE productos;
 
-29/09/2025
+30/09/2025
+
+# Resumen rápido de tipos de comandos SQL
+
+| Tipo | Comandos principales                    |
+|-------|----------------------------------------|
+| DDL   | CREATE, ALTER, DROP, TRUNCATE          |
+| DML   | SELECT, INSERT, UPDATE, DELETE         |
+| DCL   | GRANT, REVOKE                         |
+| TCL   | COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION |
+
+
+
 
 
 

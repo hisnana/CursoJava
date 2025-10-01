@@ -12,6 +12,7 @@ import es.cursojava.oo.ejercicios.productos.vehiculos.Coche;
 import es.cursojava.oo.ejercicios.productos.vehiculos.Vehiculo;
 import es.cursojava.oo.ejercicios.productos.vehiculos.VehiculoMotorizado;
 import es.cursojava.utils.MiLogger;
+import es.cursojava.utils.UtilsBBDD;
 
 public class Main {
 
@@ -35,6 +36,7 @@ public class Main {
 		Vehiculo bici1 = new Bicicleta();
 		
 		Encendible[] encendibles = {ordenador1,coche1};
+		UtilsBBDD.consultarObjeto(heladoMenta);
 		
 		return encendibles;
 		

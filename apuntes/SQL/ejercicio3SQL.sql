@@ -89,7 +89,8 @@ VALUES ('Balón de fútbol', 'DEPORTE', 0, 20, 'INACTIVO');
 INSERT INTO productos_ana (nombre, categoria, precio, stock)
 VALUES ('Producto Erróneo', 'TECNOLOGIA', -10, 5);
 
-/
+/---Devuelve ORA-02290: restricción de control (GETAFE.SYS_C008265) violada
+--- El codigo de la constraint indica que no cumple con la restricción de que el precio sea mayor o igual a 0
 
 --------------------------------------------------------------------------------
 -- PASO 3: Mantenimiento de catálogo (UPDATE)

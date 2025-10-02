@@ -591,6 +591,8 @@ DROP TABLE productos;
 | DCL   | GRANT, REVOKE                         |
 | TCL   | COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION |
 
+01/10/25
+
 
 
 

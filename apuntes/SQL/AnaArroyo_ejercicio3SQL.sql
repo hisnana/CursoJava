@@ -42,7 +42,7 @@ BEGIN
     END IF;
 
     -- Generar codigo_sku automáticamente si no se pasa
-    IF :NEW.sku IS NULL THEN
+    IF :NEW.codigo_sku IS NULL THEN
         -- Elegir prefijo según categoría
         CASE :NEW.categoria
             WHEN 'TECNOLOGIA' THEN v_prefijo := 'T';
@@ -55,7 +55,7 @@ BEGIN
         SELECT seq_sku.NEXTVAL INTO v_num FROM dual;
 
         -- Construir codigo_sku con formato: SKU-[prefijo][número 3 dígitos con ceros a la izquierda]
-        :NEW.sku := 'SKU-' || v_prefijo || TO_CHAR(v_num, 'FM000');
+        :NEW.codigo_sku := 'SKU-' || v_prefijo || TO_CHAR(v_num, 'FM000');
     END IF;
 END;
 /

@@ -53,3 +53,15 @@
 2025-10-01 17:31:59 [INFO] (Main): Da comienzo la creación de productos
 2025-10-01 17:31:59 [INFO] (Ordenador): El producto Ordenador se va ha encender.
 2025-10-01 17:31:59 [INFO] (Coche): El producto Coche se va ha encender.
+2025-10-02 16:44:02 [INFO] (PagoTarjetaCredito): El pago con Tarjeta de crédito se ha realizado correctamente con el pago 9ceaa5ef-eee5-430b-b71c-b79b5e643388 y la cantidad 100.0
+2025-10-02 16:44:02 [INFO] (PagoCrisptomoneda): El pago con criptomonedas se ha realizado correctamente con el pago 3d2d61fe-2660-4613-8711-8602604bcb92 y la cantidad 100.0
+2025-10-02 16:44:02 [INFO] (PagoPayPal): El pago con PayPal se ha realizado correctamente con el pago a9189db7-5e64-4f2d-b06b-6738195f5835 y la cantidad 100.0
+2025-10-02 16:45:42 [INFO] (PagoTarjetaCredito): El pago con Tarjeta de crédito se ha realizado correctamente con el pago d7640e11-5a60-4084-9bb4-42f155515481 y la cantidad 100.0
+2025-10-02 16:45:42 [INFO] (PagoCrisptomoneda): El pago con criptomonedas se ha realizado correctamente con el pago 19b75dc9-f553-45d8-89ae-f2976dc53586 y la cantidad 100.0
+2025-10-02 16:45:42 [INFO] (PagoPayPal): El pago con PayPal se ha realizado correctamente con el pago 3ab1ec0e-4ed7-466f-93e4-137d2a067db2 y la cantidad 100.0
+2025-10-02 16:50:23 [INFO] (PagoTarjetaCredito): El pago con Tarjeta de crédito se ha realizado correctamente con el pago 4b3e2ac5-e6ac-4282-88f9-b9fa1f1c9c5a y la cantidad 100.0
+2025-10-02 16:50:23 [INFO] (PagoCrisptomoneda): El pago con criptomonedas se ha realizado correctamente con el pago 41efc202-b69e-4fea-bc4b-9e93d1b5df46 y la cantidad 100.0
+2025-10-02 16:50:23 [INFO] (PagoPayPal): El pago con PayPal se ha realizado correctamente con el pago a49256b2-c6bc-4218-a202-45349eb07c99 y la cantidad 100.0
+2025-10-02 16:58:05 [INFO] (PagoTarjetaCredito): El pago con Tarjeta de crédito se ha realizado correctamente con el pago 876a2bd6-f670-4c53-a304-4ae9681ee3e7 y la cantidad 100.0
+2025-10-02 16:58:05 [INFO] (PagoCrisptomoneda): El pago con criptomonedas se ha realizado correctamente con el pago f91e81a1-59b5-4ce5-b88d-4adca68159b8 y la cantidad 100.0
+2025-10-02 16:58:05 [INFO] (PagoPayPal): El pago con PayPal se ha realizado correctamente con el pago dea64412-55f9-48e4-b47d-6d75f8d83743 y la cantidad 100.0

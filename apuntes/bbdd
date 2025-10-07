@@ -591,8 +591,699 @@ DROP TABLE productos;
 | DCL   | GRANT, REVOKE                         |
 | TCL   | COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION |
 
-01/10/25
+------------------------------
 
+
+# BBDD
+## Modos típicos de incluir datos auditables en tablas SQL Oracle
+
+> [!CAUTION]  El profesor solo nombro que había métodos típicos para ello, pero no lo explicó.
+
+En entornos donde es importante mantener trazabilidad (por ejemplo, saber quién creó o modificó un dato, y cuándo), se suele implementar auditoría directamente en las tablas o mediante estructuras adicionales. A continuación, se detallan las opciones más comunes.
+
+---
+
+### 1. Campos de auditoría en cada tabla
+
+Consiste en agregar columnas de control directamente en las tablas principales de datos.
+
+Campos comunes:
+
+| Campo        | Descripción                                       |
+| ------------ | ------------------------------------------------- |
+| CREATED_AT | Fecha y hora de creación del registro             |
+| CREATED_BY | Usuario que creó el registro                      |
+| UPDATED_AT | Fecha y hora de la última modificación            |
+| UPDATED_BY | Usuario que hizo la última modificación           |
+| DELETED_AT | Fecha de eliminación lógica (opcional)            |
+| DELETED_BY | Usuario que eliminó lógicamente (opcional)        |
+| IS_DELETED | Bandera para marcar eliminación lógica (opcional) |
+
+Ventajas:
+
+- Fácil de implementar
+    
+- Accesible directamente desde las consultas normales
+    
+- Compatible con frameworks ORM
+    
+
+Desventajas:
+
+- Solo registra la última acción
+    
+- No guarda historial detallado de cambios
+    
+
+---
+
+### 2. Tablas de auditoría o histórico (Change Log)
+
+Se crean tablas separadas, normalmente con el mismo diseño que la tabla original, más campos adicionales para el seguimiento de acciones.
+
+Campos adicionales comunes:
+
+- AUDIT_ACTION (INSERT, UPDATE, DELETE)
+    
+- AUDIT_TIMESTAMP
+    
+- AUDIT_USER
+    
+- AUDIT_SESSION_ID
+    
+- Otros metadatos relevantes
+    
+
+Implementación típica:
+
+- Triggers en la tabla principal que insertan en la tabla de auditoría ante cada cambio
+    
+- También puede hacerse desde la lógica de negocio en la aplicación
+    
+
+Ventajas:
+
+- Permite guardar todo el historial de cambios
+    
+- Útil para auditorías y trazabilidad detallada
+    
+
+Desventajas:
+
+- Requiere más espacio en disco
+    
+- Mayor complejidad en mantenimiento y consultas
+    
+
+---
+
+### 3. Uso de Triggers
+
+Los triggers permiten automatizar la actualización de campos de auditoría o la inserción en tablas de auditoría.
+
+Ejemplo 1: Actualizar campos de auditoría en la tabla original
+CREATE OR REPLACE TRIGGER trg_before_update_cliente
+BEFORE UPDATE ON clientes
+FOR EACH ROW
+BEGIN
+  :NEW.updated_at := SYSDATE;
+  :NEW.updated_by := SYS_CONTEXT('USERENV', 'SESSION_USER');
+END;
+
+Ejemplo 2: Insertar en tabla de auditoría
+CREATE OR REPLACE TRIGGER trg_audit_cliente
+AFTER INSERT OR UPDATE OR DELETE ON clientes
+FOR EACH ROW
+BEGIN
+  INSERT INTO clientes_aud (
+    id, nombre, email, audit_action, audit_timestamp, audit_user
+  ) VALUES (
+    COALESCE(:OLD.id, :NEW.id),
+    COALESCE(:OLD.nombre, :NEW.nombre),
+    COALESCE(:OLD.email, :NEW.email),
+    CASE
+      WHEN INSERTING THEN 'INSERT'
+      WHEN UPDATING THEN 'UPDATE'
+      WHEN DELETING THEN 'DELETE'
+    END,
+    SYSDATE,
+    SYS_CONTEXT('USERENV', 'SESSION_USER')
+  );
+END;
+
+---
+
+### 4. Uso de ORA_ROWSCN y Flashback
+
+Oracle permite utilizar funciones internas para ver versiones anteriores de registros o identificar cuándo fue la última modificación.
+
+- ORA_ROWSCN: Pseudocolumna que indica el SCN (System Change Number) de la última modificación
+    
+- Flashback Query: Permite consultar cómo estaba una tabla en un momento pasado, si el UNDO lo permite
+    
+
+Ventajas:
+
+- No requiere cambiar las tablas
+    
+- Útil para recuperación y análisis temporal
+    
+
+Desventajas:
+
+- Requiere configuración avanzada
+    
+- Limitado por la retención de UNDO
+    
+
+---
+
+### 5. Auditoría nativa de Oracle (DB-level)
+
+Oracle ofrece mecanismos de auditoría avanzados a nivel de base de datos:
+
+- Standard Auditing
+    
+- Fine-Grained Auditing (FGA)
+    
+- Oracle Audit Vault
+    
+
+Ventajas:
+
+- No requiere modificar tablas de negocio
+
+
+- Cumple normativas exigentes (por ejemplo, seguridad financiera o sanitaria)
+    
+
+Desventajas:
+
+- Puede requerir licencias adicionales
+    
+- Configuración y monitoreo más complejos
+    
+
+---
+
+### Recomendación práctica habitual
+
+En la mayoría de proyectos empresariales se recomienda:
+
+1. Agregar campos de auditoría (`created_at`, updated_at, etc.) en cada tabla
+    
+2. Si se requiere historial completo, usar triggers y una tabla de auditoría asociada
+    
+3. Para entornos con requerimientos regulatorios altos, considerar Flashback o herramientas de auditoría de Oracle
+    
+
+---
+
+## Orden de cláusulas en una consulta SELECT en Oracle SQL
+
+---
+
+### 1. Orden de escritura (sintaxis SQL)
+SELECT columnas
+FROM tabla
+WHERE condiciones
+GROUP BY columnas
+HAVING condiciones_de_grupo
+ORDER BY columnas;
+
+---
+
+### 2. Orden lógico de ejecución
+
+|Paso|Cláusula|Descripción|
+|---|---|---|
+|1|`FROM`|Se obtienen las tablas o vistas base|
+|2|`WHERE`|Se filtran las filas según condiciones|
+|3|`GROUP BY`|Se agrupan las filas filtradas|
+|4|`HAVING`|Se filtran grupos según condiciones de grupo|
+|5|`SELECT`|Se proyectan columnas y funciones (agregación)|
+|6|`ORDER BY`|Se ordenan las filas resultantes|
+
+---
+
+### 3. Ejemplo completo
+SELECT departamento_id, COUNT(*) AS total_empleados
+FROM empleados
+WHERE salario > 2000
+GROUP BY departamento_id
+HAVING COUNT(*) > 5
+ORDER BY total_empleados DESC;
+
+- Primero se filtran empleados con salario > 2000 (`WHERE`).
+    
+- Luego se agrupan por departamento (`GROUP BY`).
+    
+- Después se filtran departamentos con más de 5 empleados (`HAVING`).
+    
+- Se selecciona el departamento y el conteo (`SELECT`).
+    
+- Finalmente, se ordenan los resultados por cantidad descendente (`ORDER BY`).
+
+## ROUND
+
+Se utiliza para redondear números o fechas. Aquí tienes la sintaxis y ejemplos claros, todos envueltos con el formato que necesitas para Obsidian:
+
+---
+
+### 1. Redondeo de Números
+
+### Sintaxis:
+ROUND(número [, decimales])
+
+- número: valor numérico que deseas redondear.
+    
+- decimales: número de decimales a los que quieres redondear (opcional). Si se omite, redondea al entero más cercano.
+    
+
+### Ejemplos:
+-- Redondea a 2 decimales
+SELECT ROUND(123.4567, 2) AS resultado FROM dual;
+-- Resultado: 123.46
+
+-- Redondea a 0 decimales (entero más cercano)
+SELECT ROUND(123.5) AS resultado FROM dual;
+-- Resultado: 124
+
+-- Redondea a -1 (decena más cercana)
+SELECT ROUND(123.4567, -1) AS resultado FROM dual;
+-- Resultado: 120
+
+
+---
+
+### 2. Redondeo de Fechas
+
+Cuando se usa con fechas, ROUND redondea al período más cercano según la unidad indicada.
+
+### Sintaxis:
+ROUND(fecha, 'unidad')
+
+- fecha: valor de tipo DATE
+    
+- unidad: puede ser 'YEAR', 'MONTH', 'DAY', etc.
+    
+
+#### Ejemplos:
+-- Redondea al primer día del mes más cercano
+SELECT ROUND(TO_DATE('15-SEP-2023', 'DD-MON-YYYY'), 'MONTH') AS resultado FROM dual;
+-- Resultado: 01-OCT-2023
+
+-- Redondea al domingo o lunes más cercano según NLS_TERRITORY
+SELECT ROUND(TO_DATE('04-OCT-2023', 'DD-MON-YYYY'), 'W') AS resultado FROM dual;
+
+
+---
+
+## Debezium
+
+> [!CAUTION]  El profesor solo lo nombró, pero no lo explicó.
+### ¿Qué es Debezium?
+
+Debezium es una plataforma open-source que escucha los logs de transacciones de bases de datos (como MySQL, PostgreSQL, SQL Server, Oracle, MongoDB) y transmite esos cambios a Kafka topics, permitiendo construir aplicaciones _event-driven_ basadas en los cambios en las bases de datos.
+
+---
+
+### Arquitectura básica
+
+[Base de datos] -> [Debezium Connector] -> [Kafka Topic] -> [Consumer]
+
+1. La base de datos produce cambios (INSERT, UPDATE, DELETE).
+    
+2. Debezium lee el log de transacciones (binlog, WAL, etc.).
+    
+3. Esos cambios se publican como eventos en Kafka.
+    
+4. Tus servicios pueden consumir esos eventos desde Kafka.
+    
+
+---
+
+### Requisitos generales
+
+- Apache Kafka en ejecución
+    
+- Apache Kafka Connect (puede usar el de Confluent o standalone)
+    
+- Debezium Connector (MySQL, PostgreSQL, SQL Server, Oracle, MongoDB, etc.)
+    
+- Base de datos configurada para permitir CDC (según el tipo)
+
+
+---
+
+## COUNT 
+
+### 1.Contar todas las filas (incluye nulos)
+SELECT COUNT(*) FROM empleados;
+
+- Cuenta todas las filas de la tabla, incluyendo aquellas con valores nulos.
+    
+- Útil para saber el total de registros.
+    
+
+---
+
+### 2. Contar valores no nulos de una columna
+SELECT COUNT(salario) FROM empleados;
+
+- Cuenta solo las filas donde salario no es nulo.
+    
+- Útil cuando quieres contar solo datos válidos.
+    
+
+---
+
+### 3. Contar valores distintos (únicos)
+SELECT COUNT(DISTINCT departamento_id) FROM empleados;
+
+- Devuelve el número de departamentos únicos entre los empleados.
+    
+
+---
+
+### 4. Usar COUNT con GROUP BY
+SELECT departamento_id, COUNT(*) AS total_empleados
+FROM empleados
+GROUP BY departamento_id;
+
+- Cuenta empleados por departamento.
+    
+- Agrupa los resultados según departamento_id.
+    
+
+---
+
+### 5. Combinar con condiciones (`WHERE`)
+SELECT COUNT(*) FROM empleados
+WHERE salario > 3000;
+
+- Cuenta solo los empleados con salario mayor a 3000.
+    
+
+---
+
+### 6. Ejemplo completo
+SELECT
+  COUNT(*) AS total,
+  COUNT(salario) AS con_salario,
+  COUNT(DISTINCT departamento_id) AS departamentos_unicos
+FROM empleados;
+
+
+---
+
+## Alias en Oracle SQL
+
+### 1. Alias para columnas
+SELECT nombre AS empleado_nombre
+FROM empleados;
+
+- empleado_nombre es un alias para la columna nombre.
+    
+- El uso de AS es opcional en Oracle:
+    
+SELECT nombre empleado_nombre FROM empleados;
+
+Ambos funcionan igual.
+
+---
+
+### 2. Alias con espacios o caracteres especiales
+
+Si el alias contiene espacios, se deben usar comillas dobles:
+SELECT nombre empleado_nombre FROM empleados;
+
+---
+
+### 3. Alias para expresiones o funciones
+SELECT salario * 12 AS salario_anual
+FROM empleados;
+
+- Asigna un nombre al resultado de una expresión.
+    
+
+---
+
+### 4. Alias para funciones de agregación
+SELECT COUNT(*) AS total_empleados
+FROM empleados;
+
+- Facilita la lectura de resultados agregados.
+    
+
+---
+
+### 5. Alias para tablas
+SELECT e.nombre, d.nombre AS departamento
+FROM empleados e
+JOIN departamentos d ON e.departamento_id = d.id;
+
+- e y d son alias para las tablas empleados y departamentos.
+    
+- Esto permite escribir consultas más concisas.
+    
+
+---
+
+### 6. Alias dentro de subconsultas
+SELECT *
+FROM (
+  SELECT nombre, salario * 12 AS salario_anual
+  FROM empleados
+) emp_con_sueldo;
+
+- Se da un alias (`emp_con_sueldo`) a la subconsulta para poder referenciarla.
+    
+
+---
+
+### Notas importantes
+
+- El alias no cambia el nombre real en la base de datos.
+    
+- Es útil en reportes, vistas, y para mejorar la claridad del código SQL.
+    
+- Aunque AS es opcional, se recomienda usarlo para mayor claridad.
+    
+
+---
+
+## Uso de BETWEEN en Oracle SQL
+
+BETWEEN se utiliza para comparar si un valor está dentro de un rango, incluyendo los valores extremos.
+
+---
+
+### Sintaxis
+valor BETWEEN mínimo AND máximo
+
+- Equivale a:
+    
+       valor >= mínimo AND valor <= máximo
+        
+
+---
+
+### 1. Ejemplo con números
+SELECT * FROM empleados
+WHERE salario BETWEEN 3000 AND 5000;
+
+- Devuelve los empleados cuyo salario está entre 3000 y 5000, inclusive.
+    
+
+---
+
+### 2. Ejemplo con fechas
+SELECT * FROM pedidos
+WHERE fecha_pedido BETWEEN TO_DATE('01-01-2023', 'DD-MM-YYYY')
+                      AND TO_DATE('31-12-2023', 'DD-MM-YYYY');
+
+- Devuelve pedidos realizados en el año 2023.
+    
+- Las fechas límites sí se incluyen.
+    
+
+---
+
+### 3. Ejemplo con texto (valores alfabéticos)
+SELECT * FROM productos
+WHERE nombre BETWEEN 'A' AND 'M';
+
+- Devuelve productos cuyos nombres comienzan entre la letra A y la M.
+    
+- Oracle hace la comparación alfabética (según collation).
+    
+
+---
+
+### 4. Uso con NOT BETWEEN
+SELECT * FROM empleados
+WHERE salario NOT BETWEEN 3000 AND 5000;
+
+- Devuelve empleados cuyo salario no esté dentro del rango especificado.
+    
+
+---
+
+### 5. Equivalencia lógica
+
+Este ejemplo:
+SELECT * FROM empleados
+WHERE salario BETWEEN 3000 AND 5000;
+
+Es equivalente a:
+SELECT * FROM empleados
+WHERE salario >= 3000 AND salario <= 5000;
+
+---
+
+### Notas
+
+- BETWEEN incluye los valores límite (es decir, es **inclusivo**).
+    
+- Se puede usar con números, fechas y texto.
+
+- Evita usar BETWEEN si los valores mínimo y máximo están invertidos, ya que puede no devolver resultados.
+
+---
+
+## Uso de LIKE en Oracle SQL
+
+El operador LIKE se utiliza para realizar búsquedas por patrones en columnas de texto. Es útil cuando no se conoce el valor exacto, pero sí parte de él.
+
+---
+
+### Sintaxis básica
+SELECT * FROM empleados
+WHERE nombre LIKE 'J%';
+
+- Devuelve todos los empleados cuyo nombre comienza por la letra J.
+    
+
+---
+
+### Comodines disponibles
+
+|Comodín|Significado|Ejemplo|
+|---|---|---|
+|`%`|Cualquier cantidad de caracteres (incluyendo 0)|`'A%'` → comienza con A|
+|`_`|Exactamente un solo carácter|`'A_'` → A seguido de un carácter|
+
+---
+
+### 1. Usar % (cualquier número de caracteres)
+SELECT * FROM empleados
+WHERE nombre LIKE '%ez';
+
+- Encuentra nombres que terminan en ez, como “Pérez”, “Gómez”.
+    
+
+---
+
+### 2. Usar _ (un solo carácter)
+SELECT * FROM empleados
+WHERE nombre LIKE '_ara';
+
+- Devuelve registros como “Sara”, “Lara”, “Kara”, etc.
+    
+- La primera letra puede ser cualquiera, seguido de “ara”.
+    
+
+---
+
+### 3. Combinación de % y _
+SELECT * FROM empleados
+WHERE nombre LIKE '_a%';
+
+- Encuentra nombres donde la segunda letra es a, como “Sara”, “Maria”, “David”.
+    
+
+---
+
+### 4. Escape de caracteres especiales
+
+Cuando quieres buscar los comodines % o _ como caracteres literales, debes usar la cláusula ESCAPE:
+SELECT * FROM productos
+WHERE descripcion LIKE '10\%%' ESCAPE '\';
+
+- Busca descripciones que contienen el símbolo % como texto, no como comodín.
+    
+
+---
+
+### 5. Comparaciones con mayúsculas y minúsculas
+
+En Oracle, LIKE es sensible a mayúsculas por defecto:
+SELECT * FROM empleados
+WHERE nombre LIKE 'juan'; -- No encontrará 'Juan'
+
+Para hacer una búsqueda insensible al caso, puedes usar UPPER o LOWER:
+SELECT * FROM empleados
+WHERE UPPER(nombre) LIKE 'JUAN';
+
+---
+
+### 6. Alternativa más avanzada: REGEXP_LIKE
+
+Cuando necesitas patrones más complejos (como expresiones regulares), puedes usar REGEXP_LIKE:
+SELECT * FROM empleados
+WHERE REGEXP_LIKE(nombre, '^J.*z$');
+
+- Encuentra nombres que comienzan con J y terminan con z.
+    
+
+---
+
+### Ejemplos de patrones comunes
+
+|Búsqueda deseada|Ejemplo con `LIKE`|
+|---|---|
+|Empieza por “A”|`'A%'`|
+|Termina en “z”|`'%z'`|
+|Contiene “mar”|`'%mar%'`|
+|Segunda letra es “a”|`'_a%'`|
+|Cuatro letras exactas|`'____'`|
+
+---
+
+## Función NVL en Oracle SQL
+
+NVL se utiliza para reemplazar valores NULL por un valor predeterminado que tú especifiques.
+
+---
+
+### Sintaxis
+NVL(expresión, valor_reemplazo)
+
+- Si expresión es NULL, devuelve valor_reemplazo.
+    
+- Si expresión no es NULL, devuelve el valor de expresión.
+    
+
+---
+
+### 1. Ejemplo básico
+SELECT nombre, NVL(comision, 0) AS comision_final
+FROM empleados;
+
+- Si comision es NULL, muestra 0 en su lugar.
+    
+
+---
+
+### 2. Uso con cadenas
+SELECT nombre, NVL(direccion, 'No especificada') AS direccion_final
+FROM empleados;
+
+- Si direccion es NULL, muestra 'No especificada'.
+    
+
+---
+
+### 3. En cálculos
+SELECT nombre, salario + NVL(bono, 0) AS ingreso_total
+FROM empleados;
+
+- Suma el salario más el bono (considerando el bono como 0 si es NULL).
+    
+
+---
+
+### Notas
+
+- NVL solo permite dos parámetros.
+    
+- El tipo de dato de valor_reemplazo debe ser compatible con el de expresión.
+    
+- Alternativas modernas: COALESCE (acepta múltiples valores) y CASE.
+    
+
+---
 
 
 

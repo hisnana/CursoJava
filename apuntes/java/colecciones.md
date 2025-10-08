@@ -38,124 +38,147 @@ linkedList.add("Go");
 linkedList.remove(0);
 System.out.println(linkedList);
 ```
-  # LinkedList
+# LinkedList
 Lista doblemente enlazada, eficiente para inserciones y eliminaciones.
 
-```java
-List<String> linkedList = new LinkedList<>();
-linkedList.add("C++");
-linkedList.add("Go");
-linkedList.remove(0);
-System.out.println(linkedList);
-```
-
-CopyOnWriteArrayList
-
+# CopyOnWriteArrayList
 Lista segura para hilos que copia el array en cada escritura.
 
-CopyOnWriteArrayList<String> cowList = new CopyOnWriteArrayList<>();
-cowList.add("Concurrent");
-cowList.add("List");
-
-Set
-HashSet
-
-Conjunto no ordenado, no permite duplicados.
-
+```java
 Set<String> hashSet = new HashSet<>();
 hashSet.add("A");
 hashSet.add("B");
 hashSet.add("A");
 System.out.println(hashSet);
+CopyOnWriteArrayList<String> cowList = new CopyOnWriteArrayList<>();
+cowList.add("Concurrent");
+cowList.add("List");
+```
+# Set
 
-LinkedHashSet
+## HashSet
+Conjunto no ordenado, no permite duplicados.
 
+```java
+Set<String> hashSet = new HashSet<>();
+hashSet.add("A");
+hashSet.add("B");
+hashSet.add("A");
+System.out.println(hashSet);
+```
+
+## LinkedHashSet
 Conjunto que mantiene el orden de inserción.
-
+```java
+// LinkedHashSet
 Set<String> linkedHashSet = new LinkedHashSet<>();
 linkedHashSet.add("X");
 linkedHashSet.add("Y");
 System.out.println(linkedHashSet);
+````
 
-TreeSet
-
+## TreeSet
 Conjunto ordenado (orden natural o comparator).
 
+```java
+
+// TreeSet
 Set<Integer> treeSet = new TreeSet<>();
 treeSet.add(3);
 treeSet.add(1);
 treeSet.add(2);
 System.out.println(treeSet);
+````
 
-Queue
-LinkedList (implementa Queue)
+# Queue
+
+## LinkedList (implementa Queue)
+```java
+// Queue con LinkedList
 Queue<String> queue = new LinkedList<>();
 queue.add("Primero");
 queue.add("Segundo");
 System.out.println(queue.poll());
+````
 
-PriorityQueue
-
+## PriorityQueue
 Cola con prioridad basada en orden natural o comparator.
 
+```java
+// PriorityQueue
 PriorityQueue<Integer> pq = new PriorityQueue<>();
 pq.add(5);
 pq.add(1);
 pq.add(3);
 System.out.println(pq.poll());
+```
 
-Map
-HashMap
+# Map
 
+## HashMap
 Mapa no ordenado, acceso rápido por clave.
 
+```java
+// HashMap
 Map<String, Integer> hashMap = new HashMap<>();
 hashMap.put("A", 1);
 hashMap.put("B", 2);
 System.out.println(hashMap.get("A"));
+```
 
-LinkedHashMap
-
+## LinkedHashMap
 Mapa que mantiene el orden de inserción.
-
+```java
+// LinkedHashMap
 Map<String, Integer> linkedHashMap = new LinkedHashMap<>();
 linkedHashMap.put("X", 10);
 linkedHashMap.put("Y", 20);
 System.out.println(linkedHashMap);
+```
 
-TreeMap
-
+## TreeMap
 Mapa ordenado por clave (natural o comparator).
-
+```java
+// TreeMap
 Map<Integer, String> treeMap = new TreeMap<>();
 treeMap.put(2, "B");
 treeMap.put(1, "A");
 System.out.println(treeMap);
+````
 
-ConcurrentHashMap
-
+## ConcurrentHashMap
 Mapa concurrente, seguro para múltiples hilos.
 
+```java
+// ConcurrentHashMap
 ConcurrentHashMap<String, String> concurrentMap = new ConcurrentHashMap<>();
 concurrentMap.put("key", "value");
+```
 
-3. Características Clave
-Colección	Orden	Permite duplicados	Acceso por índice	Concurrencia
-List (ArrayList)	Sí	Sí	Sí	No (salvo CopyOnWrite)
-Set (HashSet)	No (excepto LinkedHashSet)	No	No	No
-Queue (LinkedList)	Sí (FIFO)	Sí	No	No
-Map (HashMap)	No (excepto LinkedHashMap)	Claves no duplicadas	No	No (salvo ConcurrentHashMap)
-4. Cuándo usar cada una
-Necesidad	Colección recomendada
-Lista ordenada, acceso rápido	ArrayList
-Inserciones/eliminaciones frecuentes	LinkedList
-Sin duplicados, orden no importante	HashSet
-Sin duplicados, orden de inserción	LinkedHashSet
-Sin duplicados, orden natural	TreeSet
-Pares clave-valor rápido, sin orden	HashMap
-Pares clave-valor con orden	TreeMap
-Acceso seguro concurrente	ConcurrentHashMap, CopyOnWriteArrayList
+# 3. Características Clave
+
+| Colección           | Orden                   | Permite duplicados       | Acceso por índice | Concurrencia             |
+|---------------------|-------------------------|-------------------------|-------------------|--------------------------|
+| List (ArrayList)    | Sí                      | Sí                      | Sí                | No (salvo CopyOnWrite)   |
+| Set (HashSet)       | No (excepto LinkedHashSet) | No                    | No                | No                       |
+| Queue (LinkedList)  | Sí (FIFO)               | Sí                      | No                | No                       |
+| Map (HashMap)       | No (excepto LinkedHashMap) | Claves no duplicadas  | No                | No (salvo ConcurrentHashMap) |
+
+# 4. Cuándo usar cada una
+
+| Necesidad                     | Colección recomendada               |
+|------------------------------|------------------------------------|
+| Lista ordenada, acceso rápido | ArrayList                         |
+| Inserciones/eliminaciones frecuentes | LinkedList                |
+| Sin duplicados, orden no importante | HashSet                   |
+| Sin duplicados, orden de inserción | LinkedHashSet              |
+| Sin duplicados, orden natural | TreeSet                         |
+| Pares clave-valor rápido, sin orden | HashMap                   |
+| Pares clave-valor con orden | TreeMap                         |
+| Acceso seguro concurrente    | ConcurrentHashMap, CopyOnWriteArrayList |
+
   
   
 
   
+

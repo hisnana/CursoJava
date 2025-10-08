@@ -65,3 +65,31 @@
 2025-10-02 16:58:05 [INFO] (PagoTarjetaCredito): El pago con Tarjeta de crédito se ha realizado correctamente con el pago 876a2bd6-f670-4c53-a304-4ae9681ee3e7 y la cantidad 100.0
 2025-10-02 16:58:05 [INFO] (PagoCrisptomoneda): El pago con criptomonedas se ha realizado correctamente con el pago f91e81a1-59b5-4ce5-b88d-4adca68159b8 y la cantidad 100.0
 2025-10-02 16:58:05 [INFO] (PagoPayPal): El pago con PayPal se ha realizado correctamente con el pago dea64412-55f9-48e4-b47d-6d75f8d83743 y la cantidad 100.0
+2025-10-08 20:13:11 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:13:30 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:14:39 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:14:49 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:22:56 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:23:52 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:24:01 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:24:06 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:24:16 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:24:22 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:24:31 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:32:40 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:32:51 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:33:00 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-08 20:33:09 [INFO] (Main): Total a pagar para Cliente1: €0,60
+
+2025-10-08 20:33:09 [INFO] (Main): Total a pagar para Cliente2: €3,34
+
+2025-10-08 20:33:09 [INFO] (Main): Resumen de compras de todos los clientes:
+2025-10-08 20:33:09 [INFO] (Main): Cliente1 ha comprado:
+2025-10-08 20:33:09 [INFO] (Main): - Manzanas x2 unidades (0,30 € cada unidad)
+2025-10-08 20:33:09 [INFO] (Main): Total a pagar: €0,60
+
+2025-10-08 20:33:09 [INFO] (Main): Cliente2 ha comprado:
+2025-10-08 20:33:09 [INFO] (Main): - Cebolla x1 unidades (0,40 € cada unidad)
+2025-10-08 20:33:09 [INFO] (Main): - Yogur x3 unidades (0,98 € cada unidad)
+2025-10-08 20:33:09 [INFO] (Main): Total a pagar: €3,34
+

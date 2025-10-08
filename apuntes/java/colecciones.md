@@ -164,6 +164,14 @@ concurrentMap.put("key", "value");
 | Queue (LinkedList)  | Sí (FIFO)               | Sí                      | No                | No                       |
 | Map (HashMap)       | No (excepto LinkedHashMap) | Claves no duplicadas  | No                | No (salvo ConcurrentHashMap) |
 
+Buena pregunta. En la tabla de colecciones, "concurrencia" se refiere a si una colección en Java es segura para ser usada por múltiples hilos al mismo tiempo (multi-threading) sin causar errores como:
+
+Datos corruptos
+
+Condiciones de carrera (race conditions)
+
+Excepciones inesperadas (ConcurrentModificationException, por ejemplo)
+
 # 4. Cuándo usar cada una
 
 | Necesidad                     | Colección recomendada               |
@@ -181,4 +189,5 @@ concurrentMap.put("key", "value");
   
 
   
+
 

@@ -187,7 +187,32 @@ Excepciones inesperadas (ConcurrentModificationException, por ejemplo)
 
   
   
+## Diagrama de colecciones en Java (Mermaid)
 
+```mermaid
+graph TD
+  Collection --> List
+  Collection --> Set
+  Collection --> Queue
+  Collection --> Map
+
+  List --> ArrayList
+  List --> LinkedList
+  List --> CopyOnWriteArrayList
+
+  Set --> HashSet
+  Set --> LinkedHashSet
+  Set --> TreeSet
+
+  Queue --> "LinkedList (Queue)"
+  Queue --> PriorityQueue
+
+  Map --> HashMap
+  Map --> LinkedHashMap
+  Map --> TreeMap
+  Map --> ConcurrentHashMap
+````
   
+
 
 

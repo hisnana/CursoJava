@@ -213,8 +213,52 @@ graph TD
   Map --> TreeMap
   Map --> ConcurrentHashMap
 ```
+# POJO en Java
 
+**POJO** significa **Plain Old Java Object** (Objeto Java Simple).
+
+## ¿Qué es un POJO?
+
+- Clase Java simple que contiene solo **atributos privados**, **getters y setters**.
+- No depende de frameworks ni hereda clases especiales.
+- Generalmente tiene un constructor vacío.
+- Usado para representar datos sin lógica compleja.
+
+## Características
+
+- Atributos privados.
+- Métodos públicos para acceder/modificar (getters y setters).
+- Constructor vacío (opcional pero común).
+- Métodos auxiliares como `toString()`, `equals()` y `hashCode()`.
+
+## Ejemplo
+
+```java
+public class Persona {
+    private String nombre;
+    private int edad;
+
+    public Persona() {}
+
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public int getEdad() { return edad; }
+    public void setEdad(int edad) { this.edad = edad; }
+
+    @Override
+    public String toString() {
+        return nombre + " tiene " + edad + " años.";
+    }
+}
+```
   
+
 
 
 

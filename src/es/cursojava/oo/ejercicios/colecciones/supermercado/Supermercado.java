@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import es.cursojava.oo.ejercicios.colecciones.supermercado.Alimentos.Alimento;
+import es.cursojava.utils.MiLogger;
 
 class Supermercado {
     private String nombre;
@@ -21,11 +22,13 @@ class Supermercado {
 
     // Mostrar todos los productos disponibles con cantidades (recorremos todas las listas)
     public void mostrarStock() {
-        System.out.println("Productos disponibles en " + nombre + ":");
+    	MiLogger.info("Productos disponibles en " + nombre + ":");
         for (List<Alimento> categoria : getStockAlimentos()) {
+        	
             for (Alimento a : categoria) {
                 if (a.getCantidad() > 0) {
-                    System.out.println("- " + a.getNombre()+": " + a.getCantidad() + " unidades");
+                    MiLogger.info("- " + a.getNombre()+": " + a.getCantidad() + " unidades");
+                    
                 }
             }
         }

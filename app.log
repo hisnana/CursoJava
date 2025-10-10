@@ -93,3 +93,85 @@
 2025-10-08 20:33:09 [INFO] (Main): - Yogur x3 unidades (0,98 € cada unidad)
 2025-10-08 20:33:09 [INFO] (Main): Total a pagar: €3,34
 
+2025-10-10 18:05:18 [INFO] (Main): 
+Atendiendo a Cliente1
+2025-10-10 18:05:18 [INFO] (Supermercado): - Fruta: 2 unidades
+2025-10-10 18:05:18 [INFO] (Supermercado): - Verdura: 2 unidades
+2025-10-10 18:05:18 [INFO] (Supermercado): - Lacteo: 2 unidades
+2025-10-10 18:05:18 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:05:28 [INFO] (Main): Fruta
+2025-10-10 18:05:28 [INFO] (Main): Producto no disponible o agotado.
+2025-10-10 18:05:28 [INFO] (Supermercado): - Fruta: 2 unidades
+2025-10-10 18:05:28 [INFO] (Supermercado): - Verdura: 2 unidades
+2025-10-10 18:05:28 [INFO] (Supermercado): - Lacteo: 2 unidades
+2025-10-10 18:05:28 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:06:13 [INFO] (Main): 
+Atendiendo a Cliente1
+2025-10-10 18:06:13 [INFO] (Supermercado): - Fruta: 2 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Plátanos: 3 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Manzanas: 5 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Verdura: 2 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Pimiento: 2 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Cebolla: 8 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Lacteo: 2 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Leche: 5 unidades
+2025-10-10 18:06:13 [INFO] (Supermercado): - Yogur: 6 unidades
+2025-10-10 18:06:13 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:07:18 [INFO] (Main): 
+Atendiendo a Cliente1
+2025-10-10 18:07:18 [INFO] (Supermercado): - Fruta: 3 unidades
+2025-10-10 18:07:18 [INFO] (Supermercado): - Fruta: 5 unidades
+2025-10-10 18:07:18 [INFO] (Supermercado): - Verdura: 2 unidades
+2025-10-10 18:07:18 [INFO] (Supermercado): - Verdura: 8 unidades
+2025-10-10 18:07:18 [INFO] (Supermercado): - Lacteo: 5 unidades
+2025-10-10 18:07:18 [INFO] (Supermercado): - Lacteo: 6 unidades
+2025-10-10 18:07:18 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:15:47 [INFO] (Main): lacteo
+2025-10-10 18:15:47 [INFO] (Main): Producto no disponible o agotado.
+2025-10-10 18:15:47 [INFO] (Supermercado): - Fruta: 3 unidades
+2025-10-10 18:15:47 [INFO] (Supermercado): - Fruta: 5 unidades
+2025-10-10 18:15:47 [INFO] (Supermercado): - Verdura: 2 unidades
+2025-10-10 18:15:47 [INFO] (Supermercado): - Verdura: 8 unidades
+2025-10-10 18:15:47 [INFO] (Supermercado): - Lacteo: 5 unidades
+2025-10-10 18:15:47 [INFO] (Supermercado): - Lacteo: 6 unidades
+2025-10-10 18:15:47 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:15:54 [INFO] (Main): Lacteo
+2025-10-10 18:15:54 [INFO] (Main): Producto no disponible o agotado.
+2025-10-10 18:15:54 [INFO] (Supermercado): - Fruta: 3 unidades
+2025-10-10 18:15:54 [INFO] (Supermercado): - Fruta: 5 unidades
+2025-10-10 18:15:54 [INFO] (Supermercado): - Verdura: 2 unidades
+2025-10-10 18:15:54 [INFO] (Supermercado): - Verdura: 8 unidades
+2025-10-10 18:15:54 [INFO] (Supermercado): - Lacteo: 5 unidades
+2025-10-10 18:15:54 [INFO] (Supermercado): - Lacteo: 6 unidades
+2025-10-10 18:15:54 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:16:05 [INFO] (Main): 
+Atendiendo a Cliente1
+2025-10-10 18:16:05 [INFO] (Supermercado): Productos disponibles en MiSuper:
+2025-10-10 18:16:05 [INFO] (Supermercado): - Plátanos: 3 unidades
+2025-10-10 18:16:05 [INFO] (Supermercado): - Manzanas: 5 unidades
+2025-10-10 18:16:05 [INFO] (Supermercado): - Pimiento: 2 unidades
+2025-10-10 18:16:05 [INFO] (Supermercado): - Cebolla: 8 unidades
+2025-10-10 18:16:05 [INFO] (Supermercado): - Leche: 5 unidades
+2025-10-10 18:16:05 [INFO] (Supermercado): - Yogur: 6 unidades
+2025-10-10 18:16:05 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:16:08 [INFO] (Main): Lacteo
+2025-10-10 18:16:08 [INFO] (Main): Producto no disponible o agotado.
+2025-10-10 18:16:08 [INFO] (Supermercado): Productos disponibles en MiSuper:
+2025-10-10 18:16:08 [INFO] (Supermercado): - Plátanos: 3 unidades
+2025-10-10 18:16:08 [INFO] (Supermercado): - Manzanas: 5 unidades
+2025-10-10 18:16:08 [INFO] (Supermercado): - Pimiento: 2 unidades
+2025-10-10 18:16:08 [INFO] (Supermercado): - Cebolla: 8 unidades
+2025-10-10 18:16:08 [INFO] (Supermercado): - Leche: 5 unidades
+2025-10-10 18:16:08 [INFO] (Supermercado): - Yogur: 6 unidades
+2025-10-10 18:16:08 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-10 18:16:15 [INFO] (Main): Leche
+2025-10-10 18:16:15 [INFO] (Main): ¿Cuántas unidades quiere comprar?: 
+2025-10-10 18:16:18 [INFO] (Main): ¿Desea seguir comprando? (s/n): 
+2025-10-10 18:16:24 [INFO] (Supermercado): Productos disponibles en MiSuper:
+2025-10-10 18:16:24 [INFO] (Supermercado): - Plátanos: 3 unidades
+2025-10-10 18:16:24 [INFO] (Supermercado): - Manzanas: 5 unidades
+2025-10-10 18:16:24 [INFO] (Supermercado): - Pimiento: 2 unidades
+2025-10-10 18:16:24 [INFO] (Supermercado): - Cebolla: 8 unidades
+2025-10-10 18:16:24 [INFO] (Supermercado): - Leche: 3 unidades
+2025-10-10 18:16:24 [INFO] (Supermercado): - Yogur: 6 unidades
+2025-10-10 18:16:24 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 

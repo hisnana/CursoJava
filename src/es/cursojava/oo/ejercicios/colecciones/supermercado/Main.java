@@ -68,7 +68,7 @@ public class Main {
                     continue;
                 }
 
-                System.out.print("¿Cuántas unidades quiere comprar?: ");
+                MiLogger.info("¿Cuántas unidades quiere comprar?: ");
                 int cantidad = Integer.parseInt(sc.nextLine());
 
                 if (cantidad <= 0) {
@@ -98,7 +98,7 @@ public class Main {
                 // Actualizar stock
                 stockProducto.setCantidad(stockProducto.getCantidad() - cantidad);
 
-                System.out.print("¿Desea seguir comprando? (s/n): ");
+                MiLogger.info("¿Desea seguir comprando? (s/n): ");
                 String resp = sc.nextLine();
                 if (!resp.equalsIgnoreCase("s")) {
                     continuar = false;

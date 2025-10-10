@@ -172,7 +172,7 @@ WHERE LOWER(nombre) LIKE '%cafe%';
 Enunciado: Para las categorías TECNOLOGIA y HOGAR con `estado = 'ACTIVO'`, muestra precio medio y nº de productos_ana. Solo devuelve categorías cuya media sea > 100€. Ordena por media desc.
 SELECT 
   categoria,
-  AVG(precio) AS precio_medio,
+  ROUND(AVG(precio),2) AS precio_medio,
   COUNT(*) AS numero_productos
 FROM productos_ana
 WHERE categoria IN ('TECNOLOGIA', 'HOGAR')

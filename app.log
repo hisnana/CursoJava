@@ -175,3 +175,122 @@ Atendiendo a Cliente1
 2025-10-10 18:16:24 [INFO] (Supermercado): - Leche: 3 unidades
 2025-10-10 18:16:24 [INFO] (Supermercado): - Yogur: 6 unidades
 2025-10-10 18:16:24 [INFO] (Main): ¿Qué producto desea comprar? (o 'salir' para terminar): 
+2025-10-13 20:17:00 [INFO] (Inicio): == 1) Número de aulas = 3
+2025-10-13 20:17:00 [INFO] (Inicio): == 2) Datos de alumnos por aula ==
+2025-10-13 20:17:00 [INFO] (Inicio): [aula1]
+2025-10-13 20:17:00 [INFO] (Inicio):   - Alumno{nombre='Ana', edad=17, notaMedia=8,40}
+2025-10-13 20:17:00 [INFO] (Inicio):   - Alumno{nombre='Bruno', edad=18, notaMedia=6,70}
+2025-10-13 20:17:00 [INFO] (Inicio): [aula2]
+2025-10-13 20:17:00 [INFO] (Inicio):   - Alumno{nombre='Carla', edad=16, notaMedia=9,10}
+2025-10-13 20:17:00 [INFO] (Inicio): [aula3]
+2025-10-13 20:17:00 [INFO] (Inicio):   - Alumno{nombre='Diego', edad=17, notaMedia=5,90}
+2025-10-13 20:17:00 [INFO] (Inicio):   - Alumno{nombre='Elena', edad=18, notaMedia=7,30}
+2025-10-13 20:17:00 [INFO] (Inicio):   - Alumno{nombre='Félix', edad=17, notaMedia=9,40}
+2025-10-13 20:17:00 [INFO] (Inicio):   - Alumno{nombre='Gabriela', edad=16, notaMedia=7,90}
+2025-10-13 20:17:00 [INFO] (Inicio): == 3) Conteo de alumnos por aula ==
+2025-10-13 20:17:58 [INFO] (Inicio): == 1) Número de aulas = 3
+2025-10-13 20:17:58 [INFO] (Inicio): == 2) Datos de alumnos por aula ==
+2025-10-13 20:17:58 [INFO] (Inicio): [aula1]
+2025-10-13 20:17:58 [INFO] (Inicio):   - Alumno{nombre='Ana', edad=17, notaMedia=8,40}
+2025-10-13 20:17:58 [INFO] (Inicio):   - Alumno{nombre='Bruno', edad=18, notaMedia=6,70}
+2025-10-13 20:17:58 [INFO] (Inicio): [aula2]
+2025-10-13 20:17:58 [INFO] (Inicio):   - Alumno{nombre='Carla', edad=16, notaMedia=9,10}
+2025-10-13 20:17:58 [INFO] (Inicio): [aula3]
+2025-10-13 20:17:58 [INFO] (Inicio):   - Alumno{nombre='Diego', edad=17, notaMedia=5,90}
+2025-10-13 20:17:58 [INFO] (Inicio):   - Alumno{nombre='Elena', edad=18, notaMedia=7,30}
+2025-10-13 20:17:58 [INFO] (Inicio):   - Alumno{nombre='Félix', edad=17, notaMedia=9,40}
+2025-10-13 20:17:58 [INFO] (Inicio):   - Alumno{nombre='Gabriela', edad=16, notaMedia=7,90}
+2025-10-13 20:17:58 [INFO] (Inicio): == 3) Conteo de alumnos por aula ==
+2025-10-13 20:18:25 [INFO] (Inicio): == 1) Número de aulas = 3
+2025-10-13 20:18:25 [INFO] (Inicio): == 2) Datos de alumnos por aula ==
+2025-10-13 20:18:25 [INFO] (Inicio): [aula1]
+2025-10-13 20:18:25 [INFO] (Inicio):   - Alumno{nombre='Ana', edad=17, notaMedia=8,40}
+2025-10-13 20:18:25 [INFO] (Inicio):   - Alumno{nombre='Bruno', edad=18, notaMedia=6,70}
+2025-10-13 20:18:25 [INFO] (Inicio): [aula2]
+2025-10-13 20:18:25 [INFO] (Inicio):   - Alumno{nombre='Carla', edad=16, notaMedia=9,10}
+2025-10-13 20:18:25 [INFO] (Inicio): [aula3]
+2025-10-13 20:18:25 [INFO] (Inicio):   - Alumno{nombre='Diego', edad=17, notaMedia=5,90}
+2025-10-13 20:18:25 [INFO] (Inicio):   - Alumno{nombre='Elena', edad=18, notaMedia=7,30}
+2025-10-13 20:18:25 [INFO] (Inicio):   - Alumno{nombre='Félix', edad=17, notaMedia=9,40}
+2025-10-13 20:18:25 [INFO] (Inicio):   - Alumno{nombre='Gabriela', edad=16, notaMedia=7,90}
+2025-10-13 20:18:25 [INFO] (Inicio): == 3) Conteo de alumnos por aula ==
+2025-10-13 20:18:49 [INFO] (Inicio): Alumnos en aula2:
+2025-10-13 20:18:49 [INFO] (Inicio):   - Alumno{nombre='Carla', edad=16, notaMedia=9,10}
+2025-10-13 20:18:49 [INFO] (Inicio): == 5) Aula(s) con el alumno de mayor nota media ==
+2025-10-13 20:18:49 [INFO] (Inicio):  - Aula: aula3 | Alumno{nombre='Félix', edad=17, notaMedia=9,40}
+2025-10-13 20:47:57 [INFO] (Inicio): == 1) Número de aulas = 3
+2025-10-13 20:47:57 [INFO] (Inicio): == 2) Datos de alumnos por aula ==
+2025-10-13 20:47:57 [INFO] (Inicio): [aula1]
+2025-10-13 20:47:57 [INFO] (Inicio):   - Alumno{nombre='Ana', edad=17, notaMedia=8,40}
+2025-10-13 20:47:57 [INFO] (Inicio):   - Alumno{nombre='Bruno', edad=18, notaMedia=6,70}
+2025-10-13 20:47:57 [INFO] (Inicio): [aula2]
+2025-10-13 20:47:57 [INFO] (Inicio):   - Alumno{nombre='Carla', edad=16, notaMedia=9,10}
+2025-10-13 20:47:57 [INFO] (Inicio): [aula3]
+2025-10-13 20:47:57 [INFO] (Inicio):   - Alumno{nombre='Diego', edad=17, notaMedia=5,90}
+2025-10-13 20:47:57 [INFO] (Inicio):   - Alumno{nombre='Elena', edad=18, notaMedia=7,30}
+2025-10-13 20:47:57 [INFO] (Inicio):   - Alumno{nombre='Félix', edad=17, notaMedia=9,40}
+2025-10-13 20:47:57 [INFO] (Inicio):   - Alumno{nombre='Gabriela', edad=16, notaMedia=7,90}
+2025-10-13 20:47:57 [INFO] (Inicio): == 3) Conteo de alumnos por aula ==
+2025-10-13 20:48:10 [INFO] (Inicio): Alumnos en aula3:
+2025-10-13 20:48:10 [INFO] (Inicio):   - Alumno{nombre='Diego', edad=17, notaMedia=5,90}
+2025-10-13 20:48:10 [INFO] (Inicio):   - Alumno{nombre='Elena', edad=18, notaMedia=7,30}
+2025-10-13 20:48:10 [INFO] (Inicio):   - Alumno{nombre='Félix', edad=17, notaMedia=9,40}
+2025-10-13 20:48:10 [INFO] (Inicio):   - Alumno{nombre='Gabriela', edad=16, notaMedia=7,90}
+2025-10-13 20:48:10 [INFO] (Inicio): == 5) Aula(s) con el alumno de mayor nota media ==
+2025-10-13 20:48:10 [INFO] (Inicio):  - Aula: aula3 | Alumno{nombre='Félix', edad=17, notaMedia=9,40}
+2025-10-13 20:57:02 [INFO] (Inicio): =========== EJERCICIO 1 ===========
+2025-10-13 20:57:02 [INFO] (Inicio): 1) Nº de aulas de Colegio Principal: 3
+2025-10-13 20:57:02 [INFO] (Inicio): 2) Datos de los alumnos por aula
+2025-10-13 20:57:02 [INFO] (Inicio): [aula1]
+2025-10-13 20:57:02 [INFO] (Inicio):   - Alumno{nombre='alumno1', edad=0, notaMedia=8,00}
+2025-10-13 20:57:02 [INFO] (Inicio):   - Alumno{nombre='alumno2', edad=0, notaMedia=4,00}
+2025-10-13 20:57:02 [INFO] (Inicio): [aula2]
+2025-10-13 20:57:02 [INFO] (Inicio):   - Alumno{nombre='alumno3', edad=0, notaMedia=7,00}
+2025-10-13 20:57:02 [INFO] (Inicio): [aula3]
+2025-10-13 20:57:02 [INFO] (Inicio):   - Alumno{nombre='alumno4', edad=0, notaMedia=5,00}
+2025-10-13 20:57:02 [INFO] (Inicio):   - Alumno{nombre='alumno5', edad=0, notaMedia=9,00}
+2025-10-13 20:57:02 [INFO] (Inicio):   - Alumno{nombre='alumno6', edad=0, notaMedia=6,00}
+2025-10-13 20:57:02 [INFO] (Inicio):   - Alumno{nombre='alumno7', edad=0, notaMedia=3,00}
+2025-10-13 20:57:02 [INFO] (Inicio): 3) Conteo por aula
+2025-10-13 20:57:02 [INFO] (Inicio): aula1 -> 2 alumnos
+2025-10-13 20:57:02 [INFO] (Inicio): aula2 -> 1 alumno
+2025-10-13 20:57:02 [INFO] (Inicio): aula3 -> 4 alumnos
+2025-10-13 20:57:21 [INFO] (Inicio): Alumnos en aula3:
+2025-10-13 20:57:21 [INFO] (Inicio):   - alumno4 Apellido4 (DNI 4444D) | media: 5.0
+2025-10-13 20:57:21 [INFO] (Inicio):   - alumno5 Apellido5 (DNI 5555E) | media: 9.0
+2025-10-13 20:57:21 [INFO] (Inicio):   - alumno6 Apellido6 (DNI 6666F) | media: 6.0
+2025-10-13 20:57:21 [INFO] (Inicio):   - alumno7 Apellido7 (DNI 7777G) | media: 3.0
+2025-10-13 20:57:21 [INFO] (Inicio): 5) Aula(s) con el alumno de mayor nota
+2025-10-13 20:57:21 [INFO] (Inicio): Mejor nota: 9.0
+2025-10-13 20:57:21 [INFO] (Inicio):  - Aula: aula3 | alumno5 Apellido5
+2025-10-13 20:57:21 [INFO] (Inicio): =========== EJERCICIO 2 ===========
+2025-10-13 20:57:21 [INFO] (Inicio): Listado de colegios, aulas y alumnos:
+2025-10-13 20:57:21 [INFO] (Inicio): Colegio: Colegio Principal
+2025-10-13 20:57:21 [INFO] (Inicio): Dirección: C/ Jardines 1
+2025-10-13 20:57:21 [INFO] (Inicio):   [aula1]
+2025-10-13 20:57:21 [INFO] (Inicio):     - alumno1 Apellido1 | media: 8.0
+2025-10-13 20:57:21 [INFO] (Inicio):     - alumno2 Apellido2 | media: 4.0
+2025-10-13 20:57:21 [INFO] (Inicio):   [aula2]
+2025-10-13 20:57:21 [INFO] (Inicio):     - alumno3 Apellido3 | media: 7.0
+2025-10-13 20:57:21 [INFO] (Inicio):   [aula3]
+2025-10-13 20:57:21 [INFO] (Inicio):     - alumno4 Apellido4 | media: 5.0
+2025-10-13 20:57:21 [INFO] (Inicio):     - alumno5 Apellido5 | media: 9.0
+2025-10-13 20:57:21 [INFO] (Inicio):     - alumno6 Apellido6 | media: 6.0
+2025-10-13 20:57:21 [INFO] (Inicio):     - alumno7 Apellido7 | media: 3.0
+2025-10-13 20:57:21 [INFO] (Inicio): Colegio: Colegio Fuji
+2025-10-13 20:57:21 [INFO] (Inicio): Dirección: Av. Montaña 8
+2025-10-13 20:57:21 [INFO] (Inicio):   [aulaA]
+2025-10-13 20:57:21 [INFO] (Inicio):     - Hugo Santos | media: 7.2
+2025-10-13 20:57:21 [INFO] (Inicio):     - Irene Téllez | media: 8.0
+2025-10-13 20:57:21 [INFO] (Inicio):   [aulaB]
+2025-10-13 20:57:21 [INFO] (Inicio):     - Javier Ureña | media: 6.1
+2025-10-13 20:57:21 [INFO] (Inicio):     - Kevin Villalba | media: 8.6
+2025-10-13 20:57:21 [INFO] (Inicio): Colegio: Colegio Kumo
+2025-10-13 20:57:21 [INFO] (Inicio): Dirección: Plaza del Sol 3
+2025-10-13 20:57:21 [INFO] (Inicio):   [aulaX]
+2025-10-13 20:57:21 [INFO] (Inicio):     - Laura Wang | media: 7.5
+2025-10-13 20:57:21 [INFO] (Inicio):     - Marta Xu | media: 6.8
+2025-10-13 20:57:21 [INFO] (Inicio):     - Nora Yamada | media: 8.9
+2025-10-13 20:57:21 [INFO] (Inicio):   [aulaY]
+2025-10-13 20:57:21 [INFO] (Inicio):     - Óscar Zafra | media: 7.1
+2025-10-13 20:57:21 [INFO] (Inicio): Colegio con mayor media: Colegio Kumo (media=7.575000000000001)

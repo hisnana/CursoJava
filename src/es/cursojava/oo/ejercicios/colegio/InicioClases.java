@@ -1,6 +1,6 @@
 package es.cursojava.oo.ejercicios.colegio;
 
-public class Colegio {
+public class InicioClases {
 
 	public static void main(String[] args) {
 		// Crear 3 alumnos y ponerlos a estudiar

@@ -252,6 +252,116 @@ En esta sección se resumen los principales grupos de comandos SQL con una breve
 
 ---
 
+# BBDD
+
+## Foreign Key
+
+Una Foreign Key es una restricción que se usa para asegurar la integridad referencial entre dos tablas. Esto significa que un valor en una columna (o conjunto de columnas) debe existir previamente en otra tabla.
+
+### Conceptos clave
+
+- La Foreign Key en una tabla hija apunta a la Primary Key o a una columna única en la tabla padre.
+    
+- Evita que se inserten valores en la tabla hija que no existan en la tabla padre.
+    
+- También controla el comportamiento al borrar o actualizar registros (acciones ON DELETE y `ON UPDATE`).
+
+### Sintaxis para crear una Foreign Key
+
+#### Cuando creas una tabla:
+CREATE TABLE hija (
+    id NUMBER PRIMARY KEY,
+    padre_id NUMBER,
+    CONSTRAINT fk_padre FOREIGN KEY (padre_id) REFERENCES padre(id)
+);
+
+#### Añadir una Foreign Key a una tabla existente
+ALTER TABLE hija
+
+> Luis:
+ADD CONSTRAINT fk_padre FOREIGN KEY (padre_id) REFERENCES padre(id);
+
+####  Opciones comunes en Foreign Key
+
+- ON DELETE CASCADE: Si borras un registro en la tabla padre, los registros relacionados en la tabla hija también se borran automáticamente.
+ALTER TABLE hija
+ADD CONSTRAINT fk_padre FOREIGN KEY (padre_id) REFERENCES padre(id)
+ON DELETE CASCADE;
+
+ON DELETE SET NULL: Si borras un registro en la tabla padre, la columna padre_id en la tabla hija se pone en NULL.
+
+### Ejemplo completo
+CREATE TABLE padre (
+    id NUMBER PRIMARY KEY,
+    nombre VARCHAR2(50)
+);
+
+CREATE TABLE hija (
+    id NUMBER PRIMARY KEY,
+    padre_id NUMBER,
+    CONSTRAINT fk_padre FOREIGN KEY (padre_id) REFERENCES padre(id) ON DELETE CASCADE
+);
+
+
+## Relaciones en Bases de Datos: 1:1 y 1:M
+
+### 1:1 (Uno a Uno)
+
+- Cada registro en la tabla A está relacionado con exactamente un registro en la tabla B, y viceversa.
+    
+- Ejemplo: Una persona y su pasaporte (una persona tiene un pasaporte, un pasaporte pertenece a una persona).
+
+#### Cómo implementarlo
+
+- Se usa una clave foránea única en alguna de las tablas.
+    
+- Por ejemplo, en Oracle:
+CREATE TABLE persona (
+    id NUMBER PRIMARY KEY,
+    nombre VARCHAR2(50)
+);
+
+CREATE TABLE pasaporte (
+    id NUMBER PRIMARY KEY,
+    persona_id NUMBER UNIQUE,  -- clave única para asegurar 1:1
+    numero VARCHAR2(20),
+    CONSTRAINT fk_persona FOREIGN KEY (persona_id) REFERENCES persona(id)
+);
+
+UNIQUE en persona_id garantiza que un pasaporte solo puede asociarse a una persona, y cada persona a un solo pasaporte.
+
+### 1:M (Uno a Muchos)
+
+- Un registro en la tabla A puede estar relacionado con varios registros en la tabla B, pero cada registro en B está relacionado con uno solo en A.
+    
+- Ejemplo: Un autor y sus libros (un autor puede tener muchos libros, pero cada libro tiene un solo autor).
+
+#### Cómo implementarlo
+
+- La tabla “muchos” contiene la clave foránea que apunta a la tabla “uno”.
+    
+- Por ejemplo:
+CREATE TABLE autor (
+    id NUMBER PRIMARY KEY,
+    nombre VARCHAR2(50)
+);
+
+CREATE TABLE libro (
+    id NUMBER PRIMARY KEY,
+    autor_id NUMBER,
+    titulo VARCHAR2(100),
+    CONSTRAINT fk_autor FOREIGN KEY (autor_id) REFERENCES autor(id)
+);
+
+---
+
+### Resumen
+
+|Relación|Descripción|Implementación Oracle|
+|---|---|---|
+|1:1|Un registro relacionado a otro único|Foreign Key con restricción UNIQUE|
+|1:M|Un registro relacionado a muchos|Foreign Key en tabla “muchos”|
+
 
 
 ## 🧾 Auditoría en Oracle

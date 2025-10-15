@@ -74,10 +74,4 @@ ROLLBACK; -- deshace cambios no confirmados
 
 ---
 
-## 8) Checklist de 1 minuto antes de entregar
 
-* [ ] Java: ¿he elegido bien entre **List/Set/Map**?
-* [ ] Si uso `HashSet`/`HashMap` con clases propias → **`equals/hashCode`**.
-* [ ] ¿Necesito orden? → `LinkedHash*` o `Tree*` con `Comparator`.
-* [ ] Streams: ¿puedo resolver con `map/filter/collect` o `groupingBy`?
-* [ ] SQL: JOIN vs subconsulta, `HAVING` sólo con agregadas, `FETCH FIRST n`.

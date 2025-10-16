@@ -1,4 +1,4 @@
-# 📝 Chuleta clara — SQL y Colecciones en Java (Examen 16)
+# 📝 Chuleta resumida Colecciones en Java 
 
 
 ---
@@ -17,6 +17,54 @@
 > Regla rápida: si dudas, empieza con **`ArrayList`**, **`HashSet`** o **`HashMap`**.
 
 ---
+
+
+## 💾 Listas en Java — Buscar y recorrer
+
+### ➤ Buscar posición de un elemento
+- `indexOf("Pepe")` → devuelve el **índice** o `-1` si no está.
+- `get(i)` → obtiene el elemento en la posición *i*.
+
+#### ✅ Ejemplo
+```java
+for (int i = 0; i < nombres.size(); i++) {
+    if (nombres.get(i).equals("Pepe")) {
+        System.out.println("Pepe está en índice " + i);
+    }
+}
+```
+
+> ⚠️ Usa `.equals()` para comparar Strings (no `=`).
+
+---
+
+### ➤ Recorrer una lista
+
+#### 1️⃣ Con índice
+```java
+for (int i = 0; i < nombres.size(); i++) {
+    System.out.println(i + ": " + nombres.get(i));
+}
+```
+
+#### 2️⃣ For-each (más simple)
+```java
+for (String nombre : nombres) {
+    System.out.println(nombre);
+}
+```
+
+#### 3️⃣ forEach (Java 8+)
+```java
+nombres.forEach(n -> System.out.println(n));
+```
+
+---
+
+### 🧠 Recordatorio
+- Índices van de `0` a `size() - 1`.
+- Si accedes fuera del rango → `IndexOutOfBoundsException`.
+- Si `indexOf()` no encuentra → devuelve `-1`.
 
 ## 2) Implementaciones que más aparecen COLECCIONES
 

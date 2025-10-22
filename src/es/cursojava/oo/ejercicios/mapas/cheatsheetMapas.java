@@ -1,6 +1,7 @@
 package es.cursojava.oo.ejercicios.mapas;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +10,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import es.cursojava.oo.ejercicios.colecciones.Persona;
+import es.cursojava.oo.ejercicios.colecciones.biblioteca.Autor;
+import es.cursojava.oo.ejercicios.colecciones.biblioteca.Libro;
 import es.cursojava.oo.ejercicios.colegio.Alumno;
 import es.cursojava.utils.Utilidades;
 
@@ -67,11 +70,23 @@ public class cheatsheetMapas {
 			
 			personas.remove("222B");
 			
-			//Como añadir por sublñistas
-			Map<String,List<Alumno>> aulas = new HashMap<>();
-			aulas.put("aula1",alumnos.subList(0, 2));
-			aulas.put("aula2",alumnos.subList(2, 3));
-			aulas.put("aula3",alumnos.subList(3, 7));
+			//TRATAR MAPAS CON OBJETOS Y LISTAS
+			
+			
+			//Ejercicio biblioteca, generar los objetos y agregarlos al mapa
+			Map<Autor,List<Libro>> biblioteca1 = new HashMap();
+			List<Libro> libros = new ArrayList<>();
+			libros.add(new Libro("Effective Java", "978-0134685991", 2017));
+			libros.add(new Libro("Clean Code", "978-0132350884", 2008));
+			
+			Autor autor1= new Autor("Pepe","Español");
+			Autor autor2= new Autor("Haku","Japonesa");
+			Autor autor3= new Autor("Louise","Francés");
+			
+			biblioteca1.put(autor1, libros.subList(0, 1));
+			biblioteca1.put(autor2, libros.subList(1, 2));
+			
+			
 		}
 
 	}

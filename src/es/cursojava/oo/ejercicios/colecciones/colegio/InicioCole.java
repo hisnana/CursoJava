@@ -1,17 +1,19 @@
 package es.cursojava.oo.ejercicios.colecciones.colegio;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.OptionalDouble;
 
 import es.cursojava.oo.ejercicios.colegio.Alumno;
+import es.cursojava.utils.MiLogger;
 
 public class InicioCole {
 
-	 // === Lógica ===
+    // Para mostrar números con 2 decimales sin usar printf
+    private static final DecimalFormat DF = new DecimalFormat("#0.00");
+
     public static void main(String[] args) {
         // Colegio 1 (7 alumnos: 2/1/4)
         Colegio c1 = new Colegio("Colegio Sakura", "C/ Jardines 1", new LinkedHashMap<>());
@@ -53,56 +55,62 @@ public class InicioCole {
 
         List<Colegio> colegios = List.of(c1, c2, c3);
 
-        // 1) Recorrer la lista de colegios y mostrar:
-        //    - datos del colegio
-        //    - nombre de cada aula
-        //    - por cada aula: nombre, apellido y nota media de sus alumnos
-        System.out.println("===== LISTADO DE COLEGIOS, AULAS Y ALUMNOS =====");
+        // 1) Listado (sin printf)
+        MiLogger.info("===== LISTADO DE COLEGIOS, AULAS Y ALUMNOS =====");
         for (Colegio col : colegios) {
-            System.out.println("Colegio: " + col.getNombre());
-            System.out.println("Dirección: " + col.getDireccion());
+            MiLogger.info("Colegio: " + col.getNombre());
+            MiLogger.info("Dirección: " + col.getDireccion());
             if (col.getAulas().isEmpty()) {
-                System.out.println("  (Sin aulas)");
+                MiLogger.info("  (Sin aulas)");
             } else {
                 for (Map.Entry<String, List<Alumno>> e : col.getAulas().entrySet()) {
                     String aula = e.getKey();
                     List<Alumno> alumnos = e.getValue();
-                    System.out.println("  [" + aula + "]");
+                    MiLogger.info("  [" + aula + "]");
                     if (alumnos.isEmpty()) {
-                        System.out.println("    (Sin alumnos)");
+                        MiLogger.info("    (Sin alumnos)");
                     } else {
                         for (Alumno a : alumnos) {
-                            System.out.printf("    - %s %s | media: %.2f%n",
-                                    a.getNombre(), a.getApellido(), a.getNotaMedia());
+                            MiLogger.info("    - " + a.getNombre() + " " + a.getApellido()
+                                    + " | media: " + DF.format(a.getNotaMedia()));
                         }
                     }
                 }
             }
-            System.out.println();
         }
 
-        // 2) Indicar cuál es el colegio que tiene la nota media de alumnos mayor.
-        //    (Se calcula la media de todas las notas de los alumnos del colegio)
-        Colegio mejor = colegios.stream()
-                .max(Comparator.comparingDouble(InicioCole::mediaColegioSegura))
-                .orElse(null);
+        // 2) Colegio con mayor media
+        Colegio mejor = null;
+        double mejorMedia = -1.0;
+        for (Colegio col : colegios) {
+            double media = mediaColegioSegura(col); // bucles clásicos
+            if (media > mejorMedia) {
+                mejorMedia = media;
+                mejor = col;
+            }
+        }
 
         if (mejor == null) {
-            System.out.println("No hay colegios.");
+            MiLogger.info("No hay colegios.");
         } else {
-            double media = mediaColegioSegura(mejor);
-            System.out.printf("Colegio con mayor media: %s (media=%.2f)%n", mejor.getNombre(), media);
+            MiLogger.info("Colegio con mayor media: " + mejor.getNombre()
+                    + " (media=" + DF.format(mejorMedia) + ")");
         }
     }
 
-    // Media de notas del colegio. Si no hay alumnos, devolvemos -1 para que no gane.
+    // Media de notas del colegio. Si no hay alumnos, devolvemos -1.
     private static double mediaColegioSegura(Colegio col) {
-        OptionalDouble avg = col.getAulas().values().stream()
-                .flatMap(List::stream)
-                .mapToDouble(Alumno::getNotaMedia)
-                .average();
-        return avg.isPresent() ? avg.getAsDouble() : -1.0;
+        double suma = 0.0;
+        int contador = 0;
+
+        for (List<Alumno> lista : col.getAulas().values()) {
+            for (Alumno a : lista) {
+                suma += a.getNotaMedia();
+                contador++;
+            }
+        }
+
+        return (contador == 0) ? -1.0 : (suma / contador);
     }
 }
-
 

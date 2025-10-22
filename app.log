@@ -294,3 +294,33 @@ Atendiendo a Cliente1
 2025-10-13 20:57:21 [INFO] (Inicio):   [aulaY]
 2025-10-13 20:57:21 [INFO] (Inicio):     - Óscar Zafra | media: 7.1
 2025-10-13 20:57:21 [INFO] (Inicio): Colegio con mayor media: Colegio Kumo (media=7.575000000000001)
+2025-10-22 17:58:28 [INFO] (InicioCole): ===== LISTADO DE COLEGIOS, AULAS Y ALUMNOS =====
+2025-10-22 17:58:28 [INFO] (InicioCole): Colegio: Colegio Sakura
+2025-10-22 17:58:28 [INFO] (InicioCole): Dirección: C/ Jardines 1
+2025-10-22 17:58:28 [INFO] (InicioCole):   [aula1]
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Ana López | media: 8,40
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Bruno Martín | media: 6,70
+2025-10-22 17:58:28 [INFO] (InicioCole):   [aula2]
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Carla Nieves | media: 9,10
+2025-10-22 17:58:28 [INFO] (InicioCole):   [aula3]
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Diego Ortega | media: 5,90
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Elena Pérez | media: 7,30
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Félix Quintana | media: 9,40
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Gabriela Ruiz | media: 7,90
+2025-10-22 17:58:28 [INFO] (InicioCole): Colegio: Colegio Fuji
+2025-10-22 17:58:28 [INFO] (InicioCole): Dirección: Av. Montaña 8
+2025-10-22 17:58:28 [INFO] (InicioCole):   [aulaA]
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Hugo Santos | media: 7,20
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Irene Téllez | media: 8,00
+2025-10-22 17:58:28 [INFO] (InicioCole):   [aulaB]
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Javier Ureña | media: 6,10
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Kevin Villalba | media: 8,60
+2025-10-22 17:58:28 [INFO] (InicioCole): Colegio: Colegio Kumo
+2025-10-22 17:58:28 [INFO] (InicioCole): Dirección: Plaza del Sol 3
+2025-10-22 17:58:28 [INFO] (InicioCole):   [aulaX]
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Laura Wang | media: 7,50
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Marta Xu | media: 6,80
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Nora Yamada | media: 8,90
+2025-10-22 17:58:28 [INFO] (InicioCole):   [aulaY]
+2025-10-22 17:58:28 [INFO] (InicioCole):     - Óscar Zafra | media: 7,10
+2025-10-22 17:58:28 [INFO] (InicioCole): Colegio con mayor media: Colegio Sakura (media=7,81)

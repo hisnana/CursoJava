@@ -324,3 +324,277 @@ Atendiendo a Cliente1
 2025-10-22 17:58:28 [INFO] (InicioCole):   [aulaY]
 2025-10-22 17:58:28 [INFO] (InicioCole):     - Óscar Zafra | media: 7,10
 2025-10-22 17:58:28 [INFO] (InicioCole): Colegio con mayor media: Colegio Sakura (media=7,81)
+2025-10-22 19:22:55 [INFO] (InicioCole): ===== LISTADO DE COLEGIOS, AULAS Y ALUMNOS =====
+2025-10-22 19:22:55 [INFO] (InicioCole): Colegio: Colegio Sakura
+2025-10-22 19:22:55 [INFO] (InicioCole): Dirección: C/ Jardines 1
+2025-10-22 19:22:55 [INFO] (InicioCole):   [aula1]
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Ana López | media: 8,40
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Bruno Martín | media: 6,70
+2025-10-22 19:22:55 [INFO] (InicioCole):   [aula2]
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Carla Nieves | media: 9,10
+2025-10-22 19:22:55 [INFO] (InicioCole):   [aula3]
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Diego Ortega | media: 5,90
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Elena Pérez | media: 7,30
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Félix Quintana | media: 9,40
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Gabriela Ruiz | media: 7,90
+2025-10-22 19:22:55 [INFO] (InicioCole): Colegio: Colegio Fuji
+2025-10-22 19:22:55 [INFO] (InicioCole): Dirección: Av. Montaña 8
+2025-10-22 19:22:55 [INFO] (InicioCole):   [aulaA]
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Hugo Santos | media: 7,20
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Irene Téllez | media: 8,00
+2025-10-22 19:22:55 [INFO] (InicioCole):   [aulaB]
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Javier Ureña | media: 6,10
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Kevin Villalba | media: 8,60
+2025-10-22 19:22:55 [INFO] (InicioCole): Colegio: Colegio Kumo
+2025-10-22 19:22:55 [INFO] (InicioCole): Dirección: Plaza del Sol 3
+2025-10-22 19:22:55 [INFO] (InicioCole):   [aulaX]
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Laura Wang | media: 7,50
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Marta Xu | media: 6,80
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Nora Yamada | media: 8,90
+2025-10-22 19:22:55 [INFO] (InicioCole):   [aulaY]
+2025-10-22 19:22:55 [INFO] (InicioCole):     - Óscar Zafra | media: 7,10
+2025-10-22 19:22:55 [INFO] (InicioCole): Colegio con mayor media: Colegio Sakura (media=7,81)
+2025-10-22 19:23:37 [INFO] (InicioCole): ===== LISTADO DE COLEGIOS, AULAS Y ALUMNOS =====
+2025-10-22 19:23:37 [INFO] (InicioCole): Colegio: Colegio Sakura
+2025-10-22 19:23:37 [INFO] (InicioCole): Dirección: C/ Jardines 1
+2025-10-22 19:23:37 [INFO] (InicioCole):   [aula1]
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Ana López | media: 8,40
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Bruno Martín | media: 6,70
+2025-10-22 19:23:37 [INFO] (InicioCole):   [aula2]
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Carla Nieves | media: 9,10
+2025-10-22 19:23:37 [INFO] (InicioCole):   [aula3]
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Diego Ortega | media: 5,90
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Elena Pérez | media: 7,30
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Félix Quintana | media: 9,40
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Gabriela Ruiz | media: 7,90
+2025-10-22 19:23:37 [INFO] (InicioCole): Colegio: Colegio Fuji
+2025-10-22 19:23:37 [INFO] (InicioCole): Dirección: Av. Montaña 8
+2025-10-22 19:23:37 [INFO] (InicioCole):   [aula1]
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Hugo Santos | media: 7,20
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Irene Téllez | media: 8,00
+2025-10-22 19:23:37 [INFO] (InicioCole):   [aula2]
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Javier Ureña | media: 6,10
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Kevin Villalba | media: 8,60
+2025-10-22 19:23:37 [INFO] (InicioCole): Colegio: Colegio Kumo
+2025-10-22 19:23:37 [INFO] (InicioCole): Dirección: Plaza del Sol 3
+2025-10-22 19:23:37 [INFO] (InicioCole):   [aula1]
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Laura Wang | media: 7,50
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Marta Xu | media: 6,80
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Nora Yamada | media: 8,90
+2025-10-22 19:23:37 [INFO] (InicioCole):   [aula2]
+2025-10-22 19:23:37 [INFO] (InicioCole):     - Óscar Zafra | media: 7,10
+2025-10-22 19:23:37 [INFO] (InicioCole): Colegio con mayor media: Colegio Sakura (media=7,81)
+2025-10-22 19:28:16 [INFO] (InicioCole): ===== LISTADO DE COLEGIOS, AULAS Y ALUMNOS =====
+2025-10-22 19:28:16 [INFO] (InicioCole): Colegio: Colegio Sakura
+2025-10-22 19:28:16 [INFO] (InicioCole): Dirección: C/ Jardines 1
+2025-10-22 19:28:16 [INFO] (InicioCole):   [aula1]
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Ana López | media: 8.4
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Bruno Martín | media: 6.7
+2025-10-22 19:28:16 [INFO] (InicioCole):   [aula2]
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Carla Nieves | media: 9.1
+2025-10-22 19:28:16 [INFO] (InicioCole):   [aula3]
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Diego Ortega | media: 5.9
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Elena Pérez | media: 7.3
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Félix Quintana | media: 9.4
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Gabriela Ruiz | media: 7.9
+2025-10-22 19:28:16 [INFO] (InicioCole): Colegio: Colegio Fuji
+2025-10-22 19:28:16 [INFO] (InicioCole): Dirección: Av. Montaña 8
+2025-10-22 19:28:16 [INFO] (InicioCole):   [aulaA]
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Hugo Santos | media: 7.2
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Irene Téllez | media: 8.0
+2025-10-22 19:28:16 [INFO] (InicioCole):   [aulaB]
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Javier Ureña | media: 6.1
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Kevin Villalba | media: 8.6
+2025-10-22 19:28:16 [INFO] (InicioCole): Colegio: Colegio Kumo
+2025-10-22 19:28:16 [INFO] (InicioCole): Dirección: Plaza del Sol 3
+2025-10-22 19:28:16 [INFO] (InicioCole):   [aulaX]
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Laura Wang | media: 7.5
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Marta Xu | media: 6.8
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Nora Yamada | media: 8.9
+2025-10-22 19:28:16 [INFO] (InicioCole):   [aulaY]
+2025-10-22 19:28:16 [INFO] (InicioCole):     - Óscar Zafra | media: 7.1
+2025-10-22 19:28:16 [INFO] (InicioCole): Colegio con mayor media: Colegio Sakura (media=7.81)
+2025-10-22 19:57:11 [INFO] (Biblioteca): - Japonesa
+2025-10-22 19:57:11 [INFO] (Biblioteca): - Español
+2025-10-22 19:57:11 [INFO] (Biblioteca): - Francés
+2025-10-22 19:57:55 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 19:57:55 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 19:57:55 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:00:15 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:00:15 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:00:15 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:00:15 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:00:15 [INFO] (Biblioteca): 
+=== Libros publicados después de 2010 ===
+2025-10-22 20:00:15 [INFO] (Biblioteca): - Effective Java (2017)
+2025-10-22 20:00:15 [INFO] (Biblioteca): - Effective Unit Testing (2013)
+2025-10-22 20:00:15 [INFO] (Biblioteca): - Clean Architecture (2017)
+2025-10-22 20:00:15 [INFO] (Biblioteca): 
+=== Autores con más de 2 libros y sus títulos ===
+2025-10-22 20:00:15 [INFO] (Biblioteca): Haku (3 libros):
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Java Concurrency in Practice
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Refactoring
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:00:15 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:00:15 [INFO] (Biblioteca): Louise (3 libros):
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:00:15 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:06:24 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:06:24 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:06:24 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:06:24 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:06:24 [INFO] (Biblioteca): 
+=== Libros publicados después de 2010 ===
+2025-10-22 20:06:24 [INFO] (Biblioteca): - Effective Java (2017)
+2025-10-22 20:06:24 [INFO] (Biblioteca): - Effective Unit Testing (2013)
+2025-10-22 20:06:24 [INFO] (Biblioteca): - Clean Architecture (2017)
+2025-10-22 20:07:15 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:07:15 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:07:15 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:07:15 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:07:15 [INFO] (Biblioteca): 
+=== Libros publicados después de 2010 ===
+2025-10-22 20:07:15 [INFO] (Biblioteca): - Effective Java (2017)
+2025-10-22 20:07:15 [INFO] (Biblioteca): - Effective Unit Testing (2013)
+2025-10-22 20:07:15 [INFO] (Biblioteca): - Clean Architecture (2017)
+2025-10-22 20:07:15 [INFO] (Biblioteca): 
+=== Autores con más de 2 libros y sus títulos ===
+2025-10-22 20:07:15 [INFO] (Biblioteca): Haku (3 libros):
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Java Concurrency in Practice
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Refactoring
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:07:15 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:07:15 [INFO] (Biblioteca): Louise (3 libros):
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:07:15 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:19:54 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:19:54 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:19:54 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:19:54 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:19:54 [INFO] (Biblioteca): 
+=== Autores con más de 2 libros y sus títulos ===
+2025-10-22 20:19:54 [INFO] (Biblioteca): Haku (3 libros):
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Java Concurrency in Practice
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Refactoring
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:19:54 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:19:54 [INFO] (Biblioteca): Louise (3 libros):
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:19:54 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:21:07 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:21:07 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:21:07 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:21:07 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:21:07 [INFO] (Biblioteca): =====LISTA DE LIBROS ANTERIOS A 2010======
+2025-10-22 20:21:07 [INFO] (Biblioteca): 
+=== Autores con más de 2 libros y sus títulos ===
+2025-10-22 20:21:07 [INFO] (Biblioteca): Haku (3 libros):
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Java Concurrency in Practice
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Refactoring
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:21:07 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:21:07 [INFO] (Biblioteca): Louise (3 libros):
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:21:07 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:21:28 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:21:28 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:21:28 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:21:28 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:21:28 [INFO] (Biblioteca): =====LISTA DE LIBROS ANTERIORES A 2010======
+2025-10-22 20:21:28 [INFO] (Biblioteca): 
+=== Autores con más de 2 libros y sus títulos ===
+2025-10-22 20:21:28 [INFO] (Biblioteca): Haku (3 libros):
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Java Concurrency in Practice
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Refactoring
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:21:28 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:21:28 [INFO] (Biblioteca): Louise (3 libros):
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:21:28 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:24:50 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:24:50 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:24:50 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:24:50 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:24:50 [INFO] (Biblioteca): =====LISTA DE LIBROS PUBLICADOS DEPUÉS DEL 2010======
+2025-10-22 20:24:50 [INFO] (Biblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-22 20:24:50 [INFO] (Biblioteca): Haku (3 libros):
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Java Concurrency in Practice
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Refactoring
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:24:50 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:24:50 [INFO] (Biblioteca): Louise (3 libros):
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:24:50 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:25:13 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:25:13 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:25:13 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:25:13 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:25:13 [INFO] (Biblioteca): =====LISTA DE LIBROS PUBLICADOS DEPUÉS DEL 2010======
+2025-10-22 20:25:13 [INFO] (Biblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-22 20:25:13 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:25:13 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:25:13 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:25:13 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:25:13 [INFO] (Biblioteca): Louise (4 libros):
+2025-10-22 20:25:13 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:25:13 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:25:13 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:25:13 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:26:16 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:26:16 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:26:16 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:26:16 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:26:16 [INFO] (Biblioteca): =====LISTA DE LIBROS PUBLICADOS DEPUÉS DEL 2010======
+2025-10-22 20:26:16 [INFO] (Biblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-22 20:26:16 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:26:16 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:26:16 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:26:16 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:26:16 [INFO] (Biblioteca): Louise (4 libros):
+2025-10-22 20:26:16 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:26:16 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:26:16 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:26:16 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-22 20:30:30 [INFO] (Biblioteca): === Nacionalidades de autores ===
+2025-10-22 20:30:30 [INFO] (Biblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-22 20:30:30 [INFO] (Biblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-22 20:30:30 [INFO] (Biblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-22 20:30:30 [INFO] (Biblioteca): =====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======
+2025-10-22 20:30:30 [INFO] (Biblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-22 20:30:30 [INFO] (Biblioteca): Pepe (3 libros):
+2025-10-22 20:30:30 [INFO] (Biblioteca):    * Effective Java
+2025-10-22 20:30:30 [INFO] (Biblioteca):    * Clean Code
+2025-10-22 20:30:30 [INFO] (Biblioteca):    * Head First Design Patterns
+2025-10-22 20:30:30 [INFO] (Biblioteca): Louise (4 libros):
+2025-10-22 20:30:30 [INFO] (Biblioteca):    * Test Driven Development
+2025-10-22 20:30:30 [INFO] (Biblioteca):    * Domain-Driven Design
+2025-10-22 20:30:30 [INFO] (Biblioteca):    * Effective Unit Testing
+2025-10-22 20:30:30 [INFO] (Biblioteca):    * Clean Architecture

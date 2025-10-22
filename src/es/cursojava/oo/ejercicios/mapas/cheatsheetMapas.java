@@ -3,11 +3,13 @@ package es.cursojava.oo.ejercicios.mapas;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
 import es.cursojava.oo.ejercicios.colecciones.Persona;
+import es.cursojava.oo.ejercicios.colegio.Alumno;
 import es.cursojava.utils.Utilidades;
 
 
@@ -30,7 +32,7 @@ public class cheatsheetMapas {
 			personas.put(p4.getDni() , p2 );
 			
 			
-			//Recupero los datos de una persona
+			//Recupero los datos de una persona concreta
 			String dni = Utilidades.pideDatoCadena("Introduce un dni");
 			Persona persona = personas.get(dni);
 			System.out.println(persona.getNombre());
@@ -65,7 +67,11 @@ public class cheatsheetMapas {
 			
 			personas.remove("222B");
 			
-			
+			//Como añadir por sublñistas
+			Map<String,List<Alumno>> aulas = new HashMap<>();
+			aulas.put("aula1",alumnos.subList(0, 2));
+			aulas.put("aula2",alumnos.subList(2, 3));
+			aulas.put("aula3",alumnos.subList(3, 7));
 		}
 
 	}

@@ -1,0 +1,3 @@
+
+
+FK es una restriccion.

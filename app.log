@@ -598,3 +598,33 @@ Atendiendo a Cliente1
 2025-10-22 20:30:30 [INFO] (Biblioteca):    * Domain-Driven Design
 2025-10-22 20:30:30 [INFO] (Biblioteca):    * Effective Unit Testing
 2025-10-22 20:30:30 [INFO] (Biblioteca):    * Clean Architecture
+2025-10-23 18:07:24 [INFO] (InicioCole): ===== LISTADO DE COLEGIOS, AULAS Y ALUMNOS =====
+2025-10-23 18:07:24 [INFO] (InicioCole): Colegio: Colegio Sakura
+2025-10-23 18:07:24 [INFO] (InicioCole): Dirección: C/ Jardines 1
+2025-10-23 18:07:24 [INFO] (InicioCole):   [aula1]
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Ana López | media: 8.4
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Bruno Martín | media: 6.7
+2025-10-23 18:07:24 [INFO] (InicioCole):   [aula2]
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Carla Nieves | media: 9.1
+2025-10-23 18:07:24 [INFO] (InicioCole):   [aula3]
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Diego Ortega | media: 5.9
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Elena Pérez | media: 7.3
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Félix Quintana | media: 9.4
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Gabriela Ruiz | media: 7.9
+2025-10-23 18:07:24 [INFO] (InicioCole): Colegio: Colegio Fuji
+2025-10-23 18:07:24 [INFO] (InicioCole): Dirección: Av. Montaña 8
+2025-10-23 18:07:24 [INFO] (InicioCole):   [aula1]
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Hugo Santos | media: 7.2
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Irene Téllez | media: 8.0
+2025-10-23 18:07:24 [INFO] (InicioCole):   [aula2]
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Javier Ureña | media: 6.1
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Kevin Villalba | media: 8.6
+2025-10-23 18:07:24 [INFO] (InicioCole): Colegio: Colegio Kumo
+2025-10-23 18:07:24 [INFO] (InicioCole): Dirección: Plaza del Sol 3
+2025-10-23 18:07:24 [INFO] (InicioCole):   [aula1]
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Laura Wang | media: 7.5
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Marta Xu | media: 6.8
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Nora Yamada | media: 8.9
+2025-10-23 18:07:24 [INFO] (InicioCole):   [aula2]
+2025-10-23 18:07:24 [INFO] (InicioCole):     - Óscar Zafra | media: 7.1
+2025-10-23 18:07:24 [INFO] (InicioCole): Colegio con mayor media: Colegio Sakura (media=7.81)

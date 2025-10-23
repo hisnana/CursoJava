@@ -81,11 +81,11 @@ public class InicioCole {
             }
         }
 
-        // 2) Colegio con mayor media (sin Streams)
+        // 2) Colegio con mayor media 
         Colegio mejor = null;
         double mejorMedia = -1.0;
         for (Colegio col : colegios) {
-            double media = mediaColegioSegura(col);
+            double media = mediaColegio(col);
             if (media > mejorMedia) {
                 mejorMedia = media;
                 mejor = col;
@@ -101,8 +101,8 @@ public class InicioCole {
         }
     }
 
-    // Media de notas del colegio SIN Streams. Si no hay alumnos, devolvemos -1.
-    private static double mediaColegioSegura(Colegio col) {
+    // Media de notas del colegio. Si no hay alumnos, devolvemos -1 para que nunca sea la mejor media.
+    private static double mediaColegio(Colegio col) {
         double suma = 0.0;
         int contador = 0;
 

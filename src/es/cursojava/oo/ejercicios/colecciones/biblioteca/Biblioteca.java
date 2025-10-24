@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import es.cursojava.utils.MiLogger;
+import es.cursojava.utils.Utilidades;
 
 public class Biblioteca {
 	public static void main(String[] args) {
@@ -33,59 +34,35 @@ public class Biblioteca {
 		biblioteca1.put(autor3, libros.subList(5, 9));
 		
         // ===== ejercicios =====
+		//mostrar las nacionalidades de los autores
+		GestionBiblioteca.mostrarNacionalidad(biblioteca1);
+		//mostrar el título de todos los libros publicados después del 2010
+		GestionBiblioteca.titulos2010(biblioteca1);
+		//mostrar por cada autor que tenga más de dos libros su nombre y el nombre de todos los libros que tiene publicados
+		GestionBiblioteca.masDeDos(biblioteca1);
+		//+ Solicitar los datos de un libro, autor, titulo, isbn y año de publicación, 
+//		- si el autor no está en la biblioteca, solicitar la nacionalidad del autor y meterlo en la biblioteca, 
+//		- si el autor sí está ya, agregar el libro a su listado
+//		
+//	+ Solicitar un isbn, si algún libro tiene ese isbn hay que eliminarlo
+		
 
-		mostrarNacionalidad(biblioteca1);
-		titulos2010(biblioteca1);
-		masDeDos(biblioteca1);
-    
-	}
-	
-	public static void mostrarNacionalidad(Map<Autor,List<Libro>> biblioteca) {
-        // A) Mostrar las nacionalidades de los autores
-        MiLogger.info("=== Nacionalidades de autores ===");
-        for (Autor autor : biblioteca.keySet()) {
-            MiLogger.info("- Autor "+autor.getNombre()+" su nacionalidad es " + autor.getNacionalidad());
-        }
-	}
-	
-	public static void titulos2010 (Map<Autor,List<Libro>> biblioteca) {
-	     // 2) Mostrar el título de todos los libros publicados después de 2010
-		int UMBRAL = 2010;
-		MiLogger.info("=====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======");
-		for (Map.Entry<Autor, List<Libro>> e : biblioteca.entrySet()) {
-		    Autor autor = e.getKey();
-		    List<Libro> lista = e.getValue();
+        // --- Flujo de ALTA: al menos una vez, y repetir si confirmas ---
+        do {
+            GestionBiblioteca.crearLibro(biblioteca1);
+        } while (Utilidades.pedirConfirmacion("¿Crear otro libro?"));
 
-		    System.out.println(autor.getNombre() + " (" + autor.getNacionalidad() + "):");
+        // --- Flujo de BORRADO: al menos una vez, y repetir si confirmas ---
+        do {
+            GestionBiblioteca.borrarPorIsbn(biblioteca1);
+        } while (Utilidades.pedirConfirmacion("¿Borrar otro ISBN?"));
 
-		    int encontrados = 0;
-		    for (Libro l : lista) {
-		        if (l.getAnio() > UMBRAL) {
-		            System.out.println("   * " + l.getTitulo() + " — " + l.getAnio());
-		            encontrados++;
-		        }
-		    }
-		    if (encontrados == 0) {
-		        System.out.println("   (ningún libro anterior a " + UMBRAL + ")");
-		    }
-		}
-	}
-	
-public static void masDeDos (Map<Autor,List<Libro>> biblioteca ) {
-	
-    // 3) Por cada autor con más de dos libros: su nombre y los títulos
-    MiLogger.info("\n=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===");
-    for (Map.Entry<Autor, List<Libro>> e : biblioteca.entrySet()) {
-        Autor a = e.getKey();
-        List<Libro> lista = e.getValue();
-        if (lista.size() > 2) {
-            MiLogger.info(a.getNombre() + " (" + lista.size() + " libros):");
-            for (Libro l : lista) {
-                MiLogger.info("   * " + l.getTitulo());
-            }
-        }
+        // --- Resumen final ---
+        GestionBiblioteca.imprimirBiblioteca(biblioteca1);
+        MiLogger.info("Fin del programa.");
     }
-	
-}
+
+
+   
 	
 }

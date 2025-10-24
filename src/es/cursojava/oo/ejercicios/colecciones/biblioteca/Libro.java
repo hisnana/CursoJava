@@ -4,6 +4,7 @@ public class Libro {
 	private String titulo;
 	private String isbn;
 	private int anio;
+	private Autor autor;
 	
 	
 	public Libro(String titulo, String isbn, int anio) {
@@ -12,6 +13,29 @@ public class Libro {
 		this.isbn = isbn;
 		this.anio = anio;
 	}
+
+	
+
+	public Libro(String titulo, String isbn, int anio, Autor autor) {
+		super();
+		this.titulo = titulo;
+		this.isbn = isbn;
+		this.anio = anio;
+		this.autor = autor;
+	}
+
+
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+
 
 
 	public String getTitulo() {

@@ -628,3 +628,245 @@ Atendiendo a Cliente1
 2025-10-23 18:07:24 [INFO] (InicioCole):   [aula2]
 2025-10-23 18:07:24 [INFO] (InicioCole):     - Óscar Zafra | media: 7.1
 2025-10-23 18:07:24 [INFO] (InicioCole): Colegio con mayor media: Colegio Sakura (media=7.81)
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): === Nacionalidades de autores ===
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): =====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): Pepe (3 libros):
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca):    * Effective Java
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca):    * Clean Code
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca):    * Head First Design Patterns
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): Louise (4 libros):
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca):    * Test Driven Development
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca):    * Domain-Driven Design
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca):    * Effective Unit Testing
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca):    * Clean Architecture
+2025-10-27 15:35:28 [INFO] (GestionBiblioteca): 
+=== Alta de libro ===
+2025-10-27 15:35:28 [INFO] (Utilidades): Autor (nombre): 
+2025-10-27 15:35:44 [INFO] (Utilidades): → Pepe
+2025-10-27 15:35:44 [INFO] (Utilidades): Título: 
+2025-10-27 15:35:54 [INFO] (Utilidades): → Clean Code
+2025-10-27 15:35:54 [INFO] (Utilidades): ISBN: 
+2025-10-27 15:36:15 [INFO] (Utilidades): → 978-0132350884
+2025-10-27 15:36:15 [INFO] (Utilidades): Año de publicación: 
+2025-10-27 15:36:20 [INFO] (Utilidades): → 2008
+2025-10-27 15:36:20 [INFO] (GestionBiblioteca): No se agregó. Ya existe un libro con ISBN 978-0132350884 para Pepe
+2025-10-27 15:36:20 [INFO] (Utilidades): ¿Crear otro libro? (s/n): 
+2025-10-27 15:36:31 [INFO] (Utilidades): → s
+2025-10-27 15:36:31 [INFO] (GestionBiblioteca): 
+=== Alta de libro ===
+2025-10-27 15:36:31 [INFO] (Utilidades): Autor (nombre): 
+2025-10-27 15:36:39 [INFO] (Utilidades): → Pepe
+2025-10-27 15:36:39 [INFO] (Utilidades): Título: 
+2025-10-27 15:36:54 [INFO] (Utilidades): → Solo
+2025-10-27 15:36:54 [INFO] (Utilidades): ISBN: 
+2025-10-27 15:37:00 [INFO] (Utilidades): → 23423kjhkj
+2025-10-27 15:37:00 [INFO] (Utilidades): Año de publicación: 
+2025-10-27 15:37:08 [INFO] (Utilidades): → 2025
+2025-10-27 15:37:08 [INFO] (GestionBiblioteca): Agregado: "Solo" a Pepe
+2025-10-27 15:37:08 [INFO] (Utilidades): ¿Crear otro libro? (s/n): 
+2025-10-27 15:37:13 [INFO] (Utilidades): → n
+2025-10-27 15:37:13 [INFO] (GestionBiblioteca): 
+=== Borrado por ISBN ===
+2025-10-27 15:37:13 [INFO] (Utilidades): Indica ISBN a eliminar: 
+2025-10-27 15:37:56 [INFO] (Utilidades): → 978-0132350884
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): === Nacionalidades de autores ===
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): =====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): Pepe (3 libros):
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca):    * Effective Java
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca):    * Clean Code
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca):    * Head First Design Patterns
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca): Louise (4 libros):
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca):    * Test Driven Development
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca):    * Domain-Driven Design
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca):    * Effective Unit Testing
+2025-10-27 15:46:28 [INFO] (GestionBiblioteca):    * Clean Architecture
+2025-10-27 15:46:28 [INFO] (Utilidades): ¿Quieres crear un libro? (s/n): 
+2025-10-27 15:46:34 [INFO] (Utilidades): → s
+2025-10-27 15:46:34 [INFO] (GestionBiblioteca): 
+=== Alta de libro ===
+2025-10-27 15:46:34 [INFO] (Utilidades): Autor (nombre): 
+2025-10-27 15:46:37 [INFO] (Utilidades): → Ana
+2025-10-27 15:46:37 [INFO] (Utilidades): Nacionalidad del autor nuevo: 
+2025-10-27 15:46:41 [INFO] (Utilidades): → Española
+2025-10-27 15:46:41 [INFO] (Utilidades): Título: 
+2025-10-27 15:46:44 [INFO] (Utilidades): → Sola
+2025-10-27 15:46:44 [INFO] (Utilidades): ISBN: 
+2025-10-27 15:46:49 [INFO] (Utilidades): → A3
+2025-10-27 15:46:49 [INFO] (Utilidades): Año de publicación: 
+2025-10-27 15:46:58 [INFO] (Utilidades): → 2012
+2025-10-27 15:46:58 [INFO] (GestionBiblioteca): Agregado: "Sola" a Ana
+2025-10-27 15:46:58 [INFO] (Utilidades): ¿Crear otro libro? (s/n): 
+2025-10-27 15:47:01 [INFO] (Utilidades): → n
+2025-10-27 15:47:01 [INFO] (Utilidades): ¿Quieres crear un libro? (s/n): 
+2025-10-27 15:47:04 [INFO] (Utilidades): → n
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca): 
+=== Biblioteca (resumen) ===
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca): Haku [Japonesa] → 2 libros
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Java Concurrency in Practice (2006) #A4
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Refactoring (1999) #A5
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca): Pepe [Español] → 3 libros
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Effective Java (2017) #A1
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Clean Code (2008) #A2
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Head First Design Patterns (2004) #A3
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca): Louise [Francés] → 4 libros
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Test Driven Development (2002) #B1
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Domain-Driven Design (2003) #B2
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Effective Unit Testing (2013) #B3
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Clean Architecture (2017) #B4
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca): Ana [Española] → 1 libros
+2025-10-27 15:47:04 [INFO] (GestionBiblioteca):    - Sola (2012) #A3
+2025-10-27 15:47:04 [INFO] (Biblioteca): Fin del programa.
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): === Nacionalidades de autores ===
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): =====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): Pepe (3 libros):
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca):    * Effective Java
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca):    * Clean Code
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca):    * Head First Design Patterns
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca): Louise (4 libros):
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca):    * Test Driven Development
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca):    * Domain-Driven Design
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca):    * Effective Unit Testing
+2025-10-27 15:47:55 [INFO] (GestionBiblioteca):    * Clean Architecture
+2025-10-27 15:47:55 [INFO] (Utilidades): ¿Quieres crear un libro? (s/n): 
+2025-10-27 15:48:01 [INFO] (Utilidades): → s
+2025-10-27 15:48:01 [INFO] (GestionBiblioteca): 
+=== Alta de libro ===
+2025-10-27 15:48:01 [INFO] (Utilidades): Autor (nombre): 
+2025-10-27 15:48:05 [INFO] (Utilidades): → Ana
+2025-10-27 15:48:05 [INFO] (Utilidades): Nacionalidad del autor nuevo: 
+2025-10-27 15:48:10 [INFO] (Utilidades): → Esp
+2025-10-27 15:48:10 [INFO] (Utilidades): Título: 
+2025-10-27 15:48:13 [INFO] (Utilidades): → Sola
+2025-10-27 15:48:13 [INFO] (Utilidades): ISBN: 
+2025-10-27 15:48:17 [INFO] (Utilidades): → A3
+2025-10-27 15:48:17 [INFO] (Utilidades): Año de publicación: 
+2025-10-27 15:48:20 [INFO] (Utilidades): → 2012
+2025-10-27 15:48:20 [INFO] (GestionBiblioteca): Agregado: "Sola" a Ana
+2025-10-27 15:48:20 [INFO] (Utilidades): ¿Crear otro libro? (s/n): 
+2025-10-27 15:48:27 [INFO] (Utilidades): → n
+2025-10-27 15:48:27 [INFO] (Utilidades): ¿Quieres borrar un libro? (s/n): 
+2025-10-27 15:48:29 [INFO] (Utilidades): → s
+2025-10-27 15:48:29 [INFO] (GestionBiblioteca): 
+=== Borrado por ISBN ===
+2025-10-27 15:48:29 [INFO] (Utilidades): Indica ISBN a eliminar: 
+2025-10-27 15:48:50 [INFO] (Utilidades): → A3
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): === Nacionalidades de autores ===
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): =====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): Pepe (3 libros):
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca):    * Effective Java
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca):    * Clean Code
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca):    * Head First Design Patterns
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca): Louise (4 libros):
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca):    * Test Driven Development
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca):    * Domain-Driven Design
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca):    * Effective Unit Testing
+2025-10-27 15:51:56 [INFO] (GestionBiblioteca):    * Clean Architecture
+2025-10-27 15:51:56 [INFO] (Utilidades): ¿Quieres crear un libro? (s/n): 
+2025-10-27 15:52:01 [INFO] (Utilidades): → n
+2025-10-27 15:52:01 [INFO] (Utilidades): ¿Quieres borrar un libro? (s/n): 
+2025-10-27 15:52:03 [INFO] (Utilidades): → s
+2025-10-27 15:52:03 [INFO] (GestionBiblioteca): 
+=== Borrado por ISBN ===
+2025-10-27 15:52:03 [INFO] (Utilidades): Indica ISBN a eliminar: 
+2025-10-27 15:52:10 [INFO] (Utilidades): → A3
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): === Nacionalidades de autores ===
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): =====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): Pepe (3 libros):
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca):    * Effective Java
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca):    * Clean Code
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca):    * Head First Design Patterns
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca): Louise (4 libros):
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca):    * Test Driven Development
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca):    * Domain-Driven Design
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca):    * Effective Unit Testing
+2025-10-27 15:56:32 [INFO] (GestionBiblioteca):    * Clean Architecture
+2025-10-27 15:56:32 [INFO] (Utilidades): ¿Quieres crear un libro? (s/n): 
+2025-10-27 15:56:36 [INFO] (Utilidades): → n
+2025-10-27 15:56:36 [INFO] (Utilidades): ¿Quieres borrar un libro? (s/n): 
+2025-10-27 15:56:42 [INFO] (Utilidades): → s
+2025-10-27 15:56:42 [INFO] (GestionBiblioteca): 
+=== Borrado por ISBN ===
+2025-10-27 15:56:42 [INFO] (Utilidades): Indica ISBN a eliminar: 
+2025-10-27 15:56:47 [INFO] (Utilidades): → A1
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): === Nacionalidades de autores ===
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): - Autor Haku su nacionalidad es Japonesa
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): - Autor Pepe su nacionalidad es Español
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): - Autor Louise su nacionalidad es Francés
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): =====LISTA DE LIBROS PUBLICADOS DESPUÉS DEL 2010======
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): 
+=== AUTORTES CON MAS DE DOS LIBROS PUBLICADOS Y SUS LIBROS PUBLICADOS ===
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): Haku (3 libros):
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Java Concurrency in Practice
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Refactoring
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Test Driven Development
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): Pepe (3 libros):
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Effective Java
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Clean Code
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Head First Design Patterns
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca): Louise (3 libros):
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Domain-Driven Design
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Effective Unit Testing
+2025-10-27 16:20:54 [INFO] (GestionBiblioteca):    * Clean Architecture
+2025-10-27 16:20:54 [INFO] (Utilidades): ¿Quieres crear un libro? (s/n): 
+2025-10-27 16:20:59 [INFO] (Utilidades): → n
+2025-10-27 16:20:59 [INFO] (Utilidades): ¿Quieres borrar un libro? (s/n): 
+2025-10-27 16:21:01 [INFO] (Utilidades): → s
+2025-10-27 16:21:01 [INFO] (GestionBiblioteca): 
+=== Borrado por ISBN ===
+2025-10-27 16:21:01 [INFO] (Utilidades): Indica ISBN a eliminar: 
+2025-10-27 16:21:08 [INFO] (Utilidades): → A3
+2025-10-27 16:21:08 [INFO] (GestionBiblioteca): Eliminado ISBN A3 (1 ocurrencia(s)).
+2025-10-27 16:21:08 [INFO] (Utilidades): ¿Borrar otro ISBN? (s/n): 
+2025-10-27 16:23:35 [INFO] (Utilidades): → s
+2025-10-27 16:23:35 [INFO] (GestionBiblioteca): 
+=== Borrado por ISBN ===
+2025-10-27 16:23:35 [INFO] (Utilidades): Indica ISBN a eliminar: 
+2025-10-27 16:23:39 [INFO] (Utilidades): → A3
+2025-10-27 16:23:39 [INFO] (GestionBiblioteca): No se encontró ningún libro con ISBN A3.
+2025-10-27 16:23:39 [INFO] (Utilidades): ¿Borrar otro ISBN? (s/n): 
+2025-10-27 16:23:43 [INFO] (Utilidades): → s
+2025-10-27 16:23:43 [INFO] (GestionBiblioteca): 
+=== Borrado por ISBN ===
+2025-10-27 16:23:43 [INFO] (Utilidades): Indica ISBN a eliminar: 
+2025-10-27 16:23:46 [INFO] (Utilidades): → A1
+2025-10-27 16:23:46 [INFO] (GestionBiblioteca): Eliminado ISBN A1 (1 ocurrencia(s)).
+2025-10-27 16:23:46 [INFO] (Utilidades): ¿Borrar otro ISBN? (s/n): 
+2025-10-27 16:23:48 [INFO] (Utilidades): → n
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca): 
+=== Biblioteca (resumen) ===
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca): Haku [Japonesa] → 3 libros
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca):    - Java Concurrency in Practice (2006) #A4
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca):    - Refactoring (1999) #A5
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca):    - Test Driven Development (2002) #B1
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca): Pepe [Español] → 1 libros
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca):    - Clean Code (2008) #A2
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca): Louise [Francés] → 3 libros
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca):    - Domain-Driven Design (2003) #B2
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca):    - Effective Unit Testing (2013) #B3
+2025-10-27 16:23:48 [INFO] (GestionBiblioteca):    - Clean Architecture (2017) #B4
+2025-10-27 16:23:48 [INFO] (Biblioteca): Fin del programa.

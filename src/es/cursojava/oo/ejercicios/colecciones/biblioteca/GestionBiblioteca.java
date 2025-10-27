@@ -62,8 +62,8 @@ public class GestionBiblioteca {
     public static void imprimirBiblioteca(Map<Autor, List<Libro>> biblioteca) {
         MiLogger.info("\n=== Biblioteca (resumen) ===");
         for (Map.Entry<Autor, List<Libro>> e : biblioteca.entrySet()) {
-            Autor a = e.getKey();
-            List<Libro> ls = e.getValue();
+            Autor a = e.getKey(); //Guarda las claves
+            List<Libro> ls = e.getValue();//Guarda los valores
             MiLogger.info(a.getNombre() + " [" + a.getNacionalidad() + "] → " + ls.size() + " libros");
             for (Libro l : ls) {
                 MiLogger.info("   - " + l.getTitulo() + " (" + l.getAnio() + ") #" + l.getIsbn());
@@ -73,35 +73,26 @@ public class GestionBiblioteca {
     
     public static void borrarPorIsbn(Map<Autor, List<Libro>> biblioteca) {
         MiLogger.info("\n=== Borrado por ISBN ===");
-        String target = Utilidades.pedirDato("Indica ISBN a eliminar: ");
+        String isbnABorrar = Utilidades.pedirDato("Indica ISBN a eliminar: ");
 
         int totalEliminados = 0;
 
         for (Map.Entry<Autor, List<Libro>> e : biblioteca.entrySet()) {
             List<Libro> lista = e.getValue();
             Iterator<Libro> it = lista.iterator();//Iterator es un cursor para recorrer colecciones elemento a elemento
-            while (it.hasNext()) {//hasNext() comprueba si hay mas elementos en la lista
+            while (it.hasNext()) {//hasNext() comprueba si hay mas elementos en la lista para que no de un index out bound
                 Libro l = it.next();
-                if (l.getIsbn().equalsIgnoreCase(target)) {
+                if (l.getIsbn().equalsIgnoreCase(isbnABorrar)) {
                     it.remove();           // eliminación segura sin ConcurrentModificationException
                     totalEliminados++;
                 }
             }
         }
 
-        // limpiar autores que se queden sin libros (también con Iterator)
-        Iterator<Map.Entry<Autor, List<Libro>>> itAutores = biblioteca.entrySet().iterator();
-        while (itAutores.hasNext()) {
-            Map.Entry<Autor, List<Libro>> en = itAutores.next();
-            if (en.getValue() == null || en.getValue().isEmpty()) {
-                itAutores.remove();
-            }
-        }
-
         if (totalEliminados > 0) {
-            MiLogger.info("Eliminado ISBN " + target + " (" + totalEliminados + " ocurrencia(s)).");
+            MiLogger.info("Eliminado ISBN " + isbnABorrar + " (" + totalEliminados + " ocurrencia(s)).");
         } else {
-            MiLogger.info("No se encontró ningún libro con ISBN " + target + ".");
+            MiLogger.info("No se encontró ningún libro con ISBN " + isbnABorrar + ".");
         }
     }
     

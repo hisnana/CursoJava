@@ -97,3 +97,175 @@ while (it.hasNext()) {
 * `entrySet()` devuelve una **vista respaldada**: eliminar una `Entry` con su iterador **borra del Map**.
 * Usa `Iterator.remove()` para eliminar **mientras recorres**.
 * `Map` no extiende `Collection`; es su propia jerarquía.
+
+
+Añadir contenido a una **clave** en un `Map`
+
+### A) `Map<K, List<V>>` — añadir a la lista de una clave (forma clásica)
+
+```java
+Map<String, List<Libro>> biblioteca = new LinkedHashMap<>();
+String autor = "Murakami";
+Libro libro = new Libro("Kafka on the Shore", "978-1", 2002);
+
+List<Libro> lista = biblioteca.get(autor);
+if (lista == null) {                  // 👈 evita NullPointerException
+    lista = new ArrayList<>();
+    biblioteca.put(autor, lista);
+}
+lista.add(libro);
+```
+
+**Atajo opcional (Java 8+):**
+```java
+biblioteca.computeIfAbsent("Murakami", k -> new ArrayList<>())
+          .add(new Libro("1Q84", "978-2", 2009));
+```
+
+### B) `Map<K, Set<V>>` — evitar duplicados
+
+```java
+Map<String, Set<String>> materias = new HashMap<>();
+materias.computeIfAbsent("1ºA", k -> new LinkedHashSet<>())
+        .add("Matemáticas");
+```
+
+### C) Contadores `Map<K, Integer>` — sumar 1 por clave
+
+```java
+Map<String, Integer> contador = new HashMap<>();
+Integer c = contador.get("errores");
+contador.put("errores", (c == null) ? 1 : c + 1);
+```
+
+**Alternativa (Java 8+):**
+```java
+contador.merge("errores", 1, (oldV, inc) -> oldV + inc);
+```
+
+### D) Reemplazar vs no sobrescribir
+
+- `put(k, v)` → **sustituye** el valor anterior si existe.
+- `putIfAbsent(k, v)` → solo inserta si **no** existe la clave.
+- `replace(k, v)` → solo cambia si **sí** existe la clave.
+
+### E) Recorrer un `Map`
+
+```java
+// Lectura
+for (Map.Entry<K, V> e : mapa.entrySet()) {
+    K k = e.getKey();
+    V v = e.getValue();
+    // leer, imprimir, acumular...
+}
+```
+
+```java
+// Modificación segura (borrado durante el bucle)
+Iterator<Map.Entry<K, V>> it2 = mapa.entrySet().iterator();
+while (it2.hasNext()) {
+    Map.Entry<K, V> e = it2.next();
+    if (deboBorrar(e)) {
+        it2.remove();
+    }
+}
+```
+
+---
+
+## 3) `null` en las implementaciones de `Map`
+
+| Implementación | ¿clave `null`? | ¿valor `null`? |
+|---|---|---|
+| `HashMap` / `LinkedHashMap` | ✅ (solo 1 clave `null`) | ✅ (múltiples) |
+| `TreeMap` | ❌ | ✅ |
+
+> Aunque algunos `Map` aceptan `null`, evita usarlo si luego vas a invocar métodos sobre el valor.
+
+##  Añadir contenido a una **clave** en un `Map`
+
+### A) `Map<K, List<V>>` — añadir a la lista de una clave (forma clásica)
+
+```java
+Map<String, List<Libro>> biblioteca = new LinkedHashMap<>();
+String autor = "Murakami";
+Libro libro = new Libro("Kafka on the Shore", "978-1", 2002);
+
+List<Libro> lista = biblioteca.get(autor);
+if (lista == null) {                  // 👈 evita NullPointerException
+    lista = new ArrayList<>();
+    biblioteca.put(autor, lista);
+}
+lista.add(libro);
+```
+
+**Atajo opcional (Java 8+):**
+```java
+biblioteca.computeIfAbsent("Murakami", k -> new ArrayList<>())
+          .add(new Libro("1Q84", "978-2", 2009));
+```
+
+### B) `Map<K, Set<V>>` — evitar duplicados
+
+```java
+Map<String, Set<String>> materias = new HashMap<>();
+materias.computeIfAbsent("1ºA", k -> new LinkedHashSet<>())
+        .add("Matemáticas");
+```
+
+### C) Contadores `Map<K, Integer>` — sumar 1 por clave
+
+```java
+Map<String, Integer> contador = new HashMap<>();
+Integer c = contador.get("errores");
+contador.put("errores", (c == null) ? 1 : c + 1);
+```
+
+**Alternativa (Java 8+):**
+```java
+contador.merge("errores", 1, (oldV, inc) -> oldV + inc);
+```
+
+### D) Reemplazar vs no sobrescribir
+
+- `put(k, v)` → **sustituye** el valor anterior si existe.
+- `putIfAbsent(k, v)` → solo inserta si **no** existe la clave.
+- `replace(k, v)` → solo cambia si **sí** existe la clave.
+
+### E) Recorrer un `Map`
+
+```java
+// Lectura
+for (Map.Entry<K, V> e : mapa.entrySet()) {
+    K k = e.getKey();
+    V v = e.getValue();
+    // leer, imprimir, acumular...
+}
+```
+
+```java
+// Modificación segura (borrado durante el bucle)
+Iterator<Map.Entry<K, V>> it2 = mapa.entrySet().iterator();
+while (it2.hasNext()) {
+    Map.Entry<K, V> e = it2.next();
+    if (deboBorrar(e)) {
+        it2.remove();
+    }
+}
+```
+
+---
+
+## 3) `null` en las implementaciones de `Map`
+
+| Implementación | ¿clave `null`? | ¿valor `null`? |
+|---|---|---|
+| `HashMap` / `LinkedHashMap` | ✅ (solo 1 clave `null`) | ✅ (múltiples) |
+| `TreeMap` | ❌ | ✅ |
+
+> Aunque algunos `Map` aceptan `null`, evita usarlo si luego vas a invocar métodos sobre el valor.
+
+---
+
+
+

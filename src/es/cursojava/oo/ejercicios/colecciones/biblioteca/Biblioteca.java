@@ -13,25 +13,43 @@ public class Biblioteca {
 		
 		Map<Autor,List<Libro>> biblioteca1 = new HashMap();
 		
-		List<Libro> libros = new ArrayList<>();
-		libros.add(new Libro("Effective Java", "978-0134685991", 2017));
-		libros.add(new Libro("Clean Code", "978-0132350884", 2008));
-		libros.add(new Libro("Head First Design Patterns", "978-0596007126", 2004));
-		libros.add(new Libro("Java Concurrency in Practice", "978-0321349606", 2006));
-		libros.add(new Libro("Refactoring", "978-0201485677", 1999));
-		libros.add(new Libro("Test Driven Development", "978-0321146533", 2002));
-		libros.add(new Libro("Domain-Driven Design", "978-0321125217", 2003));
-		libros.add(new Libro("Effective Unit Testing", "978-1935182573", 2013));
-		libros.add(new Libro("Clean Architecture", "978-0134494166", 2017));
-		
-		
-		Autor autor1= new Autor("Pepe","Español");
-		Autor autor2= new Autor("Haku","Japonesa");
-		Autor autor3= new Autor("Louise","Francés");
-		
-		biblioteca1.put(autor1, libros.subList(0, 3));
-		biblioteca1.put(autor2, libros.subList(3, 5));
-		biblioteca1.put(autor3, libros.subList(5, 9));
+
+		// --- Autores ---
+		Autor autor1 = new Autor("Pepe", "Español");
+		Autor autor2 = new Autor("Haku", "Japonesa");
+		Autor autor3 = new Autor("Louise", "Francés");
+
+		// --- Libros (creados primero) ---
+		Libro l1 = new Libro("Effective Java",               "A1", 2017);
+		Libro l2 = new Libro("Clean Code",                   "A2", 2008);
+		Libro l3 = new Libro("Head First Design Patterns",   "A3", 2004);
+		Libro l4 = new Libro("Java Concurrency in Practice", "A4", 2006);
+		Libro l5 = new Libro("Refactoring",                  "A5", 1999);
+		Libro l6 = new Libro("Test Driven Development",      "B1", 2002);
+		Libro l7 = new Libro("Domain-Driven Design",         "B2", 2003);
+		Libro l8 = new Libro("Effective Unit Testing",       "B3", 2013);
+		Libro l9 = new Libro("Clean Architecture",           "B4", 2017);
+
+		// --- Listas por autor (3 libros cada uno) ---
+		List<Libro> librosPepe   = new ArrayList<>();
+		librosPepe.add(l1);
+		librosPepe.add(l2);
+		librosPepe.add(l3);
+
+		List<Libro> librosHaku   = new ArrayList<>();
+		librosHaku.add(l4);
+		librosHaku.add(l5);
+		librosHaku.add(l6);
+
+		List<Libro> librosLouise = new ArrayList<>();
+		librosLouise.add(l7);
+		librosLouise.add(l8);
+		librosLouise.add(l9);
+
+		// --- Cargar en el mapa ---
+		biblioteca1.put(autor1, librosPepe);
+		biblioteca1.put(autor2, librosHaku);
+		biblioteca1.put(autor3, librosLouise);
 		
         // ===== ejercicios =====
 		//mostrar las nacionalidades de los autores
@@ -48,14 +66,21 @@ public class Biblioteca {
 		
 
         // --- Flujo de ALTA: al menos una vez, y repetir si confirmas ---
-        do {
-            GestionBiblioteca.crearLibro(biblioteca1);
-        } while (Utilidades.pedirConfirmacion("¿Crear otro libro?"));
+		if(Utilidades.pedirConfirmacion("¿Quieres crear un libro?")){
+	        do {
+	            GestionBiblioteca.crearLibro(biblioteca1);
+	        } while (Utilidades.pedirConfirmacion("¿Crear otro libro?"));
+		}
+
 
         // --- Flujo de BORRADO: al menos una vez, y repetir si confirmas ---
-        do {
-            GestionBiblioteca.borrarPorIsbn(biblioteca1);
-        } while (Utilidades.pedirConfirmacion("¿Borrar otro ISBN?"));
+		
+		if (Utilidades.pedirConfirmacion("¿Quieres borrar un libro?")) {
+	        do {
+	            GestionBiblioteca.borrarPorIsbn(biblioteca1);
+	        } while (Utilidades.pedirConfirmacion("¿Borrar otro ISBN?"));
+		}
+
 
         // --- Resumen final ---
         GestionBiblioteca.imprimirBiblioteca(biblioteca1);

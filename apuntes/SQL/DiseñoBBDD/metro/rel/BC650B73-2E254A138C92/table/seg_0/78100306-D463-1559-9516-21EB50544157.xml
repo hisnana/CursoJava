@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="78100306-D463-1559-9516-21EB50544157" name="Estacion">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>DB25AD78-EEF6-A6B9-D82A-75374FB5E49C</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C555F91B-8205-3B8E-C0EB-6E052DCC2452" name="Estacion_PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>40690FF6-141D-A14E-E781-50ED51BC4067</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

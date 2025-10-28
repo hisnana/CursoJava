@@ -1,0 +1,2 @@
+@"C:\Users\Tardes\Downloads\databasestar-main\databasestar-main\sample_databases\oracle_hr\03 populate.sql"
+@"C:\Users\Tardes\Downloads\databasestar-main\databasestar-main\sample_databases\oracle_hr\04 others.sql"

@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C18C4CFE-1A86-AF34-51CE-F7EC7C4AA101" name="Trenes">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>FC2F1130-5645-35B7-CAEB-7C6EAC37E2FA</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Trenes_ID" id="9D89460D-80F1-399D-5D07-867A37BCDAB4">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="Linea_Linea_ID" id="3631600C-131A-77EB-0DAE-0667191A328E">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="61D2CC8B-A3BF-4177-28C6-6026009ED33F" referredColumn="56A0FC59-2356-3901-C78D-AC09D44EABCA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74B2C96E-06D9-C292-B825-4E5B2136DD74" name="Trenes_PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="9D89460D-80F1-399D-5D07-867A37BCDAB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E147F3C4-5E9E-5DC6-070B-F901083E0BC6" name="Trenes_Linea_FK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>EFBEB2A2-CC3C-A45D-487C-8C8889D05361</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3631600C-131A-77EB-0DAE-0667191A328E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

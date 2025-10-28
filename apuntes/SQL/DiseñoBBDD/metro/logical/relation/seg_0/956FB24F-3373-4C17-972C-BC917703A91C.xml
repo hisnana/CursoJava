@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_1" directorySegmentName="seg_0" id="956FB24F-3373-4C17-972C-BC917703A91C">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:25:35 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>E49C5300-D0B6-B8EA-7DD0-DE057AE49893</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DB25AD78-EEF6-A6B9-D82A-75374FB5E49C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="Orden" id="E624D969-1485-BBBA-F29C-A5F3AAFD491B">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:35:25 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

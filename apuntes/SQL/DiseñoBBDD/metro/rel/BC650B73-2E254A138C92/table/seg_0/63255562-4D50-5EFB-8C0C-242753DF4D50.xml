@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="63255562-4D50-5EFB-8C0C-242753DF4D50" name="Relation_1">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Linea_Linea_ID" id="F4E473BA-E328-E3AA-58CB-8C668944B71C">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2E3A4808-EBE9-DAC7-DDAB-691E1A60BA9A" referredColumn="56A0FC59-2356-3901-C78D-AC09D44EABCA"/>
+</associations>
+</Column>
+<Column name="Orden" id="22DFA668-2981-94EF-B2ED-F013114D85B3">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>E624D969-1485-BBBA-F29C-A5F3AAFD491B</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2DDF7A9A-00EF-2E05-77C0-680B5F47C24F" name="Relation_1_PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4E473BA-E328-E3AA-58CB-8C668944B71C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FF3849AA-5AB3-69A2-B1B0-7D01B05E6F53" name="Relation_1_Linea_FK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>956FB24F-3373-4C17-972C-BC917703A91C</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4E473BA-E328-E3AA-58CB-8C668944B71C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02DF4215-EAFC-CCFD-2F1D-3F47530B0057" name="Relation_1_Estacion_FK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>956FB24F-3373-4C17-972C-BC917703A91C</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

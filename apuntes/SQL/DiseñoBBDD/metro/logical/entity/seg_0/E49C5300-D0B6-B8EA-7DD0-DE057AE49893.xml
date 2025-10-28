@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E49C5300-D0B6-B8EA-7DD0-DE057AE49893" name="Linea">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:25:07 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+</Entity>

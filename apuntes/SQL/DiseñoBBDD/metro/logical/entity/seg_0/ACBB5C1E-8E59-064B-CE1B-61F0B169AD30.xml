@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ACBB5C1E-8E59-064B-CE1B-61F0B169AD30" name="ESTAREN">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:46:37 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="FECHAINICIO" id="B2D58F8C-12D1-9BF2-C94B-F1815F7DD1E9">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:46:52 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHAFIN" id="A61695E4-1D39-10D8-08B6-4C19E2E967E4">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:48:20 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A8E292B1-CF71-4AA7-968C-8BED723EF788" name="ESTAREN PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:48:18 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B2D58F8C-12D1-9BF2-C94B-F1815F7DD1E9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

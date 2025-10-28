@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4946A041-2402-71CA-2CBB-65AEE47CDD7D" name="Accesos">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:31:41 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5F467A1C-9090-FB61-AF84-1A5139945E6C" name="Accesos PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:33:08 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<engineerTo>
+<item key="BC650B73-20A3-583E-F9F4-2E254A138C92" value="true"/>
+</engineerTo>
+<pk>true</pk>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="87E7946E-A6C0-76FB-277C-6082DD7F65BF" containerWithKeyObject="0C99CA57-C2BD-9EDC-6B67-13F0EC869446" localFKIndex="5D1F5375-7F96-360F-5F16-1E7A3641BD36" name="Accesos_Estacion_FK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>94C0118E-34ED-BE80-5267-96E4A8232560</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<referredTableLongName>Estacion</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>78100306-D463-1559-9516-21EB50544157</referredTableID>
+<keyObject>C555F91B-8205-3B8E-C0EB-6E052DCC2452</keyObject>
+<referredKeyID>C555F91B-8205-3B8E-C0EB-6E052DCC2452</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

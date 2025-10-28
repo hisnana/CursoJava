@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="metro" id="A1EA6025-74CB-132C-93D0-BAFD0EC597AC" version="3.5">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 18:23:06 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>A1EA6025-74CB-132C-93D0-BAFD0EC597AC</designId>
+</OSDM_Design>

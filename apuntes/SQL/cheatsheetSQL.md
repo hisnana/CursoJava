@@ -241,11 +241,6 @@ CREATE TABLE asignacion_credencial (
 );
 ```
 
-### ✍️ Ejemplos de hoy
-
-```sql
--- pega aquí las consultas de clase
-```
 
 ### 🔑 PK — reglas rápidas
 
@@ -265,3 +260,6 @@ CREATE TABLE ejemplo (
 -- UNIQUE adicional (posibles varias UNIQUE)
 ALTER TABLE ejemplo ADD CONSTRAINT uq_ejemplo_b UNIQUE (b);
 ```
+
+
+

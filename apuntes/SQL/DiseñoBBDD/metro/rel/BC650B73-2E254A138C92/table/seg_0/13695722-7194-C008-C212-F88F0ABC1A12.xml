@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="13695722-7194-C008-C212-F88F0ABC1A12" name="ESTAREN">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>ACBB5C1E-8E59-064B-CE1B-61F0B169AD30</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FECHAINICIO" id="190DFD0D-1B22-8BFC-B037-C992E05C77E2">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>B2D58F8C-12D1-9BF2-C94B-F1815F7DD1E9</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHAFIN" id="626DBE87-3A24-B31C-212A-407603F16CE9">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>A61695E4-1D39-10D8-08B6-4C19E2E967E4</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Trenes_Trenes_ID" id="833B8294-788C-B522-BBEC-EF673E7CD286">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<ownerDesignName>metro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7B8F694A-0F2F-9B84-690A-58C67E9E0B2D" referredColumn="9D89460D-80F1-399D-5D07-867A37BCDAB4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="65A37E65-E2A1-C958-4D91-03488AEBEFDC" name="ESTAREN_PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>A8E292B1-CF71-4AA7-968C-8BED723EF788</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="190DFD0D-1B22-8BFC-B037-C992E05C77E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FFAD024C-6C50-65F7-78E7-E9E3BB645AF8" name="ESTAREN_Trenes_FK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>7710895F-D004-E634-9735-455CD840145A</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="833B8294-788C-B522-BBEC-EF673E7CD286"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B900A666-65EC-E98B-75B5-359965EA6883" name="ESTAREN_Cochera_FK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 19:24:24 UTC</createdTime>
+<generatorID>58B2807E-BC75-090D-BCDA-F7AC9614CD87</generatorID>
+<ownerDesignName>metro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

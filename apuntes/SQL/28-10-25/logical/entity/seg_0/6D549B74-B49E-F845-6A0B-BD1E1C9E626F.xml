@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6D549B74-B49E-F845-6A0B-BD1E1C9E626F" name="Alumno">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:40:38 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NumeroMatricula" id="45CFE91D-3C3E-CBFC-2610-E6F810D78916">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:40:45 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="F45D4C92-C591-D5DD-C395-53A1F312C99B">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:41:11 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="A6C957B5-0DDC-C521-F62E-D51508374CAE">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:42:13 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C804418D-88A7-8A8C-16D9-B8E3A9BDD020" name="Alumno PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:41:02 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>45CFE91D-3C3E-CBFC-2610-E6F810D78916</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BAC79712-AE5C-3375-1FBB-6F7CEAD5D973" name="Curso">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:36:46 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="FDF5D40C-6047-AB09-588C-0F5C394E8C50">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:37:37 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Titulo" id="FF5B9437-2B30-87E8-9CCC-91E56A876D43">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:38:30 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="518C3A1C-2477-9FBD-8EB2-D7B6B507663C" name="Curso PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:38:15 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FDF5D40C-6047-AB09-588C-0F5C394E8C50</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

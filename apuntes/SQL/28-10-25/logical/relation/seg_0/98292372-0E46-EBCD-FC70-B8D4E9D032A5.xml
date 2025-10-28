@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="MatricularseEn" directorySegmentName="seg_0" id="98292372-0E46-EBCD-FC70-B8D4E9D032A5">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 16:45:04 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="4E0031D5-5EB6-B01F-5052-350A0D676687" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>Realizarse por</nameOnSource>
+<nameOnTarget>Matricularse por</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>BAC79712-AE5C-3375-1FBB-6F7CEAD5D973</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6D549B74-B49E-F845-6A0B-BD1E1C9E626F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

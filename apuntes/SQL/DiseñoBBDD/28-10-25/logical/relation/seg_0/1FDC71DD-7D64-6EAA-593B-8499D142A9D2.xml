@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="JHIST_DEPT_FK" directorySegmentName="seg_0" id="1FDC71DD-7D64-6EAA-593B-8499D142A9D2">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<generatorID>4CDE2930-0699-D606-053F-8524D10AEA85</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<sourcePk>706946C6-9C2B-2FA0-0658-FF806F02D805</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F8FA0893-8778-27E5-52A3-D1890CCC4133</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8AFF6496-E42E-C6A6-8D07-9833A389F812</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

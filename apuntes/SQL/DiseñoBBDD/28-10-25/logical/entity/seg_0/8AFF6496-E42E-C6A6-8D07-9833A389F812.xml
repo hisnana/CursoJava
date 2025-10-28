@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8AFF6496-E42E-C6A6-8D07-9833A389F812" name="JOB HISTORY">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Table that stores job history of the employees. If an employee
+changes departments within the job or changes jobs within the department,
+new rows get inserted into this table with old job information of the
+employee. Contains a complex primary key: employee_id+start_date.
+Contains 25 rows. References with jobs, employees, and departments tables.]]></commentInRDBMS>
+<generatorID>B6398E3F-270B-BB8E-3E66-57C498E4D16C</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="EMPLOYEE ID" id="F76F25EE-50FF-80FF-992E-8320E6D76FD1">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[A not null column in the complex primary key employee_id+start_date.
+Foreign key to employee_id column of the employee table]]></commentInRDBMS>
+<generatorID>BD1A3165-5E2C-BA9A-BFA3-A50E93813ECC</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<referedAttribute>602655E6-4917-336B-7A1A-B54040C552BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="START DATE" id="A25F7486-66AC-7C09-8841-48D9B78D126E">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[A not null column in the complex primary key employee_id+start_date.
+Must be less than the end_date of the job_history table. (enforced by
+constraint jhist_date_interval)]]></commentInRDBMS>
+<generatorID>A1B92240-1183-4667-2110-3C0530B9D4C9</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="END DATE" id="8C67BDDF-F238-402A-5CE4-35523563C63D">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Last day of the employee in this job role. A not null column. Must be
+greater than the start_date of the job_history table.
+(enforced by constraint jhist_date_interval)]]></commentInRDBMS>
+<generatorID>EB92202E-F9A7-8A79-1063-DCE2A60BF7AA</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="JOB ID" id="5881D662-2654-8317-DB72-7D6A3AD5B4A2">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Job role in which the employee worked in the past; foreign key to
+job_id column in the jobs table. A not null column.]]></commentInRDBMS>
+<generatorID>4AE4D142-A91E-B623-58E6-9CA25CA313D4</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<referedAttribute>06499F74-80D0-307A-518A-3706DE01F285</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DEPARTMENT ID" id="AA3FABDF-481F-EFCF-3A93-D44E28DA6304">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Department id in which the employee worked in the past; foreign key to deparment_id column in the departments table]]></commentInRDBMS>
+<generatorID>1FDC71DD-7D64-6EAA-593B-8499D142A9D2</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>F7C4168D-33DB-1C26-D31E-2246B5F06A0B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="20C69A4F-A648-E3FE-7D50-B230DCB8EEC0" name="JHIST EMP ID ST DATE PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<generatorID>3C94F83F-BC12-3EE2-B01C-3C85F57F59F2</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F76F25EE-50FF-80FF-992E-8320E6D76FD1</attributeRef>
+<attributeRef>A25F7486-66AC-7C09-8841-48D9B78D126E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

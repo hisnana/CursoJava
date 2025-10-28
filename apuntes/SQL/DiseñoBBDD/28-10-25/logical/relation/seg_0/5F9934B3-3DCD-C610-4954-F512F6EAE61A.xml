@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="DEPT_MGR_FK" directorySegmentName="seg_0" id="5F9934B3-3DCD-C610-4954-F512F6EAE61A">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<generatorID>1042D380-E705-78E0-0C70-5CCCE6897EA4</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<sourcePk>442749F5-70CE-591E-FEE1-D01E0B15AF96</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>25F4BFB9-C41A-4897-CDFE-3A54BB65A819</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F8FA0893-8778-27E5-52A3-D1890CCC4133</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

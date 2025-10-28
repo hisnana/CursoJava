@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AAAC809D-F156-6A82-A037-B52E52C9E0B2" name="COUNTRIES">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[country table. Contains 25 rows. References with locations table.]]></commentInRDBMS>
+<generatorID>FCCDE693-CDB4-1FB3-562C-7F23589AD2DE</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="COUNTRY ID" id="9EEF47B6-D347-8D41-D7BF-7598CD732066">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key of countries table.]]></commentInRDBMS>
+<generatorID>23DEFC33-91AD-1315-2F7C-63426FE82E06</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>2 BYTE</dataTypeSize>
+<ownDataTypeParameters>2 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COUNTRY NAME" id="EDD41169-3CC1-46E0-9C4B-C4DB88F110DB">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Country name]]></commentInRDBMS>
+<generatorID>C5F3AE09-9467-F4DE-4E6E-81AB6537F644</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="REGION ID" id="1C9CCD29-2022-34C3-FEED-5F50F8EFB897">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Region ID for the country. Foreign key to region_id column in the departments table.]]></commentInRDBMS>
+<generatorID>220D1B23-19B2-7184-C6B8-027C1B04CF85</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>15C6F533-3F0D-9200-789F-3362D0942E11</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7B5F371E-0105-250C-A09E-483977E2B007" name="COUNTRY C ID PK">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<generatorID>8B7FDB5F-DA1F-38A8-96B5-B92927122487</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9EEF47B6-D347-8D41-D7BF-7598CD732066</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

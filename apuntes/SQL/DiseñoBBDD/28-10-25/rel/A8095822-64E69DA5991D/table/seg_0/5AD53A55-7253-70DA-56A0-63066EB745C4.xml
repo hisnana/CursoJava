@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5AD53A55-7253-70DA-56A0-63066EB745C4" schemaObject="634930A2-7A84-59CA-A21B-155E929332F8" name="REGIONS">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>REGIONS</sourceObjName>
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:27:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Regions table that contains region numbers and names. Contains 4 rows; references with the Countries table.]]></commentInRDBMS>
+<ownerDesignName>28-10-25</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="REGION_ID" id="A7A608B4-34DD-609C-A7F4-65DC3E17C596">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>REGIONS</sourceObjSchema>
+<sourceObjName>REGION_ID</sourceObjName>
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:27:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key of regions table.]]></commentInRDBMS>
+<ownerDesignName>28-10-25</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>REGIONS_ID_NN</notNullConstraintName>
+</Column>
+<Column name="REGION_NAME" id="4FF01E1F-77D8-2B4D-791D-1777D7E4D12E">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>REGIONS</sourceObjSchema>
+<sourceObjName>REGION_NAME</sourceObjName>
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:27:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Names of regions. Locations are in the countries of these regions.]]></commentInRDBMS>
+<ownerDesignName>28-10-25</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C1A0AEDC-B03B-6069-575C-928C00E39941" name="REG_ID_PK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>REG_ID_PK</sourceObjName>
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:28:00 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A7A608B4-34DD-609C-A7F4-65DC3E17C596"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="83F8FCFB-AE53-CFD6-3789-E15E596B6694" schemaObject="634930A2-7A84-59CA-A21B-155E929332F8" name="REG_ID_PK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>REG_ID_PK</sourceObjName>
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:28:00 UTC</createdTime>
+<ownerDesignName>28-10-25</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A7A608B4-34DD-609C-A7F4-65DC3E17C596"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

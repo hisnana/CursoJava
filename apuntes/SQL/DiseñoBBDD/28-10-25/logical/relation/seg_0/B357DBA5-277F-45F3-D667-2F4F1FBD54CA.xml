@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EMP_DEPT_FK" directorySegmentName="seg_0" id="B357DBA5-277F-45F3-D667-2F4F1FBD54CA">
+<createdBy>Tardes</createdBy>
+<createdTime>2025-10-28 17:29:56 UTC</createdTime>
+<generatorID>937C3A83-820B-4D0A-82CA-7BE37BF190FB</generatorID>
+<ownerDesignName>28-10-25</ownerDesignName>
+<engineerTo>
+<item key="A8095822-68A0-92B7-ABD9-64E69DA5991D" value="true"/>
+</engineerTo>
+<sourcePk>706946C6-9C2B-2FA0-0658-FF806F02D805</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F8FA0893-8778-27E5-52A3-D1890CCC4133</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>25F4BFB9-C41A-4897-CDFE-3A54BB65A819</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

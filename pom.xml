@@ -44,6 +44,13 @@
 			<artifactId>ojdbc11</artifactId>
 			<version>23.7.0.25.01</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.42</version>
+		</dependency>
 	</dependencies>
+	
 
 </project>

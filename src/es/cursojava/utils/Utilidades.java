@@ -1,9 +1,10 @@
 package es.cursojava.utils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Utilidades {
-	private static final Scanner SC = new Scanner(System.in); // único Scanner
+	private static final Scanner sc = new Scanner(System.in); // único Scanner
 
 	//metodo calcularEdad al cual le pasamos un año y le devolvemos la edad apatir de ese año.
 	
@@ -49,7 +50,7 @@ public class Utilidades {
 	
     public static String pedirDato(String prompt) {
         MiLogger.info(prompt);
-        String s = SC.nextLine().trim();
+        String s = sc.nextLine().trim();
         MiLogger.info("→ " + s);
         return s;
     }
@@ -57,12 +58,12 @@ public class Utilidades {
     public static int pedirEntero(String prompt) {
         while (true) {
             MiLogger.info(prompt);
-            String s = SC.nextLine().trim();
+            String s =sc.nextLine().trim();
             try {
                 int n = Integer.parseInt(s);
                 MiLogger.info("→ " + n);
                 return n;
-            } catch (NumberFormatException e) {
+            } catch (InputMismatchException | NumberFormatException e) {
                 MiLogger.info("Número inválido. Intenta de nuevo.");
             }
         }

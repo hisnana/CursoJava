@@ -40,33 +40,68 @@ public class Utilidades {
 		return num;
 	}
 	
-	public static String pideDatoCadena(String texto){
-		System.out.println(texto);
-		Scanner scan = new Scanner(System.in);
-		String dato= scan.nextLine();
-		return dato;
+	public static String pideDatoString(String texto){
+	    boolean ok = false;
+	    Scanner sc = new Scanner(System.in);
+	    String s = "";
+	    while (!ok) {
+	        MiLogger.info(texto);
+	        s = sc.nextLine().trim();
+	        if (s.isEmpty()) {
+	            MiLogger.info("No puede estar vacío. Intenta de nuevo.");
+	        } else if (s.matches("\\d+")) { // solo dígitos
+	            MiLogger.info("No introduzcas solo números. Intenta de nuevo.");
+	        } else {
+	            ok = true;
+	        }
+	    }
+	    MiLogger.info("→ " + s);
+	    return s;
 		
 	}
 	
     public static String pedirDato(String prompt) {
         MiLogger.info(prompt);
+        Scanner scan = new Scanner(System.in);
         String s = sc.nextLine().trim();
         MiLogger.info("→ " + s);
         return s;
     }
 
     public static int pedirEntero(String prompt) {
-        while (true) {
+        boolean ok = false;
+        int n = 0;
+
+        while (!ok) {
             MiLogger.info(prompt);
-            String s =sc.nextLine().trim();
+            
             try {
-                int n = Integer.parseInt(s);
-                MiLogger.info("→ " + n);
-                return n;
-            } catch (InputMismatchException | NumberFormatException e) {
+                n = sc.nextInt();
+                ok = true;                    // salida del bucle
+            } catch (NumberFormatException e) {
                 MiLogger.info("Número inválido. Intenta de nuevo.");
             }
         }
+        MiLogger.info("→ " + n);
+        return n;
+    }
+    
+    public static double pedirDecimal(String prompt) {
+        boolean ok = false;
+        double n = 0;
+
+        while (!ok) {
+            MiLogger.info(prompt);
+            
+            try {
+                n = sc.nextDouble();
+                ok = true;                    // salida del bucle
+            } catch (NumberFormatException e) {
+                MiLogger.info("Número inválido. Intenta de nuevo.");
+            }
+        }
+        MiLogger.info("→ " + n);
+        return n;
     }
     // Pregunta hasta recibir s/n válidos
     public static boolean pedirConfirmacion(String prompt) {

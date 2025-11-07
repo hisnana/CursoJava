@@ -2,6 +2,9 @@ package es.cursojava.oo.ejercicios.colegio;
 
 import java.util.Arrays;
 
+import es.cursojava.ini.excepciones.NotaInvalidaException;
+
+
 public class Alumno {
 	
 	private String nombre;
@@ -22,10 +25,45 @@ public class Alumno {
 		}
 	}
 	
-    public Alumno(String nombre, int edad, double notaMedia) {
+	
+
+	public Alumno(String nombre, String apellido, String dni, double notaMedia) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.notaMedia = notaMedia;
+	}
+
+	public Alumno(String nombre, String apellido, String dni) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+	}
+
+	public Alumno(String nombre, String apellido, String dni, double notaMedia, int edad) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.notaMedia = notaMedia;
+		this.edad = edad;
+	}
+
+	public Alumno(String nombre, int edad, double notaMedia) throws IllegalArgumentException,NotaInvalidaException  {
         this.nombre = nombre;
-        this.edad = edad;
-        this.notaMedia = notaMedia;
+        if (edad <= 0 || edad >110) {
+	        throw new IllegalArgumentException("El valor debe ser > 0 y < 110");
+	    } else {
+	    	this.edad = edad;
+	    }
+        if (notaMedia > 0.0 & notaMedia<10.0) {
+	        throw new NotaInvalidaException("El valor debe ser entre 0 y 10");
+	    } else {
+	    	this.notaMedia= notaMedia;
+	    }
+        
     }
 
 
@@ -33,30 +71,6 @@ public class Alumno {
     public String toString() {
         return String.format("Alumno{nombre='%s', edad=%d, notaMedia=%.2f}", nombre, edad, notaMedia);
     }
-	
-	public Alumno(String nombre, String dni) {
-		this.nombre = nombre;
-		this.dni = dni;
-	}
-	
-	public Alumno(String nombre, String dni, double notaMedia) {
-		
-		this.nombre = nombre;
-		this.dni = dni;
-		this.notaMedia = notaMedia;
-		
-	}
-
-	
-
-	public Alumno(String nombre, String dni, double notaMedia, String[] asignaturas) {
-		
-		this.nombre = nombre;
-		this.dni = dni;
-		this.notaMedia = notaMedia;
-		this.asignaturas = asignaturas;
-	}
-
 
 
 	public int getEdad() {
@@ -66,11 +80,6 @@ public class Alumno {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-
-	public Alumno(String string) {
-		// TODO Auto-generated constructor stub
-	}
-
 
 
 
@@ -82,13 +91,6 @@ public class Alumno {
 		this.apellido = apellidos;
 	}
 
-	public Alumno(String nombre, String apellido, String dni, double notaMedia) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.dni = dni;
-		this.notaMedia = notaMedia;
-	}
 
 	public String getNombre() {
 		return nombre;

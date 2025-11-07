@@ -12,24 +12,24 @@ public class InicioClases {
 		
 		
 		for (int i = 0; i < nombres.length ; i++) {
-			Alumno alumno = new Alumno(nombres[i],dnis[i]);
+//			Alumno alumno = new Alumno(nombres[i],dnis[i]);
 //			alumno.setNombre(nombres[i]);
 //			alumno.setDni(dnis[i]);
-			alumno.setNotaMedia(notasMedias[i]);
-			int num = (int)(Math.random() * 7+1);
-			
-			String[] asignaturasAlumno = new String[num];
-			
-			for (int j = 0 ; j < num ; j++) {
-				
-				asignaturasAlumno[j] = asignaturas[j];
-				
-			}
-			
-			alumno.setAsignaturas(asignaturasAlumno);
-			
-			alumno.estudiar();
-			alumnos[i] = alumno ;
+//			alumno.setNotaMedia(notasMedias[i]);
+//			int num = (int)(Math.random() * 7+1);
+//			
+//			String[] asignaturasAlumno = new String[num];
+//			
+//			for (int j = 0 ; j < num ; j++) {
+//				
+//				asignaturasAlumno[j] = asignaturas[j];
+//				
+//			}
+//			
+//			alumno.setAsignaturas(asignaturasAlumno);
+//			
+//			alumno.estudiar();
+//			alumnos[i] = alumno ;
 		}
 
 	}

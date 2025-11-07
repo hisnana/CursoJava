@@ -36,7 +36,7 @@ public class cheatsheetMapas {
 			
 			
 			//Recupero los datos de una persona concreta
-			String dni = Utilidades.pideDatoCadena("Introduce un dni");
+			String dni = Utilidades.pedirDato("Introduce un dni");
 			Persona persona = personas.get(dni);
 			System.out.println(persona.getNombre());
 			

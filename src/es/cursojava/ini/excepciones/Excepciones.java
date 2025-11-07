@@ -7,12 +7,14 @@ import es.cursojava.utils.Utilidades;
 
 public class Excepciones {
 
-	public static void main(String[] args) throws NumeroNoPositivoException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		int[] arrayNum=crearArray();
-		arrayNum= rellenarArray(arrayNum);
+		rellenarArray(arrayNum);
 		muestraPosicion(arrayNum);
 		MiLogger.info("bye bye");
+
 	}
 //	En una clase
 //	main ()-->
@@ -23,27 +25,40 @@ public class Excepciones {
 //
 //	Si hay alguna excepción se indica al usuario un mensaje y se vuelve a pedir la información
 	private static int[] crearArray ()  {
-		try {
-			int num= Utilidades.pedirEntero("Inserta un numero para crear un array");
-			int[] arrayNum = new int[num];
-		} catch(NumeroNoPositivoException nnpe) {
-			
-		}
+	    boolean creado = false;
+	    int[] resultado = null;
+
+	    while (!creado) {
+	        try {
+	            int num = requirePositivo(
+	                Utilidades.pedirEntero("Inserta un número (> 0) para crear un array")
+	            );
+	            resultado = new int[num];
+	            creado = true; // salimos del bucle en la siguiente iteración
+	        } catch (NumeroNoPositivoException e) {
+	            MiLogger.info("Entrada inválida: " + e.getMessage() + ". Intenta de nuevo.");
+	        }
+	    }
+	    return resultado;
 		
-		if (num <= 0) throw new NumeroNoPositivoException("El numero no puede ser 0");
-		
-		return arrayNum;
 	}
 	
-	private static int[] rellenarArray (int[] array) {
+	// Valida y lanza checked
+	public static int requirePositivo(int valor) throws NumeroNoPositivoException {
+	    if (valor <= 0) {
+	        throw new NumeroNoPositivoException("El valor debe ser > 0");
+	    }
+	    return valor;
+	}
+	
+	private static void rellenarArray (int[] array) {
 		int i=0;
 		for (int n : array) {
-			int num= Utilidades.pedirEntero("Inserta un numero para la posicion "+i+"º del array");
-			array[i]=num;
+			array[i]= Utilidades.pedirEntero("Inserta un numero para la posicion "+i+"º del array");
 			i++;
 		}
 		MiLogger.info(Arrays.toString(array));
-		return array;
+		
 	}
 	
 	private static void muestraPosicion (int[] array) {
@@ -58,8 +73,6 @@ public class Excepciones {
 			}
 			seguir=Utilidades.pedirConfirmacion("¿Quieres saber otra posicion?");
 		}
-
-		
 		
 	}
 

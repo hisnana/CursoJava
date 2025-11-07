@@ -976,3 +976,193 @@ Atendiendo a Cliente1
 2025-11-05 20:32:36 [INFO] (Excepciones): bye bye
 2025-11-05 20:49:16 [INFO] (Utilidades): Inserta un numero para crear un array
 2025-11-05 20:49:19 [INFO] (Utilidades): → -2
+2025-11-06 16:30:09 [INFO] (Utilidades): Inserta un número (> 0) para crear un array
+2025-11-06 16:30:13 [INFO] (Utilidades): → 0
+2025-11-06 16:30:13 [INFO] (Excepciones): Entrada inválida: El valor debe ser > 0. Intenta de nuevo.
+2025-11-06 16:30:13 [INFO] (Utilidades): Inserta un número (> 0) para crear un array
+2025-11-06 16:30:19 [INFO] (Utilidades): → -1
+2025-11-06 16:30:19 [INFO] (Excepciones): Entrada inválida: El valor debe ser > 0. Intenta de nuevo.
+2025-11-06 16:30:19 [INFO] (Utilidades): Inserta un número (> 0) para crear un array
+2025-11-06 16:30:29 [INFO] (Utilidades): → 1
+2025-11-06 16:30:29 [INFO] (Utilidades): Inserta un numero para la posicion 0º del array
+2025-11-06 16:30:32 [INFO] (Utilidades): → 34
+2025-11-06 16:30:32 [INFO] (Excepciones): [34]
+2025-11-06 16:30:32 [INFO] (Utilidades): Inserta un numero de la posicion que quieres mostrar 
+2025-11-06 16:30:38 [INFO] (Utilidades): → 0
+2025-11-06 16:30:38 [INFO] (Excepciones): En la posicion 0 esta el numero 34
+2025-11-06 16:30:38 [INFO] (Utilidades): ¿Quieres saber otra posicion? (s/n): 
+2025-11-06 16:30:46 [INFO] (Utilidades): → s
+2025-11-06 16:30:46 [INFO] (Utilidades): Inserta un numero de la posicion que quieres mostrar 
+2025-11-06 16:30:49 [INFO] (Utilidades): → 5
+2025-11-06 16:30:49 [INFO] (Excepciones): La posicion solicitada no existe tiene que ser del 0 al 0
+2025-11-06 16:30:49 [INFO] (Utilidades): ¿Quieres saber otra posicion? (s/n): 
+2025-11-06 16:30:51 [INFO] (Utilidades): → n
+2025-11-06 16:30:51 [INFO] (Excepciones): bye bye
+2025-11-06 16:44:15 [INFO] (Utilidades): Inserta un número (> 0) para crear un array
+2025-11-06 16:44:19 [INFO] (Utilidades): → 0
+2025-11-06 16:44:19 [INFO] (Excepciones): Entrada inválida: El valor debe ser > 0. Intenta de nuevo.
+2025-11-06 16:44:19 [INFO] (Utilidades): Inserta un número (> 0) para crear un array
+2025-11-06 16:44:22 [INFO] (Utilidades): → -1
+2025-11-06 16:44:22 [INFO] (Excepciones): Entrada inválida: El valor debe ser > 0. Intenta de nuevo.
+2025-11-06 16:44:22 [INFO] (Utilidades): Inserta un número (> 0) para crear un array
+2025-11-06 16:44:25 [INFO] (Utilidades): → 2
+2025-11-06 16:44:25 [INFO] (Utilidades): Inserta un numero para la posicion 0º del array
+2025-11-06 16:44:26 [INFO] (Utilidades): → 23432
+2025-11-06 16:44:26 [INFO] (Utilidades): Inserta un numero para la posicion 1º del array
+2025-11-06 16:44:28 [INFO] (Utilidades): → 23423
+2025-11-06 16:44:28 [INFO] (Excepciones): [23432, 23423]
+2025-11-06 16:44:28 [INFO] (Utilidades): Inserta un numero de la posicion que quieres mostrar 
+2025-11-06 16:44:35 [INFO] (Utilidades): → 1
+2025-11-06 16:44:35 [INFO] (Excepciones): En la posicion 1 esta el numero 23423
+2025-11-06 16:44:35 [INFO] (Utilidades): ¿Quieres saber otra posicion? (s/n): 
+2025-11-06 16:44:40 [INFO] (Utilidades): → n
+2025-11-06 16:44:40 [INFO] (Excepciones): bye bye
+2025-11-06 20:23:59 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:23:59 [INFO] (Utilidades): Dime el nombre del alumno0º
+2025-11-06 20:24:10 [INFO] (Utilidades): → pepe
+2025-11-06 20:24:10 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:25:20 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:25:20 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:25:25 [INFO] (Utilidades): → pepe
+2025-11-06 20:25:25 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:25:27 [INFO] (Test): Error java.util.InputMismatchException
+2025-11-06 20:25:27 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:25:27 [INFO] (Utilidades): → f
+2025-11-06 20:25:27 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:25:36 [INFO] (Utilidades): → 0
+2025-11-06 20:25:36 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:26:04 [INFO] (Utilidades): → 0.0
+2025-11-06 20:26:04 [INFO] (Test): Error java.lang.IllegalArgumentException: El valor debe ser > 0
+2025-11-06 20:26:04 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:26:04 [INFO] (Utilidades): → 
+2025-11-06 20:26:04 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:26:25 [INFO] (Utilidades): → 0
+2025-11-06 20:26:25 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:26:30 [INFO] (Utilidades): → 0.0
+2025-11-06 20:26:30 [INFO] (Test): Error java.lang.IllegalArgumentException: El valor debe ser > 0
+2025-11-06 20:26:30 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:26:30 [INFO] (Utilidades): → 
+2025-11-06 20:26:30 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:26:33 [INFO] (Utilidades): → 23
+2025-11-06 20:26:33 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:26:37 [INFO] (Utilidades): → 11.0
+2025-11-06 20:26:37 [INFO] (Test): Inserta los datos del alumno1º
+2025-11-06 20:26:37 [INFO] (Utilidades): Dime el nombre del alumno 1º
+2025-11-06 20:26:37 [INFO] (Utilidades): → 
+2025-11-06 20:26:37 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:28:50 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:28:50 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:28:54 [INFO] (Utilidades): → 45
+2025-11-06 20:28:54 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:28:58 [INFO] (Utilidades): → 56
+2025-11-06 20:28:58 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:29:03 [INFO] (Utilidades): → 78.0
+2025-11-06 20:29:03 [INFO] (Test): Inserta los datos del alumno1º
+2025-11-06 20:29:03 [INFO] (Utilidades): Dime el nombre del alumno 1º
+2025-11-06 20:29:03 [INFO] (Utilidades): → 
+2025-11-06 20:29:03 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:31:36 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:31:36 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:32:09 [INFO] (Utilidades): → 6576
+2025-11-06 20:32:09 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:32:15 [INFO] (Utilidades): → 0
+2025-11-06 20:32:15 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:32:55 [INFO] (Utilidades): → 11.0
+2025-11-06 20:32:55 [INFO] (Test): Error java.lang.IllegalArgumentException: El valor debe ser > 0
+2025-11-06 20:32:55 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:32:55 [INFO] (Utilidades): → 
+2025-11-06 20:32:55 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:34:31 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:34:31 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:34:36 [INFO] (Utilidades): → 4545
+2025-11-06 20:34:36 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:34:39 [INFO] (Utilidades): → 454
+2025-11-06 20:34:39 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:34:43 [INFO] (Utilidades): → 0.0
+2025-11-06 20:34:43 [INFO] (Test): Inserta los datos del alumno1º
+2025-11-06 20:34:43 [INFO] (Utilidades): Dime el nombre del alumno 1º
+2025-11-06 20:34:43 [INFO] (Utilidades): → 
+2025-11-06 20:34:43 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:35:05 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:35:05 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:39:26 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:39:26 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:39:33 [INFO] (Utilidades): No introduzcas solo números. Intenta de nuevo.
+2025-11-06 20:39:33 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:39:40 [INFO] (Utilidades): → ana
+2025-11-06 20:39:40 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:39:47 [INFO] (Utilidades): → -1
+2025-11-06 20:39:47 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:40:23 [INFO] (Utilidades): → 11.0
+2025-11-06 20:40:23 [INFO] (Test): Error El valor debe ser > 0
+2025-11-06 20:40:23 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:40:23 [INFO] (Utilidades): No puede estar vacío. Intenta de nuevo.
+2025-11-06 20:40:23 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:40:30 [INFO] (Utilidades): → ana
+2025-11-06 20:40:30 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:42:33 [INFO] (Utilidades): → -1
+2025-11-06 20:42:33 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:42:39 [INFO] (Utilidades): → 11.0
+2025-11-06 20:42:39 [INFO] (Test): Error El valor debe ser > 0
+2025-11-06 20:42:39 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:42:39 [INFO] (Utilidades): No puede estar vacío. Intenta de nuevo.
+2025-11-06 20:42:39 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:43:38 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:43:38 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:43:41 [INFO] (Utilidades): → ana
+2025-11-06 20:43:41 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:43:46 [INFO] (Utilidades): → -1
+2025-11-06 20:43:46 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:44:00 [INFO] (Utilidades): → 11.0
+2025-11-06 20:44:00 [INFO] (Test): Error El valor debe ser > 0 y < 110
+2025-11-06 20:44:00 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:44:00 [INFO] (Utilidades): No puede estar vacío. Intenta de nuevo.
+2025-11-06 20:44:00 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:44:44 [INFO] (Utilidades): No introduzcas solo números. Intenta de nuevo.
+2025-11-06 20:44:44 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:44:47 [INFO] (Utilidades): → ana
+2025-11-06 20:44:47 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:44:51 [INFO] (Utilidades): → 22
+2025-11-06 20:44:51 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:44:54 [INFO] (Utilidades): → 4.0
+2025-11-06 20:44:54 [INFO] (Test): Error El valor debe ser entre 0 y 10
+2025-11-06 20:44:54 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:44:54 [INFO] (Utilidades): No puede estar vacío. Intenta de nuevo.
+2025-11-06 20:44:54 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:45:42 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:45:42 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:45:45 [INFO] (Utilidades): → ana
+2025-11-06 20:45:45 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:45:48 [INFO] (Utilidades): → 44
+2025-11-06 20:45:48 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:45:51 [INFO] (Utilidades): → 5.0
+2025-11-06 20:45:51 [INFO] (Test): Error El valor debe ser entre 0 y 10
+2025-11-06 20:45:51 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:45:59 [INFO] (Utilidades): → ana
+2025-11-06 20:45:59 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:46:03 [INFO] (Utilidades): → 33
+2025-11-06 20:46:03 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:46:06 [INFO] (Test): Error null
+2025-11-06 20:46:06 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:47:11 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:47:11 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:47:13 [INFO] (Utilidades): → ana
+2025-11-06 20:47:13 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:47:14 [INFO] (Utilidades): → 35
+2025-11-06 20:47:14 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:47:19 [INFO] (Test): Error null
+2025-11-06 20:47:19 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:48:03 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:48:03 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:48:06 [INFO] (Utilidades): → ana
+2025-11-06 20:48:06 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:48:07 [INFO] (Utilidades): → 35
+2025-11-06 20:48:07 [INFO] (Utilidades): Introduce la nota media
+2025-11-06 20:48:12 [INFO] (Test): Error 3null
+2025-11-06 20:48:12 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:48:52 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-06 20:48:52 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-06 20:48:55 [INFO] (Utilidades): → ana
+2025-11-06 20:48:55 [INFO] (Utilidades): Introduce la edad
+2025-11-06 20:48:58 [INFO] (Utilidades): → 45
+2025-11-06 20:48:58 [INFO] (Utilidades): Introduce la nota media

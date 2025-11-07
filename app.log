@@ -1166,3 +1166,132 @@ Atendiendo a Cliente1
 2025-11-06 20:48:55 [INFO] (Utilidades): Introduce la edad
 2025-11-06 20:48:58 [INFO] (Utilidades): → 45
 2025-11-06 20:48:58 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:13:53 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-07 16:13:53 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:13:56 [INFO] (Utilidades): → ana
+2025-11-07 16:13:56 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:14:03 [INFO] (Utilidades): → 0
+2025-11-07 16:14:03 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:14:07 [INFO] (Utilidades): → 5.0
+2025-11-07 16:14:07 [INFO] (Test): Error  El valor debe ser > 0 y < 110
+2025-11-07 16:14:07 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:14:18 [INFO] (Utilidades): → ana
+2025-11-07 16:14:18 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:14:22 [INFO] (Utilidades): → 35
+2025-11-07 16:14:22 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:27:47 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-07 16:27:47 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:27:49 [INFO] (Utilidades): → ana
+2025-11-07 16:27:49 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:27:51 [INFO] (Utilidades): → 33
+2025-11-07 16:27:51 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:33:58 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-07 16:33:58 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:34:00 [INFO] (Utilidades): → ana
+2025-11-07 16:34:00 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:34:02 [INFO] (Utilidades): → 33
+2025-11-07 16:34:02 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:34:05 [INFO] (Utilidades): Número inválido. Intenta de nuevo.
+2025-11-07 16:34:05 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:34:11 [INFO] (Utilidades): → 5.5
+2025-11-07 16:34:11 [INFO] (Test): Error  El valor debe ser entre 0 y 10
+2025-11-07 16:34:11 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:34:19 [INFO] (Utilidades): → ana
+2025-11-07 16:34:19 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:34:22 [INFO] (Utilidades): → 35
+2025-11-07 16:34:22 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:34:25 [INFO] (Utilidades): → 5.0
+2025-11-07 16:34:25 [INFO] (Test): Error  El valor debe ser entre 0 y 10
+2025-11-07 16:34:25 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:35:51 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-07 16:35:51 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:35:52 [INFO] (Utilidades): → ana
+2025-11-07 16:35:52 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:35:55 [INFO] (Utilidades): → 35
+2025-11-07 16:35:55 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:35:57 [INFO] (Utilidades): Número inválido. Intenta de nuevo.
+2025-11-07 16:35:57 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:36:02 [INFO] (Utilidades): → 5.5
+2025-11-07 16:36:02 [INFO] (Test): Error  El valor debe ser entre 0 y 10
+2025-11-07 16:36:02 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:36:11 [INFO] (Utilidades): → ana
+2025-11-07 16:36:11 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:36:14 [INFO] (Utilidades): → 35
+2025-11-07 16:36:14 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:36:23 [INFO] (Utilidades): → 7.0
+2025-11-07 16:36:23 [INFO] (Test): Error  El valor debe ser entre 0 y 10
+2025-11-07 16:36:23 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:40:49 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-07 16:40:49 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:40:51 [INFO] (Utilidades): → ana
+2025-11-07 16:40:51 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:40:53 [INFO] (Utilidades): → 35
+2025-11-07 16:40:53 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:40:56 [INFO] (Utilidades): Número inválido. Intenta de nuevo.
+2025-11-07 16:40:56 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:41:04 [INFO] (Utilidades): → 5.5
+2025-11-07 16:41:04 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:41:06 [INFO] (Utilidades): → ana
+2025-11-07 16:41:06 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:41:09 [INFO] (Utilidades): → 35
+2025-11-07 16:41:09 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:41:12 [INFO] (Utilidades): → 5.0
+2025-11-07 16:41:12 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:41:20 [INFO] (Utilidades): No introduzcas solo números. Intenta de nuevo.
+2025-11-07 16:41:20 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:41:24 [INFO] (Utilidades): → mario
+2025-11-07 16:41:24 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:41:27 [INFO] (Utilidades): → 55
+2025-11-07 16:41:27 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:41:29 [INFO] (Utilidades): → 7.0
+2025-11-07 16:41:29 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:42:49 [INFO] (Test): Inserta los datos del alumno0º
+2025-11-07 16:42:49 [INFO] (Utilidades): Dime el nombre del alumno 0º
+2025-11-07 16:42:50 [INFO] (Utilidades): → ana
+2025-11-07 16:42:50 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:42:53 [INFO] (Utilidades): → 35
+2025-11-07 16:42:53 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:42:54 [INFO] (Utilidades): → 8.0
+2025-11-07 16:42:54 [INFO] (Test): Inserta los datos del alumno1º
+2025-11-07 16:42:54 [INFO] (Utilidades): Dime el nombre del alumno 1º
+2025-11-07 16:42:57 [INFO] (Utilidades): → mario
+2025-11-07 16:42:57 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:42:58 [INFO] (Utilidades): → 55
+2025-11-07 16:42:58 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:43:01 [INFO] (Utilidades): Número inválido. Intenta de nuevo.
+2025-11-07 16:43:01 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:43:12 [INFO] (Utilidades): → 8.9
+2025-11-07 16:43:12 [INFO] (Test): Inserta los datos del alumno2º
+2025-11-07 16:43:12 [INFO] (Utilidades): Dime el nombre del alumno 2º
+2025-11-07 16:43:24 [INFO] (Utilidades): → pepe
+2025-11-07 16:43:24 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:43:27 [INFO] (Utilidades): → 33
+2025-11-07 16:43:27 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:43:34 [INFO] (Utilidades): → 4.5
+2025-11-07 16:43:34 [INFO] (Test): Inserta los datos del alumno3º
+2025-11-07 16:43:34 [INFO] (Utilidades): Dime el nombre del alumno 3º
+2025-11-07 16:43:38 [INFO] (Utilidades): → nene
+2025-11-07 16:43:38 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:43:40 [INFO] (Utilidades): → 22
+2025-11-07 16:43:40 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:43:42 [INFO] (Utilidades): → 2.0
+2025-11-07 16:43:42 [INFO] (Test): Inserta los datos del alumno4º
+2025-11-07 16:43:42 [INFO] (Utilidades): Dime el nombre del alumno 4º
+2025-11-07 16:43:53 [INFO] (Utilidades): → dani
+2025-11-07 16:43:53 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:43:57 [INFO] (Utilidades): → 33
+2025-11-07 16:43:57 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:44:00 [INFO] (Utilidades): → 2.0
+2025-11-07 16:44:00 [INFO] (Test): Inserta los datos del alumno5º
+2025-11-07 16:44:00 [INFO] (Utilidades): Dime el nombre del alumno 5º
+2025-11-07 16:44:04 [INFO] (Utilidades): → luis
+2025-11-07 16:44:04 [INFO] (Utilidades): Introduce la edad
+2025-11-07 16:44:07 [INFO] (Utilidades): → 11
+2025-11-07 16:44:07 [INFO] (Utilidades): Introduce la nota media
+2025-11-07 16:44:12 [INFO] (Utilidades): → 9.0
+2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='ana', edad=35, notaMedia=8,00}
+2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='mario', edad=55, notaMedia=8,90}
+2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='pepe', edad=33, notaMedia=4,50}
+2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='nene', edad=22, notaMedia=2,00}
+2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='dani', edad=33, notaMedia=2,00}
+2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='luis', edad=11, notaMedia=9,00}

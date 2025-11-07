@@ -55,14 +55,14 @@ public class Alumno {
         this.nombre = nombre;
         if (edad <= 0 || edad >110) {
 	        throw new IllegalArgumentException("El valor debe ser > 0 y < 110");
-	    } else {
-	    	this.edad = edad;
-	    }
-        if (notaMedia > 0.0 & notaMedia<10.0) {
+	    } 
+	    this.edad = edad;
+	    
+        if (notaMedia < 0.0 || notaMedia > 10.0) {
 	        throw new NotaInvalidaException("El valor debe ser entre 0 y 10");
-	    } else {
-	    	this.notaMedia= notaMedia;
-	    }
+	    } 
+	    this.notaMedia= notaMedia;
+	    
         
     }
 

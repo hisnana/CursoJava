@@ -1,0 +1,21 @@
+package es.cursojava.ini.excepciones.cafeteria.pojos;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class TazaCafe {
+	private String tipoCafe;
+	private int temperatura;
+	
+	
+	public TazaCafe(String tipoCafe, int temperatura) {
+		super();
+		this.tipoCafe = tipoCafe;
+		this.temperatura = (int)(Math.random() * 101);
+	}
+	
+	
+
+}

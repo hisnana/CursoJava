@@ -88,16 +88,18 @@ public class Utilidades {
     
     public static double pedirDecimal(String prompt) {
         boolean ok = false;
-        double n = 0;
-
+        double n = 0.0;
+        Scanner sc = new Scanner(System.in);
         while (!ok) {
             MiLogger.info(prompt);
-            
             try {
-                n = sc.nextDouble();
-                ok = true;                    // salida del bucle
-            } catch (NumberFormatException e) {
+                n = sc.nextDouble();     // depende del locale
+                ok = true;
+            } catch (InputMismatchException e) {
                 MiLogger.info("Número inválido. Intenta de nuevo.");
+                sc.next();               // descarta el token incorrecto
+            } finally {
+                if (sc.hasNextLine()) sc.nextLine(); // limpia el fin de línea
             }
         }
         MiLogger.info("→ " + n);

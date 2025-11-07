@@ -23,27 +23,23 @@ public class Test {
 				 String nombre = Utilidades.pideDatoString("Dime el nombre del alumno "+contador+"º");
 				 int edad = 0;
 				 double notaMedia = 0;
+				 edad = Utilidades.pedirEntero("Introduce la edad");
+				 notaMedia = Utilidades.pedirDecimal("Introduce la nota media");
+				 Alumno alumno;
 				 try {
-					 edad = Utilidades.pedirEntero("Introduce la edad");
-					 datoIncorrecto=false;
-				 }catch (IllegalArgumentException iae) {
+					alumno = new Alumno(nombre,edad,notaMedia);
+					alumnos.add(alumno);
+					datoIncorrecto = false;
+				 } catch (IllegalArgumentException iae) {
+					// TODO Auto-generated catch block
 					 MiLogger.info("Error  "+iae.getMessage());
 					 datoIncorrecto = true;
-				 }
-				try {
-					notaMedia = Utilidades.pedirDecimal("Introduce la nota media");
-					datoIncorrecto=false;
-				}catch (NotaInvalidaException nie) {
-					// TODO: handle exception
-					MiLogger.info("Error  "+nie.getMessage());
-					datoIncorrecto = true;
-				}
-				
-				 if(datoIncorrecto==false) {
-					 Alumno alumno = new Alumno(nombre,edad,notaMedia);
-					 alumnos.add(alumno);
+				 } catch ( NotaInvalidaException nie) {
 					 
+					 MiLogger.info("Error  "+nie.getMessage());
+						datoIncorrecto = true;
 				 }
+					 
 				 
 			 }
 			 contador++;			 

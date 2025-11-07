@@ -1295,3 +1295,25 @@ Atendiendo a Cliente1
 2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='nene', edad=22, notaMedia=2,00}
 2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='dani', edad=33, notaMedia=2,00}
 2025-11-07 16:44:12 [INFO] (Test): Alumno{nombre='luis', edad=11, notaMedia=9,00}
+2025-11-07 18:05:54 [INFO] (Comensal): El cliente Paco se toma un cafe es.cursojava.ini.excepciones.cafeteria.pojos.TazaCafe@279f2327
+2025-11-07 18:07:33 [INFO] (Comensal): El cliente Paco se toma un cafe Con leche
+2025-11-07 18:10:12 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche
+2025-11-07 18:10:12 [ERROR] (AbrirBar): Problemas con el cafe: La temperatura del cafe es mayor a 80º
+2025-11-07 18:17:48 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche
+2025-11-07 18:17:48 [INFO] (Comensal): El cliente Paco se toma un cafe con leche
+2025-11-07 18:18:23 [ERROR] (AbrirBar): Problemas con el cafe: La temperatura del cafe es mayor a 80º
+2025-11-07 18:18:23 [INFO] (Comensal): El cliente Paco se toma un cafe con leche
+2025-11-07 18:19:34 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche
+2025-11-07 18:19:34 [INFO] (Comensal): El cliente Paco se toma un cafe con leche
+2025-11-07 18:20:21 [ERROR] (AbrirBar): Problemas con el cafe: La temperatura del café es menor a 20º
+2025-11-07 18:20:21 [ERROR] (AbrirBar): Problemas con el cafe: La temperatura del cafe es mayor a 80º
+2025-11-07 18:21:18 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche a temperatura 52
+2025-11-07 18:21:18 [INFO] (Comensal): El cliente Paco se toma un cafe con leche a temperatura 24
+2025-11-07 18:21:30 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche a temperatura 32
+2025-11-07 18:21:30 [INFO] (Comensal): El cliente Paco se toma un cafe con leche a temperatura 30
+2025-11-07 18:21:33 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche a temperatura 46
+2025-11-07 18:21:33 [INFO] (Comensal): El cliente Paco se toma un cafe con leche a temperatura 68
+2025-11-07 18:21:35 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche a temperatura 43
+2025-11-07 18:21:35 [INFO] (Comensal): El cliente Paco se toma un cafe con leche a temperatura 29
+2025-11-07 18:21:36 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche a temperatura 59
+2025-11-07 18:21:36 [ERROR] (AbrirBar): Problemas con el cafe de Paco : La temperatura del cafe es mayor a 80º

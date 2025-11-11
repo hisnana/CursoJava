@@ -15,14 +15,14 @@ public class ConsultaProductos {
         "FROM TB_PRODUCTOS_ANA";
 
     public static void main(String[] args) {
-        List<Producto> lista = consultaProductos();
-        System.out.println("Cantidad productos: " + lista.size());
-        for (Producto p : lista) {
+        List<Producto> productos = consultaProductos();
+        System.out.println("Cantidad productos: " + productos.size());
+        for (Producto p : productos) {
             System.out.println(p); // toString() de Lombok
         }
     }
 
-    /** Devuelve la lista de productos leídos de la BD. */
+    /** Devuelve la lista de productos leídos de la BD y los añade a la lista productos */
     public static List<Producto> consultaProductos() {
         List<Producto> productos = new ArrayList<>();
 

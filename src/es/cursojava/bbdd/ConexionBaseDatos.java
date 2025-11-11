@@ -14,10 +14,10 @@ public class ConexionBaseDatos {
 
 
     private static void conectaOracle() {
-		String url_oracle = "jdbc:oracle:thin:ana/password@//10.2.1.23:1522/XEPDB1";	
-		String url_oracle2 = "jdbc:oracle:thin:@//10.2.1.23:1522/XEPDB1";
-		String username = "ana";
-		String password = "password";
+		String url_oracle = "jdbc:oracle:thin:nana/password@//localhost:31521/XEPDB1";	
+		String url_oracle2 = "jdbc:oracle:thin:@//localhost:31521/XEPDB1";
+		String username = "nana";
+		String password = "nana2025";
 
 		
 		//try (Connection connection = DriverManager.getConnection(url_oracle2,username,password);) {

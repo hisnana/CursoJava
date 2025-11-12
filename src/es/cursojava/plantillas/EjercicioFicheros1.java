@@ -17,6 +17,8 @@ package es.cursojava.plantillas;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import es.cursojava.utils.MiLogger;
 import es.cursojava.utils.Utilidades;
@@ -34,6 +36,7 @@ public class EjercicioFicheros1 {
         File dirImg = new File(base, DIR_IMG);
         File dirDoc = new File(base, DIR_DOC);
         File dirOtros = new File(base, DIR_OTROS);
+        List<File> otros = new ArrayList<File>();
         if (!base.exists()) base.mkdirs();
         dirImg.mkdirs();
         dirDoc.mkdirs();
@@ -44,6 +47,7 @@ public class EjercicioFicheros1 {
 		
 		if(numFicheros>0) {
 			int contador = 0;
+			
 			while(contador<numFicheros) {
 				String nombreFichero = Utilidades.pideDatoString("Dime como llamar el fichero "+(contador+1)).toLowerCase();
 				String nombreSolo = new File(nombreFichero).getName();
@@ -57,6 +61,7 @@ public class EjercicioFicheros1 {
                     escribeLinea(destino, "Archivo creado para pruebas.");
                 } else {
                     destino = unicoTest(dirOtros, sinExtension(nombreSolo), ext);
+                    otros.add(destino);
                 }
                 
 				
@@ -80,9 +85,9 @@ public class EjercicioFicheros1 {
 		}
 		
 		 // 3) Renombrar los ficheros en "Otros" a: <TU_NOMBRE>_<contador>.<ext>
-        String miNombre = "Ana"; // <-- pon aquí tu nombre preferido
+        String miNombre = "Ana"; 
         int contador = 1;
-        File[] otros = dirOtros.listFiles();
+        
         if (otros != null) {
             for (File f : otros) {
                 if (!f.isFile()) continue;

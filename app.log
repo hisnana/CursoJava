@@ -1395,3 +1395,50 @@ Atendiendo a Cliente1
 2025-11-12 20:19:41 [INFO] (Utilidades): Dime como llamar el fichero 1
 2025-11-12 20:19:46 [INFO] (Utilidades): → test.txt
 2025-11-12 20:19:46 [INFO] (EjercicioFicheros1): Ya existía: C:\Users\Tardes\Ficheros\Documentos\test.txt
+2025-11-12 20:30:31 [INFO] (Utilidades): Cuanto ficheros quieres crear?
+2025-11-12 20:30:34 [INFO] (Utilidades): → 2
+2025-11-12 20:30:34 [INFO] (Utilidades): Dime como llamar el fichero 1
+2025-11-12 20:30:40 [INFO] (Utilidades): → nana
+2025-11-12 20:30:40 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Otros\nana
+2025-11-12 20:30:40 [INFO] (Utilidades): Dime como llamar el fichero 2
+2025-11-12 20:30:45 [INFO] (Utilidades): → meme
+2025-11-12 20:30:45 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Otros\meme
+2025-11-12 20:31:01 [INFO] (Utilidades): Cuanto ficheros quieres crear?
+2025-11-12 20:31:02 [INFO] (Utilidades): → 2
+2025-11-12 20:31:02 [INFO] (Utilidades): Dime como llamar el fichero 1
+2025-11-12 20:31:04 [INFO] (Utilidades): → nana
+2025-11-12 20:31:04 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Otros\nana
+2025-11-12 20:31:04 [INFO] (Utilidades): Dime como llamar el fichero 2
+2025-11-12 20:31:06 [INFO] (Utilidades): → meme
+2025-11-12 20:31:06 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Otros\meme
+2025-11-12 20:31:19 [INFO] (Utilidades): Cuanto ficheros quieres crear?
+2025-11-12 20:31:20 [INFO] (Utilidades): → 2
+2025-11-12 20:31:20 [INFO] (Utilidades): Dime como llamar el fichero 1
+2025-11-12 20:31:22 [INFO] (Utilidades): → nana
+2025-11-12 20:31:22 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Otros\nana
+2025-11-12 20:31:22 [INFO] (Utilidades): Dime como llamar el fichero 2
+2025-11-12 20:31:23 [INFO] (Utilidades): → meme
+2025-11-12 20:31:23 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Otros\meme
+2025-11-12 20:32:22 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 20:32:25 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Otros
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_1                                                    0,00 B NO esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_1.img                                                0,00 B NO esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_1_1                                                  0,00 B NO esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_1_2                                                  0,00 B SI esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_2                                                    0,00 B NO esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_2.pepe                                               0,00 B NO esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_2_1                                                  0,00 B SI esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_2_2                                                  0,00 B NO esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ana_3_1                                                 30,00 B NO esta oculto
+
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 20:32:25 [INFO] (EjercicioFicheros2): Ficheros: 9   Tamaño total: 30,00 B
+

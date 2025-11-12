@@ -51,11 +51,12 @@ public class EjercicioFicheros1 {
 				
                 File destino;
                 if (esImagen(ext)) {
-                    destino = ensureUnique(dirImg, sinExtension(nombreSolo), ext);
+                    destino = unicoTest(dirImg, sinExtension(nombreSolo), ext);
                 } else if (".txt".equals(ext)) {
-                    destino = ensureUnique(dirDoc, sinExtension(nombreSolo), ext);
+                    destino = unicoTest(dirDoc, sinExtension(nombreSolo), ext);
+                    escribeLinea(destino, "Archivo creado para pruebas.");
                 } else {
-                    destino = ensureUnique(dirOtros, sinExtension(nombreSolo), ext);
+                    destino = unicoTest(dirOtros, sinExtension(nombreSolo), ext);
                 }
                 
 				
@@ -64,7 +65,7 @@ public class EjercicioFicheros1 {
                     if (destino.createNewFile()) {
                     	MiLogger.info("Creado: " + destino.getAbsolutePath());
                         // Opcional: rellenar con una línea
-                        // escribeLinea(destino, "Archivo creado para pruebas.");
+                        
                     } else {
                     	MiLogger.info("Ya existía: " + destino.getAbsolutePath());
                     }
@@ -88,7 +89,7 @@ public class EjercicioFicheros1 {
 
                 String ext = getExtension(f.getName()); // conserva la extensión original
                 // Creamos nombre destino con contador, evitando colisiones si ya existe
-                File nuevo = ensureUnique(dirOtros, miNombre + "_" + contador, ext);
+                File nuevo = unicoTest(dirOtros, miNombre + "_" + contador, ext);
 
                 boolean ok = f.renameTo(nuevo);
                 if (ok) {
@@ -124,7 +125,7 @@ public class EjercicioFicheros1 {
     }
     
     // Asegura nombre único dentro del directorio (si existe, añade _1, _2, ...)
-    private static File ensureUnique(File dir, String baseName, String ext) {
+    private static File unicoTest(File dir, String baseName, String ext) {
         File f = new File(dir, baseName + ext);
         int i = 1;
         while (f.exists()) {

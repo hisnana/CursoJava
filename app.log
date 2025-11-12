@@ -1382,3 +1382,16 @@ Atendiendo a Cliente1
 2025-11-12 20:11:03 [INFO] (EjercicioFicheros2): ============================================================================
 2025-11-12 20:11:03 [INFO] (EjercicioFicheros2): Ficheros: 2   Tamaño total: 0,00 B
 
+2025-11-12 20:17:07 [INFO] (Utilidades): Cuanto ficheros quieres crear?
+2025-11-12 20:17:10 [INFO] (Utilidades): → 2
+2025-11-12 20:17:10 [INFO] (Utilidades): Dime como llamar el fichero 1
+2025-11-12 20:17:20 [INFO] (Utilidades): → prueba.jpg
+2025-11-12 20:17:20 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Imagenes\prueba.jpg
+2025-11-12 20:17:20 [INFO] (Utilidades): Dime como llamar el fichero 2
+2025-11-12 20:17:26 [INFO] (Utilidades): → çde
+2025-11-12 20:17:26 [INFO] (EjercicioFicheros1): Creado: C:\Users\Tardes\Ficheros\Otros\çde
+2025-11-12 20:19:31 [INFO] (Utilidades): Cuanto ficheros quieres crear?
+2025-11-12 20:19:41 [INFO] (Utilidades): → 1
+2025-11-12 20:19:41 [INFO] (Utilidades): Dime como llamar el fichero 1
+2025-11-12 20:19:46 [INFO] (Utilidades): → test.txt
+2025-11-12 20:19:46 [INFO] (EjercicioFicheros1): Ya existía: C:\Users\Tardes\Ficheros\Documentos\test.txt

@@ -1317,3 +1317,68 @@ Atendiendo a Cliente1
 2025-11-07 18:21:35 [INFO] (Comensal): El cliente Paco se toma un cafe con leche a temperatura 29
 2025-11-07 18:21:36 [INFO] (ClienteAsiduo): El cliente Marco se toma un cafe con leche a temperatura 59
 2025-11-07 18:21:36 [ERROR] (AbrirBar): Problemas con el cafe de Paco : La temperatura del cafe es mayor a 80º
+2025-11-12 19:41:05 [INFO] (Utilidades): Cuanto ficheros quieres crear?
+2025-11-12 19:41:08 [INFO] (Utilidades): → 2
+2025-11-12 19:41:08 [INFO] (Utilidades): Dime como llamar el fichero 01
+2025-11-12 19:41:32 [INFO] (Utilidades): → test1.txt
+2025-11-12 19:41:32 [INFO] (EjercicioFicheros): Creado: C:\Users\Tardes\Ficheros\Documentos\test1.txt
+2025-11-12 19:41:32 [INFO] (Utilidades): Dime como llamar el fichero 11
+2025-11-12 19:41:45 [INFO] (Utilidades): → test.png
+2025-11-12 19:41:45 [INFO] (EjercicioFicheros): Creado: C:\Users\Tardes\Ficheros\Imagenes\test.png
+2025-11-12 19:42:45 [INFO] (Utilidades): Cuanto ficheros quieres crear?
+2025-11-12 19:42:48 [INFO] (Utilidades): → 3
+2025-11-12 19:42:48 [INFO] (Utilidades): Dime como llamar el fichero 1
+2025-11-12 19:42:58 [INFO] (Utilidades): → test.pepe
+2025-11-12 19:42:58 [INFO] (EjercicioFicheros): Creado: C:\Users\Tardes\Ficheros\Otros\test.pepe
+2025-11-12 19:42:58 [INFO] (Utilidades): Dime como llamar el fichero 2
+2025-11-12 19:43:05 [INFO] (Utilidades): → test.img
+2025-11-12 19:43:05 [INFO] (EjercicioFicheros): Creado: C:\Users\Tardes\Ficheros\Otros\test.img
+2025-11-12 19:43:05 [INFO] (Utilidades): Dime como llamar el fichero 3
+2025-11-12 19:43:13 [INFO] (Utilidades): → test.png
+2025-11-12 19:43:13 [INFO] (EjercicioFicheros): Creado: C:\Users\Tardes\Ficheros\Imagenes\test_1.png
+2025-11-12 19:53:06 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 19:53:35 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Otros
+2025-11-12 19:56:37 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 19:56:59 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Documentos
+2025-11-12 19:56:59 [INFO] (EjercicioFicheros2): %-50s %12s %10s%nNOMBRETAMANOOCULTO
+2025-11-12 19:56:59 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 19:56:59 [INFO] (EjercicioFicheros2): %-50s %12s %10s%ntest1.txt0,00 BNO
+2025-11-12 19:56:59 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 19:56:59 [INFO] (EjercicioFicheros2): Ficheros: %d   Tamaño total: %s%n10,00 B
+2025-11-12 20:00:15 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 20:00:22 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Documentos
+2025-11-12 20:00:22 [INFO] (EjercicioFicheros2): %-50s %12s %10s%nNOMBRETAMANOOCULTO
+2025-11-12 20:00:22 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 20:06:20 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 20:06:29 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Documentos
+2025-11-12 20:07:03 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 20:07:06 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Documentos
+2025-11-12 20:07:06 [INFO] (EjercicioFicheros2): NOMBRE                                                   TAMANO     OCULTO
+
+2025-11-12 20:07:06 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 20:07:25 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 20:07:27 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Documentos
+2025-11-12 20:07:27 [INFO] (EjercicioFicheros2): NOMBRE                                                   TAMANO     OCULTO
+
+2025-11-12 20:07:27 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 20:07:27 [INFO] (EjercicioFicheros2): test1.txt                                                0,00 B         NO
+
+2025-11-12 20:07:27 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 20:07:27 [INFO] (EjercicioFicheros2): Ficheros: 1   Tamaño total: 0,00 B
+
+2025-11-12 20:08:28 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 20:08:30 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Documentos
+2025-11-12 20:08:30 [INFO] (EjercicioFicheros2): test1.txt                                                0,00 B NO esta oculto
+
+2025-11-12 20:08:30 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 20:08:30 [INFO] (EjercicioFicheros2): Ficheros: 1   Tamaño total: 0,00 B
+
+2025-11-12 20:11:00 [INFO] (Utilidades): Inserta un directorio:
+2025-11-12 20:11:03 [INFO] (Utilidades): → C:\Users\Tardes\Ficheros\Imagenes
+2025-11-12 20:11:03 [INFO] (EjercicioFicheros2): test.png                                                 0,00 B NO esta oculto
+
+2025-11-12 20:11:03 [INFO] (EjercicioFicheros2): test_1.png                                               0,00 B NO esta oculto
+
+2025-11-12 20:11:03 [INFO] (EjercicioFicheros2): ============================================================================
+2025-11-12 20:11:03 [INFO] (EjercicioFicheros2): Ficheros: 2   Tamaño total: 0,00 B
+

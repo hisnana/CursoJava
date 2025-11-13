@@ -1,4 +1,4 @@
-package es.cursojava.plantillas;
+package es.cursojava.ficheros;
 //Ejercicio 1:
 //============================================================
 //Ficheros FILE: 

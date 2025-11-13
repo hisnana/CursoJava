@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-public class EmpezandoConFicherosNIO {
+public class FicherosNIO {
 
     public static void main(String[] args) {
         // Rutas (usa / o Paths.get para evitar problemas con \)

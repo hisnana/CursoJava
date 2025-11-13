@@ -1,4 +1,4 @@
-package es.cursojava.plantillas;
+package es.cursojava.ficheros;
 
 import java.io.File;
 import java.util.Arrays;
@@ -32,6 +32,10 @@ public class EjercicioFicheros2 {
             }
 
             // Ordenar por nombre (A→Z, sin mayúsculas/minúsculas)
+         // Ordena 'elems' (File[]) por nombre, sin distinguir mayúsculas/minúsculas.
+         // Arrays.sort(...) ordena in-place.
+         // Comparator.comparing(File::getName, String.CASE_INSENSITIVE_ORDER)
+         //   -> extrae el nombre de cada File y lo compara ignorando el caso.
             Arrays.sort(elems, Comparator.comparing(File::getName, String.CASE_INSENSITIVE_ORDER));
 
             long totalBytes = 0L;

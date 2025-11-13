@@ -20,6 +20,15 @@ public class ArchivoServicio {
 
 	public void crearArchivo(String nombre) {
 		File archivo = new File(nombre);
+		
+		if(!archivo.exists()) {
+			try {
+				archivo.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		try (
 			FileWriter fw = new FileWriter(archivo, true);
 			BufferedWriter buffer = new BufferedWriter(fw);
@@ -73,12 +82,14 @@ public class ArchivoServicio {
 			// try (PrintWriter buffer = new PrintWriter(new FileWriter(archivo))){
 
 			buffer.println("Hola que tal amigos!");
-			buffer.println("Todo bien? yo acá escribiendo un archivo...");
-			buffer.printf("Hasta luego %s! %s", "JoseLuis", "Cadena");
-			// buffer.close();
+			buffer.println("Todo bien? yo aqui escribiendo un archivo...");
+			buffer.printf("Hasta luego %s! %s", "Ana", "Cadena");
+			
 			System.out.println("El archivo se ha creado con éxito!");
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			// buffer.close();
 		}
 	}
 
@@ -165,7 +176,7 @@ public class ArchivoServicio {
 				} else {
 					if (file.getName().endsWith(".txt")) {
 						System.out.println("Se puede leer:" + file.canRead());
-						System.out.println("TAmaño " + file.length());
+						System.out.println("Tamaño " + file.length());
 						System.out.println("Es un fichero");
 					}
 				}

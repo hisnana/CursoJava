@@ -14,13 +14,13 @@ public class ConsultaProductos {
         "SELECT ID, NOMBRE, CATEGORIA, PRECIO, STOCK, FECHA_ALTA, ESTADO, CODIGO_SKU, CREADO_POR, IVA " +
         "FROM TB_PRODUCTOS_ANA";
 
-    public static void main(String[] args) {
-        List<Producto> productos = consultaProductos();
-        System.out.println("Cantidad productos: " + productos.size());
-        for (Producto p : productos) {
-            System.out.println(p); // toString() de Lombok
-        }
-    }
+//    public static void main(String[] args) {
+//        List<Producto> productos = consultaProductos();
+//        System.out.println("Cantidad productos: " + productos.size());
+//        for (Producto p : productos) {
+//            System.out.println(p); // toString() de Lombok
+//        }
+//    }
 
     /** Devuelve la lista de productos leídos de la BD y los añade a la lista productos */
     public static List<Producto> consultaProductos() {

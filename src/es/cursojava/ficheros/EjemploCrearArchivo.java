@@ -24,14 +24,15 @@ public class EjemploCrearArchivo {
 		//Ruta relativa a la carpeta del proyecto
 
 		Date fecha = new Date();
-		SimpleDateFormat df = new SimpleDateFormat("dd-mm-yy");
+		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yy");
 		String fechaStr3 = df.format(fecha);
 
-        String nombreArchivo = "./recursos/joseluis_"+ fechaStr3 +".txt";
+        String nombreArchivo = "./recursos/ana_"+ fechaStr3 +".txt";
 		
 		
         ArchivoServicio service = new ArchivoServicio();
+        service.crearArchivo2(nombreArchivo);
         //service.mostrarContenidoDirectorio("C:\\Users\\Tardes\\");
-        service.crearArchivo3(nombreArchivo);
+        //service.crearArchivo3(nombreArchivo);
     }
 }

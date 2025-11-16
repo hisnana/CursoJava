@@ -2,6 +2,20 @@
 
 > Consejos rápidos: usa `git status` y `git log --oneline --graph` a menudo. Evita `push --force` salvo que sepas lo que haces (mejor `--force-with-lease`).
 
+# Solo la primera vez (repo nuevo local)
+git init
+git add .
+git commit -m "Primer commit"
+git remote add origin URL_DEL_GITHUB
+git push -u origin master     # o main, si tu rama se llama así
+
+# Después, en el día a día
+git status
+git add .
+git commit -m "Mensaje claro"
+git push
+git pull    # cuando quieras traer cambios del remoto
+
 ## 👤 Configuración (identidad)
 
 ```bash

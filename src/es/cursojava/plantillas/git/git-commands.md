@@ -34,7 +34,7 @@ git show <commit>                          # ver un commit
 ## ➕ Añadir y confirmar
 
 ```bash
-git add .                                  # añade todo
+git add .                                  # añade todo al staging
 git add <ruta>                             # añade selectivo
 git commit -m "mensaje"                    # crea commit
 git commit --amend                         # reescribe último (edita msg)

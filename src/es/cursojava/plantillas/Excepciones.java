@@ -1,15 +1,18 @@
 package es.cursojava.plantillas;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.InputMismatchException;
-import java.util.Objects;
 import java.util.Scanner;
 
-// Opcional: usa tu logger si lo tienes
-import es.cursojava.utils.MiLogger;
+import es.cursojava.ini.excepciones.cafeteria.excepciones.TooColdTemperatureException;
 
 /**
  * 🧠 RESUMEN RÁPIDO

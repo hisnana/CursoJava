@@ -6,9 +6,9 @@
 
         <!-- Conexión JDBC -->
         <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1522:XE</property>
-        <property name="hibernate.connection.username">getafe</property>
-        <property name="hibernate.connection.password">password</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:31521/XEPDB1</property>
+        <property name="hibernate.connection.username">nana</property>
+        <property name="hibernate.connection.password">nana2025</property>
 
         <!-- Dialecto de Hibernate -->
         <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>

@@ -115,6 +115,12 @@
     <!-- ===================== -->
     <!--     LOGGER RAÍZ       -->
     <!-- ===================== -->
+    	<!-- Sólo errores de Hibernate -->
+	<logger name="org.hibernate" level="ERROR" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+    
+    
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="ERROR_FILE"/>

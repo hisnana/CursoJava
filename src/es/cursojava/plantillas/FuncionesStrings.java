@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * - Case-insensitive (java/JAVA/Java...)
  * Incluye variantes sin regex y con Streams por si el enunciado las pide.
  */
-public class FuncionesScripts {
+public class FuncionesStrings {
     // Palabra exacta "Java" (sensibilidad a may/min desactivada + Unicode)
     private static final Pattern P = Pattern.compile("\\bJava\\b", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
 

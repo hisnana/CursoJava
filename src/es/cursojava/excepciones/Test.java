@@ -1,4 +1,4 @@
-package es.cursojava.ini.excepciones;
+package es.cursojava.excepciones;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

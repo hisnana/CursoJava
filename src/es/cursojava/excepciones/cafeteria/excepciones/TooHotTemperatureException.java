@@ -1,4 +1,4 @@
-package es.cursojava.ini.excepciones.cafeteria.excepciones;
+package es.cursojava.excepciones.cafeteria.excepciones;
 
 public class TooHotTemperatureException extends TemperatureException {
 	public TooHotTemperatureException (String message) {

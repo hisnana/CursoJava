@@ -2,7 +2,7 @@ package es.cursojava.oo.ejercicios.colegio;
 
 import java.util.Arrays;
 
-import es.cursojava.ini.excepciones.NotaInvalidaException;
+import es.cursojava.excepciones.NotaInvalidaException;
 
 
 public class Alumno {

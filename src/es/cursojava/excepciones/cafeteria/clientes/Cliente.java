@@ -1,4 +1,4 @@
-package es.cursojava.ini.excepciones.cafeteria.clientes;
+package es.cursojava.excepciones.cafeteria.clientes;
 
 
 import lombok.Getter;

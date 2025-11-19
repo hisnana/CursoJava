@@ -1,4 +1,4 @@
-package es.cursojava.ini.excepciones.cafeteria.pojos;
+package es.cursojava.excepciones.cafeteria.pojos;
 
 import lombok.Getter;
 import lombok.Setter;

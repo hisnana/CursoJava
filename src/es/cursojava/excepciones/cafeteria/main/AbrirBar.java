@@ -1,18 +1,17 @@
-package es.cursojava.ini.excepciones.cafeteria.main;
+package es.cursojava.excepciones.cafeteria.main;
 
 import java.util.ArrayList;
 
 import java.util.List;
 
-import es.cursojava.ini.excepciones.cafeteria.clientes.Cliente;
-
-import es.cursojava.ini.excepciones.cafeteria.clientes.ClienteAsiduo;
-import es.cursojava.ini.excepciones.cafeteria.clientes.Comensal;
-import es.cursojava.ini.excepciones.cafeteria.clientes.Huesped;
-import es.cursojava.ini.excepciones.cafeteria.excepciones.TooColdTemperatureException;
-import es.cursojava.ini.excepciones.cafeteria.excepciones.TooHotTemperatureException;
-import es.cursojava.ini.excepciones.cafeteria.interfaces.Cafeable;
-import es.cursojava.ini.excepciones.cafeteria.pojos.TazaCafe;
+import es.cursojava.excepciones.cafeteria.clientes.Cliente;
+import es.cursojava.excepciones.cafeteria.clientes.ClienteAsiduo;
+import es.cursojava.excepciones.cafeteria.clientes.Comensal;
+import es.cursojava.excepciones.cafeteria.clientes.Huesped;
+import es.cursojava.excepciones.cafeteria.excepciones.TooColdTemperatureException;
+import es.cursojava.excepciones.cafeteria.excepciones.TooHotTemperatureException;
+import es.cursojava.excepciones.cafeteria.interfaces.Cafeable;
+import es.cursojava.excepciones.cafeteria.pojos.TazaCafe;
 import es.cursojava.utils.MiLogger;
 
 

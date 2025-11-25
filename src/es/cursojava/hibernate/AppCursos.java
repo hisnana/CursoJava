@@ -18,6 +18,7 @@ public class AppCursos {
         System.out.println("---- CURSOS ACTIVOS ----");
         mostrarCursosActivos();
     }
+    
 
     // Insertar 3 cursos de ejemplo
     public static void insertarCursosEjemplo() {

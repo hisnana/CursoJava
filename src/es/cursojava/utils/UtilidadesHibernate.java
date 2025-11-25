@@ -8,7 +8,7 @@ public class UtilidadesHibernate {
 
     // SessionFactory es un objeto "pesado" que se crea una vez
     // y se reutiliza durante toda la vida de la aplicación.
-    // Aquí lo guardamos como static final (patrón Singleton).
+    // Aquí lo guardamos como static final (patrón Singleton: objeto que se crea una vez en memoria).
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
     // Método privado que construye la SessionFactory a partir del fichero hibernate.cfg.xml

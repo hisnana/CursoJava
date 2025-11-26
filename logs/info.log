@@ -1,6 +1,6 @@
-[2025-11-25 17:18:06] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
-[2025-11-25 17:18:06] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[2025-11-25 17:18:07] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+[2025-11-26 18:14:00] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
+[2025-11-26 18:14:00] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-11-26 18:14:01] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:oracle:thin:@localhost:31521/XEPDB1]
 	Database driver: oracle.jdbc.OracleDriver
 	Database version: 21.3
@@ -8,26 +8,6 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
-[2025-11-25 17:18:12] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
-[2025-11-25 17:18:12] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[2025-11-25 17:18:13] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
-	Database JDBC URL [jdbc:oracle:thin:@localhost:31521/XEPDB1]
-	Database driver: oracle.jdbc.OracleDriver
-	Database version: 21.3
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[2025-11-25 17:18:42] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
-[2025-11-25 17:18:42] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-[2025-11-25 17:18:43] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
-	Database JDBC URL [jdbc:oracle:thin:@localhost:31521/XEPDB1]
-	Database driver: oracle.jdbc.OracleDriver
-	Database version: 21.3
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[2025-11-25 17:18:44] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-[2025-11-25 17:18:44] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2025-11-25 17:18:44] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5abbb273] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2025-11-26 18:14:01] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2025-11-26 18:14:02] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-11-26 18:14:02] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4a105556] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.

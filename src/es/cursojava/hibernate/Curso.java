@@ -79,6 +79,7 @@ public class Curso {
     // --------- CALLBACK @PrePersist ---------
     // Se ejecuta justo antes del INSERT
     @PrePersist
+    //Se ejecuta antes de insertar un dato
     public void prePersist() {
         // Si no hemos seteado fechaCreacion, la ponemos a "ahora"
         if (fechaCreacion == null) {

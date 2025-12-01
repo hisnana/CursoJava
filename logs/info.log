@@ -8,3 +8,63 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
+[2025-12-01 20:09:07] INFO  e.c.h.e.presentacion.AppEmpleados - === Alta de empleados ===
+[2025-12-01 20:09:07] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
+[2025-12-01 20:09:07] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-12-01 20:09:08] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@localhost:31521/XEPDB1]
+	Database driver: oracle.jdbc.OracleDriver
+	Database version: 21.3
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-01 20:15:21] INFO  e.c.h.e.presentacion.AppEmpleados - === Alta de empleados ===
+[2025-12-01 20:15:21] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
+[2025-12-01 20:15:22] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-12-01 20:15:22] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@localhost:31521/XEPDB1]
+	Database driver: oracle.jdbc.OracleDriver
+	Database version: 21.3
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-01 20:16:09] INFO  e.c.h.e.presentacion.AppEmpleados - === Alta de empleados ===
+[2025-12-01 20:16:09] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
+[2025-12-01 20:16:09] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-12-01 20:16:10] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@localhost:31521/XEPDB1]
+	Database driver: oracle.jdbc.OracleDriver
+	Database version: 21.3
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-01 20:16:10] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2025-12-01 20:16:10] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-12-01 20:34:22] INFO  e.c.h.e.presentacion.AppEmpleados - === Alta de empleados ===
+[2025-12-01 20:34:22] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.12.Final
+[2025-12-01 20:34:22] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-12-01 20:34:23] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@localhost:31521/XEPDB1]
+	Database driver: oracle.jdbc.OracleDriver
+	Database version: 21.3
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+[2025-12-01 20:34:23] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2025-12-01 20:34:24] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-12-01 20:34:24] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e1ba142] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - Creado empleado: EmpleadoDto{id=1, nif='11111111A', nombre='Ana', departamento='IT', salario=1800.00}
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - Creado empleado: EmpleadoDto{id=2, nif='22222222B', nombre='Luis', departamento='VENTAS', salario=2000.00}
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - === Buscar por NIF ===
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - Empleado encontrado por NIF 11111111A: EmpleadoDto{id=1, nif='11111111A', nombre='Ana', departamento='IT', salario=1800}
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - === Listar por departamento (IT) ===
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - Empleado IT: EmpleadoDto{id=1, nif='11111111A', nombre='Ana', departamento='IT', salario=1800}
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - === Actualizar salario ===
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - Empleado actualizado: EmpleadoDto{id=1, nif='11111111A', nombre='Ana', departamento='IT', salario=1900.00}
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - === Listar todos ===
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - Empleado en BBDD: EmpleadoDto{id=1, nif='11111111A', nombre='Ana', departamento='IT', salario=1900}
+[2025-12-01 20:34:25] INFO  e.c.h.e.presentacion.AppEmpleados - Empleado en BBDD: EmpleadoDto{id=2, nif='22222222B', nombre='Luis', departamento='VENTAS', salario=2000}

@@ -1,132 +1,63 @@
 <configuration>
 
-    <!-- Carpeta base para los logs -->
+    <!-- Carpeta base de logs -->
     <property name="LOG_DIR" value="logs"/>
 
     <!-- ===================== -->
     <!--  Consola con colores  -->
     <!-- ===================== -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- En algunas consolas Windows, si no ves colores, descomenta esto:
-        <withJansi>true</withJansi>
-        -->
         <encoder>
-            <!--
-              %highlight(...) colorea según el nivel:
-              ERROR=rojo, WARN=amarillo, INFO=verde, DEBUG=azul, TRACE=cian
-            -->
+            <!-- Colores según nivel -->
             <pattern>[%d{HH:mm:ss}] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- ===================== -->
-    <!--  ERROR -> error.log   -->
-    <!-- ===================== -->
-    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/error.log</file>
-
-        <!-- Rotación diaria + compresión -->
+    <!-- =========================== -->
+    <!--  Fichero solo para Hibernate -->
+    <!-- =========================== -->
+    <appender name="HIBERNATE_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/hibernate.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_DIR}/error-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <!-- un fichero por día -->
+            <fileNamePattern>${LOG_DIR}/hibernate.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
-
         <encoder>
             <pattern>[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
-
-        <!-- Solo ERROR -->
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>ERROR</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
     </appender>
 
-    <!-- ==================== -->
-    <!--  WARN -> warn.log    -->
-    <!-- ==================== -->
-    <appender name="WARN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/warn.log</file>
-
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_DIR}/warn-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
-            <maxHistory>7</maxHistory>
-        </rollingPolicy>
-
-        <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-
-        <!-- Solo WARN -->
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>WARN</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-    </appender>
-
-    <!-- ==================== -->
-    <!--  INFO -> info.log    -->
-    <!-- ==================== -->
-    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/info.log</file>
-
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_DIR}/info-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
-            <maxHistory>7</maxHistory>
-        </rollingPolicy>
-
-        <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-
-        <!-- Solo INFO -->
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>INFO</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-    </appender>
-
-    <!-- ===================== -->
-    <!--  DEBUG -> debug.log   -->
-    <!-- ===================== -->
-    <appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/debug.log</file>
-
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_DIR}/debug-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
-            <maxHistory>7</maxHistory>
-        </rollingPolicy>
-
-        <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-
-        <!-- Solo DEBUG -->
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>DEBUG</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-    </appender>
-
-    <!-- ===================== -->
-    <!--     LOGGER RAÍZ       -->
-    <!-- ===================== -->
-    	<!-- Sólo errores de Hibernate -->
-	<logger name="org.hibernate" level="ERROR" additivity="false">
-		<appender-ref ref="STDOUT" />
-	</logger>
-    
-    
-    <root level="DEBUG">
+    <!-- ================================================ -->
+    <!--  Logger de tu aplicación (solo tu paquete)      -->
+    <!--  Esto es lo que quieres ver en pantalla         -->
+    <!-- ================================================ -->
+    <logger name="es.cursojava.hibernate.empleados" level="INFO" additivity="false">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="ERROR_FILE"/>
-        <appender-ref ref="WARN_FILE"/>
-        <appender-ref ref="INFO_FILE"/>
-        <appender-ref ref="DEBUG_FILE"/>
+    </logger>
+
+    <!-- ===================================================== -->
+    <!--  Logger de Hibernate: manda TODO a fichero,          -->
+    <!--  sin propagar al root (no llega a la consola)        -->
+    <!-- ===================================================== -->
+    <logger name="org.hibernate" level="DEBUG" additivity="false">
+        <appender-ref ref="HIBERNATE_FILE"/>
+    </logger>
+
+    <!-- Opcional: si quieres ver solo el SQL en el fichero -->
+    <!--
+    <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+        <appender-ref ref="HIBERNATE_FILE"/>
+    </logger>
+    -->
+
+    <!-- ========================= -->
+    <!--  Root logger por defecto -->
+    <!-- ========================= -->
+    <!-- WARN para que, si se cuela algo sin logger específico,
+         solo salga lo grave. No mandamos nada extra a consola. -->
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
     </root>
 
 </configuration>

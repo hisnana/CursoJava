@@ -1,7 +1,9 @@
-package es.cursojava.hibernate.appcursos;
+package es.cursojava.hibernate.cursos;
 
 import java.util.List;
 import org.hibernate.Session;
+
+import es.cursojava.hibernate.cursos.entity.Curso;
 
 /**
  * DAO de la entidad Curso.

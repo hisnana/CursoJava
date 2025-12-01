@@ -1,4 +1,4 @@
-package es.cursojava.hibernate.appcursos;
+package es.cursojava.hibernate.cursos.entity;
 
 import jakarta.persistence.*;
 

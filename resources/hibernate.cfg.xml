@@ -31,6 +31,7 @@
         <!-- Entidad mapeada -->
         <mapping class="es.cursojava.hibernate.Curso" />
         <mapping class="es.cursojava.hibernate.CursoDao" />
+        <mapping class="es.cursojava.hibernate.entity.Empleado" />
         
     </session-factory>
 </hibernate-configuration>

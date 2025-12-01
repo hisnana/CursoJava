@@ -1,4 +1,4 @@
-package es.cursojava.hibernate;
+package es.cursojava.hibernate.appcursos;
 
 import java.util.List;
 import org.hibernate.Session;

@@ -1,4 +1,4 @@
-package es.cursojava.hibernate.app;
+package es.cursojava.hibernate.appcursos;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +10,6 @@ import java.time.LocalDate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import es.cursojava.hibernate.Curso;
-import es.cursojava.hibernate.CursoDAO;
 import es.cursojava.utils.UtilidadesHibernate;
 
 public class ImportarCursosDesdeFichero {

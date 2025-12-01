@@ -1,6 +1,5 @@
-package es.cursojava.hibernate;
+package es.cursojava.hibernate.appcursos;
 
-import es.cursojava.hibernate.Curso;
 import es.cursojava.utils.UtilidadesHibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

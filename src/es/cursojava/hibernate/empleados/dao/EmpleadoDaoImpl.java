@@ -20,16 +20,25 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         Transaction tx = null;
         try (Session session = UtilidadesHibernate.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
-            session.saveOrUpdate(empleado);
+
+            if (empleado.getId() == null) {
+                // 👶 Nuevo empleado (TRANSIENT) → persist
+                session.persist(empleado);
+                // A partir de aquí, Hibernate le asigna un ID (con IDENTITY suele ser inmediato)
+                log.info("Empleado creado con id={} y NIF={}", empleado.getId(), empleado.getNif());
+            } else {
+                // 🔁 Ya existe en BBDD (DETACHED) → merge
+                Empleado managed = (Empleado) session.merge(empleado);
+                log.info("Empleado actualizado con id={} y NIF={}", managed.getId(), managed.getNif());
+            }
+
             tx.commit();
-            log.debug("Empleado guardado/actualizado en BBDD: {}", empleado);
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             log.error("Error guardando/actualizando empleado en BBDD", e);
             throw e;
         }
     }
-
     @Override
     public Empleado buscarPorId(Long id) {
         try (Session session = UtilidadesHibernate.getSessionFactory().openSession()) {

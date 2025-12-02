@@ -33,21 +33,20 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     public EmpleadoDto altaEmpleado(EmpleadoDto empleadoDto) throws BusinessException {
         validarEmpleadoParaAlta(empleadoDto);
 
-        // Comprobar NIF duplicado
         Empleado existente = empleadoDao.buscarPorNif(empleadoDto.getNif());
         if (existente != null) {
-            // ⚠️ Ya existe → no creamos uno nuevo, solo avisamos y devolvemos el existente
-            log.warn("No se crea empleado; ya existe uno con NIF {}. Se devuelve el existente.", 
-                     empleadoDto.getNif());
+            log.warn("No se crea empleado; ya existe uno con NIF {} (id={})",
+                     empleadoDto.getNif(), existente.getId());
             return toDto(existente);
         }
 
-        // Si no existe, lo creamos normalmente
         Empleado empleado = toEntity(empleadoDto);
-        empleadoDao.guardar(empleado);
+        empleadoDao.guardar(empleado); // aquí se le rellena el id
 
-        log.info("Empleado creado correctamente con NIF {}", empleado.getNif());
-        return toDto(empleado);
+        log.info("Empleado creado correctamente con id={} y NIF={}", 
+                 empleado.getId(), empleado.getNif());
+
+        return toDto(empleado); // el DTO ya saldrá con id
     }
 
     @Override

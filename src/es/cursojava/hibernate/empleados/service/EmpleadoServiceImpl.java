@@ -5,6 +5,8 @@ import es.cursojava.hibernate.empleados.dto.EmpleadoDto;
 import es.cursojava.hibernate.empleados.entity.Empleado;
 import es.cursojava.hibernate.empleados.exception.BusinessException;
 import es.cursojava.hibernate.empleados.interfaces.EmpleadoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;   // 👈 añade esto
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -14,6 +16,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class EmpleadoServiceImpl implements EmpleadoService {
+	
+	private static final Logger log = LoggerFactory.getLogger(EmpleadoServiceImpl.class); // 👈 logger
 
     private final EmpleadoDao empleadoDao;
 
@@ -29,15 +33,20 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     public EmpleadoDto altaEmpleado(EmpleadoDto empleadoDto) throws BusinessException {
         validarEmpleadoParaAlta(empleadoDto);
 
-        // Validar NIF único
+        // Comprobar NIF duplicado
         Empleado existente = empleadoDao.buscarPorNif(empleadoDto.getNif());
         if (existente != null) {
-            throw new BusinessException("Ya existe un empleado con NIF " + empleadoDto.getNif());
+            // ⚠️ Ya existe → no creamos uno nuevo, solo avisamos y devolvemos el existente
+            log.warn("No se crea empleado; ya existe uno con NIF {}. Se devuelve el existente.", 
+                     empleadoDto.getNif());
+            return toDto(existente);
         }
 
+        // Si no existe, lo creamos normalmente
         Empleado empleado = toEntity(empleadoDto);
         empleadoDao.guardar(empleado);
 
+        log.info("Empleado creado correctamente con NIF {}", empleado.getNif());
         return toDto(empleado);
     }
 
@@ -161,5 +170,20 @@ public class EmpleadoServiceImpl implements EmpleadoService {
                 e.getDepartamento(),
                 e.getSalario()
         );
+    }
+    
+    @Override
+    public void eliminarPorNif(String nif) throws BusinessException {
+        if (nif == null || nif.isBlank()) {
+            throw new BusinessException("El NIF es obligatorio para eliminar un empleado");
+        }
+
+        Empleado empleado = empleadoDao.buscarPorNif(nif);
+        if (empleado == null) {
+            throw new BusinessException("No existe empleado con NIF " + nif);
+        }
+
+        empleadoDao.eliminar(empleado);
+        log.info("Empleado eliminado correctamente con NIF {}", nif);
     }
 }

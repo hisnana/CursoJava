@@ -73,4 +73,19 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
             return lista;
         }
     }
+    
+    @Override
+    public void eliminar(Empleado empleado) {
+        Transaction tx = null;
+        try (Session session = UtilidadesHibernate.getSessionFactory().openSession()) {
+            tx = session.beginTransaction();
+            session.delete(empleado);
+            tx.commit();
+            log.info("Empleado eliminado de BBDD: {}", empleado);
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            log.error("Error eliminando empleado en BBDD", e);
+            throw e;
+        }
+    }
 }

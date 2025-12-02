@@ -17,4 +17,7 @@ public interface EmpleadoService {
     List<EmpleadoDto> listarPorDepartamento(String departamento) throws BusinessException;
 
     List<EmpleadoDto> listarTodos() throws BusinessException; // opcional pero útil
+    
+    void eliminarPorNif(String nif) throws BusinessException;
+    
 }

@@ -15,4 +15,5 @@ public interface EmpleadoDao {
     List<Empleado> buscarPorDepartamento(String departamento);
 
     List<Empleado> buscarTodos();
+    void eliminar(Empleado empleado);  
 }

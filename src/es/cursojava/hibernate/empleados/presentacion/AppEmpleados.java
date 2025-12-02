@@ -23,13 +23,15 @@ public class AppEmpleados {
         EmpleadoService empleadoService = new EmpleadoServiceImpl(empleadoDao);
 
         try {
-            log.info("=== Alta de empleados ===".toUpperCase());
-            // Eliminar empleados previos si existen (para pruebas repetibles)
-            empleadoService.eliminarPorNif("11111111A");
+            log.info("=== Alta de empleados ===".toUpperCase());            
 
             EmpleadoDto emp1 = new EmpleadoDto("11111111A", "Ana", "IT", new BigDecimal("1800.00"));
             EmpleadoDto empCreado1 = empleadoService.altaEmpleado(emp1);
             log.info("Creado empleado: {}", empCreado1);
+            
+            //Actualizar empleado que ya existe
+            EmpleadoDto actualizado = empleadoService.actualizarSalario("11111111A", new BigDecimal("1800.00"));
+            log.info("Empleado actualizado: {}".toUpperCase(), actualizado);
 
             EmpleadoDto emp2 = new EmpleadoDto("22222222B", "Luis", "VENTAS", new BigDecimal("2000.00"));
             EmpleadoDto empCreado2 = empleadoService.altaEmpleado(emp2);
@@ -44,7 +46,7 @@ public class AppEmpleados {
             listaIt.forEach(e -> log.info("Empleado IT: {}".toUpperCase(), e));
 
             log.info("=== Actualizar salario ===".toUpperCase());
-            EmpleadoDto actualizado = empleadoService.actualizarSalario("11111111A", new BigDecimal("1900.00"));
+            actualizado = empleadoService.actualizarSalario("11111111A", new BigDecimal("1900.00"));
             log.info("Empleado actualizado: {}".toUpperCase(), actualizado);
 
             log.info("=== Listar todos ===".toUpperCase());

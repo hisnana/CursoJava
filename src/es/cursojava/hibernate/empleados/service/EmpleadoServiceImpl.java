@@ -185,5 +185,5 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
         empleadoDao.eliminar(empleado);
         log.info("Empleado eliminado correctamente con NIF {}", nif);
-    }
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 }

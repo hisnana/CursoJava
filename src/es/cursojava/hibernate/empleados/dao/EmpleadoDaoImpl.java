@@ -88,9 +88,23 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         Transaction tx = null;
         try (Session session = UtilidadesHibernate.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
-            session.delete(empleado);
+
+            // Aseguramos que la entidad está gestionada por la sesión
+            Empleado managed = empleado;
+            if (!session.contains(empleado)) {
+                // lo volvemos a cargar por id (puede venir "detached")
+                managed = session.get(Empleado.class, empleado.getId());
+            }
+
+            if (managed != null) {
+                session.remove(managed);  // 👈 sustituye a delete()
+                log.info("Empleado eliminado de BBDD: {}", managed);
+            } else {
+                log.warn("Se ha intentado eliminar un empleado inexistente (id={})", 
+                         empleado.getId());
+            }
+
             tx.commit();
-            log.info("Empleado eliminado de BBDD: {}", empleado);
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             log.error("Error eliminando empleado en BBDD", e);

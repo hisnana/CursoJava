@@ -1,8 +1,10 @@
 package es.cursojava.hibernate.cursos.dao;
 
 import java.util.List;
+
 import org.hibernate.Session;
 
+import es.cursojava.hibernate.cursos.entity.Aula;
 import es.cursojava.hibernate.cursos.entity.Curso;
 
 /**
@@ -77,4 +79,31 @@ public class CursoDAO {
                 Curso.class
         ).list();
     }
+    
+    /**
+     * Asigna un aula a un curso dado su id.
+     * No hace validaciones de negocio (eso es tarea del servicio).
+     */
+    public void asignarAula(Long cursoId, Aula aula) {
+        Curso curso = obtenerCursoPorId(cursoId);
+        if (curso != null) {
+            curso.setAula(aula);
+            session.merge(curso); // sincroniza cambios
+        }
+    }
+
+    /**
+     * Obtiene un curso junto con su aula (fetch join para evitar lazy en otra sesión).
+     */
+    public Curso obtenerCursoConAula(Long id) {
+        return session.createQuery(
+                        "SELECT c FROM Curso c " +
+                        "LEFT JOIN FETCH c.aula " +
+                        "WHERE c.id = :id",
+                        Curso.class
+                )
+                .setParameter("id", id)
+                .uniqueResult();
+    }
+
 }

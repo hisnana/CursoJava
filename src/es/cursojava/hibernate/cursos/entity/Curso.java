@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import es.cursojava.hibernate.cursos.entity.Aula;
 
 /**
  * Entidad Curso -> tabla TB_CURSO
@@ -158,5 +159,23 @@ public class Curso {
                 ", fechaFin=" + fechaFin +
                 ", fechaCreacion=" + fechaCreacion +
                 '}';
+    }
+    
+    // ----------------- RELACIÓN ONE-TO-ONE CON AULA -----------------
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(
+            name = "AULA_ID",
+            foreignKey = @ForeignKey(name = "FK_CURSO_AULA"),
+            unique = true // un aula no puede estar en dos cursos a la vez
+    )
+    private Aula aula;
+
+    public Aula getAula() {
+        return aula;
+    }
+
+    public void setAula(Aula aula) {
+        this.aula = aula;
     }
 }

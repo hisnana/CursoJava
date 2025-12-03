@@ -100,13 +100,29 @@ public class EmpleadoServiceImpl implements EmpleadoService {
         }
 
         List<Empleado> lista = empleadoDao.buscarPorDepartamento(departamento);
-        return lista.stream().map(this::toDto).collect(Collectors.toList());
+     // 2️⃣ Usamos un Stream para transformar List<Empleado> → List<EmpleadoDto>
+        return lista.stream()
+        		.map(this::toDto)
+        		// .map(...) → transforma cada elemento del stream
+                // En este caso, por cada Empleado 'e' llama a this.toDto(e)
+                // Resultado: Stream<EmpleadoDto>
+        		.collect(Collectors.toList());
+		        // .collect(...) → operación terminal: el stream se "consume"
+		        // Collectors.toList() → mete todos los EmpleadoDto en una nueva List<EmpleadoDto>
     }
 
     @Override
     public List<EmpleadoDto> listarTodos() throws BusinessException {
         List<Empleado> lista = empleadoDao.buscarTodos();
-        return lista.stream().map(this::toDto).collect(Collectors.toList());
+     
+     // 2️⃣ Convertimos la lista de entidades en lista de DTOs con un Stream
+        return lista.stream()
+        		// Stream<Empleado>
+        		.map(this::toDto)
+        		// Empleado → EmpleadoDto
+        		.collect(Collectors.toList());
+        		// Resultado final: List<EmpleadoDto>
+
     }
 
     // =====================

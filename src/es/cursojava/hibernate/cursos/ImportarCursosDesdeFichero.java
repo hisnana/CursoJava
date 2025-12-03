@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import es.cursojava.hibernate.cursos.dao.CursoDAO;
 import es.cursojava.hibernate.cursos.entity.Curso;
 import es.cursojava.utils.UtilidadesHibernate;
 

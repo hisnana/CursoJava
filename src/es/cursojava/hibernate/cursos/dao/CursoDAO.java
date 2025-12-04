@@ -3,6 +3,8 @@ package es.cursojava.hibernate.cursos.dao;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import es.cursojava.hibernate.cursos.entity.Aula;
 import es.cursojava.hibernate.cursos.entity.Curso;
@@ -16,6 +18,9 @@ import es.cursojava.hibernate.cursos.entity.Curso;
  */
 public class CursoDAO {
 	
+	private static final Logger log = LoggerFactory.getLogger(CursoDAO.class);
+
+	
 	private final Session session;
 
     // Constructor: obligas a pasarle una Session válida al crear el DAO
@@ -27,6 +32,7 @@ public class CursoDAO {
      * Guarda un curso nuevo en la base de datos (INSERT).
      */
 	public void guardarCurso(Curso curso) {
+		log.debug("Guardando curso {}", curso.getCodigo());
 		session.persist(curso);
 	}
 
@@ -34,6 +40,7 @@ public class CursoDAO {
      * Busca un curso por su ID (PK).
      */
 	public Curso obtenerCursoPorId(Long id) {
+		log.debug("Buscando curso con id {}", id);
 		return session.get(Curso.class, id);
 	}
 
@@ -43,6 +50,7 @@ public class CursoDAO {
      * Si viene "despegado", puedes usar merge.
      */
 	public void actualizarCurso(Curso curso) {
+		log.debug("Actualizando curso {}", curso.getCodigo());
 		session.merge(curso);  // o session.update(curso) según cómo lo estéis viendo en clase
 	}
 
@@ -50,6 +58,7 @@ public class CursoDAO {
      * Elimina un curso (objeto ya cargado).
      */
 	public void eliminarCurso(Curso curso) {
+		log.debug("Eliminando curso {}", curso.getCodigo());
 		session.remove(curso);
 	}
 
@@ -57,9 +66,12 @@ public class CursoDAO {
      * Elimina un curso a partir de su id.
      */
     public void eliminarCursoPorId(Long id) {
+        log.debug("Eliminando curso por id {}", id);
         Curso c = obtenerCursoPorId(id);
         if (c != null) {
             session.remove(c);
+        } else {
+            log.warn("No se encontró curso con id {} para eliminar", id);
         }
     }
 
@@ -67,6 +79,7 @@ public class CursoDAO {
      * Devuelve todos los cursos de la tabla.
      */
 	public List<Curso> obtenerTodosLosCursos() {
+		log.debug("Obteniendo todos los cursos");
 		return session.createQuery("FROM Curso", Curso.class).list();
 	}
 
@@ -74,6 +87,7 @@ public class CursoDAO {
      * Devuelve solo los cursos activos (activo = true).
      */
     public List<Curso> obtenerCursosActivos() {
+    	log.debug("Obteniendo cursos activos");
         return session.createQuery(
                 "FROM Curso c WHERE c.activo = true",
                 Curso.class

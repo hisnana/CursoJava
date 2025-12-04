@@ -1,20 +1,29 @@
 package es.cursojava.hibernate.cursos;
 
-import es.cursojava.hibernate.cursos.dto.AulaDTO;
-import es.cursojava.hibernate.cursos.dto.CursoDTO;
-import es.cursojava.hibernate.cursos.service.CursoService;
-import es.cursojava.utils.UtilidadesHibernate;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class AppCursosAulas {
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.slf4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import es.cursojava.hibernate.cursos.dto.AulaDTO;
+import es.cursojava.hibernate.cursos.dto.CursoDTO;
+import es.cursojava.hibernate.cursos.exception.AulaYaAsignadaException;
+import es.cursojava.hibernate.cursos.service.CursoService;
+import es.cursojava.utils.UtilidadesHibernate;
+
+public class AppCursoAulas {
+    private static final Logger log = LoggerFactory.getLogger(AppCursos.class);
+
 
     public static void main(String[] args) {
         Session session = null;
         Transaction tx = null;
+        
+        
 
         try {
             session = UtilidadesHibernate.abrirSesion();
@@ -40,9 +49,19 @@ public class AppCursosAulas {
             aulaDTO.setCapacidad(20);
             aulaDTO.setUbicacion("Planta 1");
 
+            CursoDTO cursoGuardado = null;
             // 2) Crear curso + aula a la vez
-            CursoDTO cursoGuardado = cursoService.crearCursoConAula(cursoDTO, aulaDTO);
-            System.out.println("Curso creado con ID: " + cursoGuardado.getId());
+            try {
+                cursoGuardado =
+                        cursoService.crearCursoConAula(cursoDTO, aulaDTO);
+                log.info("Curso creado con id {}", cursoGuardado.getId());
+            } catch (AulaYaAsignadaException e) {
+                // ESTE es el control del error que estás buscando
+                log.warn("No se ha creado el curso porque: {}", e.getMessage());
+                // aquí decides: seguir con otros cursos, pedir otro aula, etc.
+            }
+
+            
 
             // 3) Confirmamos la transacción
             tx.commit();
@@ -50,17 +69,23 @@ public class AppCursosAulas {
             // 4) Nueva sesión para simular otra petición que lee
             session = UtilidadesHibernate.abrirSesion();
             CursoService servicioLectura = new CursoService(session);
-
-            CursoDTO cursoLeido = servicioLectura.obtenerCursoConAula(cursoGuardado.getId());
-
-            System.out.println("Curso leído: " + cursoLeido.getNombre());
-            if (cursoLeido.getAula() != null) {
-                System.out.println("Aula: " + cursoLeido.getAula().getCodigoAula()
-                        + " (" + cursoLeido.getAula().getUbicacion() + "), capacidad "
-                        + cursoLeido.getAula().getCapacidad());
+            
+            if (cursoGuardado == null) {
+                log.warn("Curso no creado por aula ya asignada");
             } else {
-                System.out.println("El curso no tiene aula asignada.");
+                CursoDTO cursoLeido = servicioLectura.obtenerCursoConAula(cursoGuardado.getId());
+
+                log.info("Curso leído: " + cursoLeido.getNombre());
+                if (cursoLeido.getAula() != null) {
+                    log.info("Aula: " + cursoLeido.getAula().getCodigoAula()
+                            + " (" + cursoLeido.getAula().getUbicacion() + "), capacidad "
+                            + cursoLeido.getAula().getCapacidad());
+                } else {
+                    log.info("El curso no tiene aula asignada.");
+                }
             }
+
+ 
 
         } catch (Exception e) {
             if (tx != null) {

@@ -31,6 +31,8 @@
         <!-- Entidad mapeada -->
 
         <mapping class="es.cursojava.hibernate.empleados.entity.Empleado"/>
+        <mapping class="es.cursojava.hibernate.cursos.entity.Curso"/>
+        <mapping class="es.cursojava.hibernate.cursos.entity.Aula"/>
         <!-- Usa esto para mapear todas las @Entity del paquete: -->
         <mapping package="es.cursojava.hibernate.cursos.entity"/>
         <mapping package="es.cursojava.hibernate.empleados.entity"/>

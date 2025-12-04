@@ -1,20 +1,29 @@
 package es.cursojava.hibernate.cursos.service;
 
+import es.cursojava.hibernate.cursos.dao.AulaDAO;
 import es.cursojava.hibernate.cursos.dao.CursoDAO;
 import es.cursojava.hibernate.cursos.dto.AulaDTO;
 import es.cursojava.hibernate.cursos.dto.CursoDTO;
 import es.cursojava.hibernate.cursos.entity.Aula;
 import es.cursojava.hibernate.cursos.entity.Curso;
+import es.cursojava.hibernate.cursos.exception.AulaYaAsignadaException;
+
 import org.hibernate.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CursoService {
+	private static final Logger log = LoggerFactory.getLogger(CursoService.class);
 
     private final Session session;
     private final CursoDAO cursoDAO;
+    private final AulaDAO aulaDAO;
+
 
     public CursoService(Session session) {
         this.session = session;
         this.cursoDAO = new CursoDAO(session);
+        this.aulaDAO = new AulaDAO(session);
     }
 
     // --------- MAPEOS DTO <-> ENTITY ---------
@@ -90,29 +99,46 @@ public class CursoService {
                 )
                 .setParameter("aulaId", aulaId)
                 .uniqueResult();
+
         if (count != null && count > 0) {
-            throw new IllegalStateException("El aula ya está asignada a otro curso");
+            throw new AulaYaAsignadaException("El aula ya está asignada a otro curso");
         }
     }
 
     // --------- MÉTODOS DEL ENUNCIADO ---------
+ // ... (métodos de mapeo DTO <-> entity y validaciones que ya vimos)
 
-    /**
-     * Crea un curso y un aula a la vez, y los guarda en BD.
-     */
     public CursoDTO crearCursoConAula(CursoDTO cursoDTO, AulaDTO aulaDTO) {
-        Aula aula = mapAulaDTOToEntity(aulaDTO);
-        validarAula(aula);
 
+        // 1) ¿Existe ya un aula con ese código?
+        Aula aula = null;
+        if (aulaDTO != null && aulaDTO.getCodigoAula() != null) {
+            aula = aulaDAO.buscarPorCodigo(aulaDTO.getCodigoAula());
+        }
+
+        if (aula != null) {
+            // Ya existe → la reutilizamos
+            log.warn("El aula con código {} ya existe, se reutiliza en lugar de crear una nueva",
+                    aula.getCodigoAula());
+            validarAula(aula);
+            // También aquí podrías comprobar que no esté ya asignada a otro curso:
+            validarAulaNoAsignada(aula.getId());
+        } else {
+            // No existe → se crea nueva
+            aula = mapAulaDTOToEntity(aulaDTO);
+            validarAula(aula);   // capacidad > 0, etc.
+            // No hace falta guardar aquí: cascade=ALL desde Curso se encargará
+        }
+
+        // 2) Crear entidad Curso desde el DTO
         Curso curso = mapCursoDTOToEntity(cursoDTO);
-        curso.setAula(aula); // asocio el aula
+        curso.setAula(aula);
 
-        // Como cascade = ALL, al guardar el curso se guarda también el aula
+        // 3) Guardar curso (y aula nueva si la hubiera)
         cursoDAO.guardarCurso(curso);
 
         return mapCursoToDTO(curso);
     }
-
     /**
      * Asigna un aula ya existente a un curso ya existente.
      */

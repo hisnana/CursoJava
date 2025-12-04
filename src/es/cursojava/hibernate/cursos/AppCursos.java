@@ -1,21 +1,27 @@
 package es.cursojava.hibernate.cursos;
 
-import es.cursojava.hibernate.cursos.entity.Curso;
-import es.cursojava.utils.UtilidadesHibernate;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import es.cursojava.hibernate.cursos.dao.CursoDAO;
+import es.cursojava.hibernate.cursos.entity.Curso;
+import es.cursojava.utils.UtilidadesHibernate;
+
 public class AppCursos {
+	private static final Logger log = LoggerFactory.getLogger(CursoDAO.class);
+
 
     public static void main(String[] args) {
         insertarCursosEjemplo();
-        System.out.println("---- TODOS LOS CURSOS ----");
+        log.info("---- TODOS LOS CURSOS ----");
         mostrarTodosLosCursos();
-        System.out.println("---- CURSOS ACTIVOS ----");
+        log.info("---- CURSOS ACTIVOS ----");
         mostrarCursosActivos();
     }
     

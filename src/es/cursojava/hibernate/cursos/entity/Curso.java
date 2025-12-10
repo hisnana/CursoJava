@@ -1,11 +1,25 @@
 package es.cursojava.hibernate.cursos.entity;
 
-import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import es.cursojava.hibernate.cursos.entity.Aula;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 /**
  * Entidad Curso -> tabla TB_CURSO
@@ -177,5 +191,33 @@ public class Curso {
 
     public void setAula(Aula aula) {
         this.aula = aula;
+    }
+    
+    // --------- RELACIÓN UNO-A-MUCHOS CON ALUMNO ---------
+
+    @OneToMany(
+            mappedBy = "curso",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Alumno> alumnos = new ArrayList<>();
+
+    public List<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
+    public void setAlumnos(List<Alumno> alumnos) {
+        this.alumnos = alumnos;
+    }
+
+    // helpers para mantener los dos lados sincronizados
+    public void addAlumno(Alumno alumno) {
+        alumnos.add(alumno);
+        alumno.setCurso(this);
+    }
+
+    public void removeAlumno(Alumno alumno) {
+        alumnos.remove(alumno);
+        alumno.setCurso(null);
     }
 }

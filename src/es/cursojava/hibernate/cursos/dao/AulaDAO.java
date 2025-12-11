@@ -24,7 +24,7 @@ public class AulaDAO {
         return session.get(Aula.class, id);
     }
 
-    public Aula buscarPorCodigo(String codigoAula) {
+    public Aula buscarPorCodigo(Integer codigoAula) {
         return session.createQuery(
                         "FROM Aula a WHERE a.codigoAula = :codigo",
                         Aula.class

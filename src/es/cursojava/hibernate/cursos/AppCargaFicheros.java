@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -34,13 +36,16 @@ public class AppCargaFicheros {
             session = UtilidadesHibernate.abrirSesion();
             tx = session.beginTransaction();
 
-            AulaDAO aulaDAO = new AulaDAO(session);
             CursoDAO cursoDAO = new CursoDAO(session);
             AlumnoDAO alumnoDAO = new AlumnoDAO(session);
 
-            cargarAulas(aulaDAO, Path.of("recursos/aulas.txt"));
-            cargarCursosConAula(cursoDAO, aulaDAO, Path.of("recursos/cursos_aula.txt"));
-            cargarAlumnos(alumnoDAO, cursoDAO, Path.of("recursos/alumnos_curso.txt"));
+            cargarCursosYAulas(cursoDAO,
+                               Path.of("recursos/cursos_aula.txt"),
+                               Path.of("recursos/aulas.txt"));
+
+            cargarAlumnos(alumnoDAO,
+                          cursoDAO,
+                          Path.of("recursos/alumnos_curso.txt"));
 
             tx.commit();
             log.info("Carga de ficheros completada correctamente.");
@@ -57,20 +62,6 @@ public class AppCargaFicheros {
         }
 
         
-        // 2) Consulta: ¿en qué aula está 'alumno100'?
-        try (Session sesConsulta = UtilidadesHibernate.abrirSesion()) {
-            AlumnoDAO alumnoDAOConsulta = new AlumnoDAO(sesConsulta);
-
-            Aula aula = alumnoDAOConsulta.obtenerAulaDeAlumnoPorNombre("alumno100");
-
-            if (aula == null) {
-                log.warn("No se ha encontrado aula para el alumno alumno100");
-            } else {
-                log.info("El alumno alumno100 está en el aula {} (ubicación: {})",
-                        aula.getCodigoAula(),
-                        aula.getUbicacion());
-            }
-        }
         
         try (Session sesConsulta = UtilidadesHibernate.abrirSesion()) {
             AlumnoDAO alumnoDAOConsulta = new AlumnoDAO(sesConsulta);
@@ -132,7 +123,7 @@ public class AppCargaFicheros {
             while ((linea = br.readLine()) != null) {
                 if (linea.isBlank()) continue;
                 String[] partes = linea.split(";");
-                String codigoAula = partes[0].trim();
+                Integer codigoAula = Integer.parseInt(partes[0].trim());
                 Integer capacidad = Integer.parseInt(partes[1].trim());
                 String ubicacion = partes[2].trim();
 
@@ -180,7 +171,7 @@ public class AppCargaFicheros {
                 LocalDate fechaInicio = LocalDate.parse(partes[8].trim());
                 LocalDate fechaFin = LocalDate.parse(partes[9].trim());
                 LocalDateTime fechaCreacion = LocalDate.parse(partes[10].trim()).atStartOfDay();
-                String codigoAula = partes[11].trim();       // p.ej. "1"
+                Integer codigoAula = Integer.parseInt(partes[11].trim());       // p.ej. "1"
 
                 // ¿Ya existe el curso por código?
                 Curso existente = cursoDAO.obtenerPorCodigo(codigoCurso);
@@ -261,5 +252,73 @@ public class AppCargaFicheros {
             }
         }
     }
+    
+    private static Map<Integer, Aula> cargarAulasEnMemoria(Path rutaAulas) throws Exception {
+        Map<Integer, Aula> mapa = new HashMap<>();
+
+        try (BufferedReader br = Files.newBufferedReader(rutaAulas)) {
+            String linea = br.readLine(); // cabecera
+
+            while ((linea = br.readLine()) != null) {
+                if (linea.isBlank()) continue;
+                String[] partes = linea.split(";");
+                int codigoAula = Integer.parseInt(partes[0].trim());
+                int capacidad   = Integer.parseInt(partes[1].trim());
+                String ubicacion = partes[2].trim();
+
+                Aula aula = new Aula();
+                aula.setCodigoAula(codigoAula);
+                aula.setCapacidad(capacidad);
+                aula.setUbicacion(ubicacion);
+
+                // NO se persiste aún, solo se guarda en memoria
+                mapa.put(codigoAula, aula);
+            }
+        }
+        return mapa;
+    }
+    
+    private static void cargarCursosYAulas(CursoDAO cursoDAO,
+    		Path rutaCursosAula,
+    		Path rutaAulas) throws Exception {
+
+    	Map<Integer, Aula> mapaAulas = cargarAulasEnMemoria(rutaAulas);
+
+    	try (BufferedReader br = Files.newBufferedReader(rutaCursosAula)) {
+    		String linea = br.readLine(); // cabecera
+
+    		while ((linea = br.readLine()) != null) {
+    			if (linea.isBlank()) continue;
+
+    			String[] partes = linea.split(";");
+    			String codigoCurso = partes[0].trim();
+    			// ... resto de campos del curso ...
+    			int codigoAula = Integer.parseInt(partes[11].trim());
+
+    			// ¿ya existe el curso?
+    			Curso existente = cursoDAO.obtenerPorCodigo(codigoCurso);
+    			if (existente != null) {
+    				log.info("Curso {} ya existe, no se vuelve a crear", codigoCurso);
+    				continue;
+    			}
+
+    			Curso curso = new Curso();
+    			curso.setCodigo(codigoCurso);
+    			// set resto de campos...
+
+    			Aula aula = mapaAulas.get(codigoAula);
+    			if (aula == null) {
+    				log.warn("No hay datos de aula {} en aulas.txt para el curso {}", codigoAula, codigoCurso);
+    				continue;
+    			}
+
+    			curso.setAula(aula);      // relación 1–1
+    			cursoDAO.guardarCurso(curso); // CascadeType.ALL → persiste curso + aula
+
+    			log.info("Curso {} creado con aula {}", codigoCurso, codigoAula);
+    		}
+    	}
+    }
+
 
 }

@@ -18,7 +18,7 @@ public class Aula {
 
     // Código de aula, único
     @Column(name = "CODIGO_AULA", nullable = false, length = 20, unique = true)
-    private String codigoAula;
+    private Integer codigoAula;
 
     // Capacidad (nº de alumnos)
     @Column(name = "CAPACIDAD", nullable = false)
@@ -27,6 +27,9 @@ public class Aula {
     // Ubicación física
     @Column(name = "UBICACION", length = 100)
     private String ubicacion;
+    
+    @OneToOne(mappedBy = "aula")
+    private Curso curso;
 
     public Aula() {}
 
@@ -38,11 +41,11 @@ public class Aula {
         this.id = id;
     }
 
-    public String getCodigoAula() {
+    public Integer getCodigoAula() {
         return codigoAula;
     }
 
-    public void setCodigoAula(String codigoAula) {
+    public void setCodigoAula(Integer codigoAula) {
         this.codigoAula = codigoAula;
     }
 

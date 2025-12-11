@@ -92,6 +92,31 @@ public class AppCargaFicheros {
                         aula.getUbicacion());
             }
         }
+        
+        // Practica de acceso a datos mediante un objeto con relaciones bidireccionales
+        
+        try (Session ses = UtilidadesHibernate.abrirSesion()) {
+            AlumnoDAO alumnoDAO = new AlumnoDAO(ses);
+
+            Alumno alumno = alumnoDAO.obtenerAlumnoPorNombre("alumno100");
+
+            if (alumno == null) {
+                log.warn("No se ha encontrado al alumno alumno100");
+            } else {
+                Curso curso = alumno.getCurso();   // aquí Hibernate puede hacer otra SELECT
+                Aula aula   = curso.getAula();     // y aquí otra, si la relación es LAZY
+
+                log.info("El alumno {} está en el curso {} ({}) y en el aula {} ({})",
+                        alumno.getNombre(),
+                        curso.getCodigo(),
+                        curso.getNombre(),
+                        aula.getCodigoAula(),
+                        aula.getUbicacion());
+            }
+        }
+
+        
+        
     }
 
     // -------------------------------------------------

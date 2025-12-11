@@ -145,6 +145,8 @@ public class AlumnoDAO {
                 .uniqueResult();
     }
     
+    
+    
     /**
      * Devuelve el alumno con su curso y aula cargados (JOIN FETCH),
      * buscando por nombre.
@@ -162,4 +164,19 @@ public class AlumnoDAO {
                 .setParameter("nombre", nombreAlumno)
                 .uniqueResult();
     }
+    
+    //Para practicar el acceso a todo mediante objeto con relacion bidireccional
+	/**	
+	 * Devuelve el alumno por su nombre.
+	 */
+   
+    public Alumno obtenerAlumnoPorNombre(String nombreAlumno) {
+        return session.createQuery(
+                "FROM Alumno al WHERE al.nombre = :nombre",
+                Alumno.class
+            )
+            .setParameter("nombre", nombreAlumno)
+            .uniqueResult();
+    }
+
 }

@@ -1,63 +1,27 @@
 <configuration>
 
-    <!-- Carpeta base de logs -->
-    <property name="LOG_DIR" value="logs"/>
-
-    <!-- ===================== -->
-    <!--  Consola con colores  -->
-    <!-- ===================== -->
+    <!-- Consola normal para TU app -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <!-- Colores según nivel -->
-            <pattern>[%d{HH:mm:ss}] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- =========================== -->
-    <!--  Fichero solo para Hibernate -->
-    <!-- =========================== -->
+    <!-- (Opcional) Fichero solo para Hibernate -->
     <appender name="HIBERNATE_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/hibernate.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- un fichero por día -->
-            <fileNamePattern>${LOG_DIR}/hibernate.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>7</maxHistory>
-        </rollingPolicy>
+        <file>logs/hibernate.log</file>
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- ================================================ -->
-    <!--  Logger de tu aplicación (solo tu paquete)      -->
-    <!--  Esto es lo que quieres ver en pantalla         -->
-    <!-- ================================================ -->
-    <logger name="es.cursojava.hibernate.empleados" level="INFO" additivity="false">
-        <appender-ref ref="CONSOLE"/>
-    </logger>
-
-    <!-- ===================================================== -->
-    <!--  Logger de Hibernate: manda TODO a fichero,          -->
-    <!--  sin propagar al root (no llega a la consola)        -->
-    <!-- ===================================================== -->
-    <logger name="org.hibernate" level="DEBUG" additivity="false">
+    <!-- Logger de Hibernate: nada de DEBUG/INFO en consola -->
+    <logger name="org.hibernate" level="WARN" additivity="false">
         <appender-ref ref="HIBERNATE_FILE"/>
     </logger>
 
-    <!-- Opcional: si quieres ver solo el SQL en el fichero -->
-    <!--
-    <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
-        <appender-ref ref="HIBERNATE_FILE"/>
-    </logger>
-    -->
-
-    <!-- ========================= -->
-    <!--  Root logger por defecto -->
-    <!-- ========================= -->
-    <!-- WARN para que, si se cuela algo sin logger específico,
-         solo salga lo grave. No mandamos nada extra a consola. -->
-    <root level="WARN">
+    <!-- Tu código: consola bonita -->
+    <root level="INFO">
         <appender-ref ref="CONSOLE"/>
     </root>
-
 </configuration>

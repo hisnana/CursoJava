@@ -119,5 +119,20 @@ public class CursoDAO {
                 .setParameter("id", id)
                 .uniqueResult();
     }
+    
+    /**
+     * Busca un curso por su código (campo CODIGO).
+     * Debería devolver como mucho 1 resultado porque CODIGO es único.
+     */
+    public Curso obtenerPorCodigo(String codigo) {
+        log.debug("Buscando curso por código {}", codigo);
+
+        return session.createQuery(
+                    "FROM Curso c WHERE c.codigo = :codigo",
+                    Curso.class
+                )
+                .setParameter("codigo", codigo)
+                .uniqueResult();
+    }
 
 }

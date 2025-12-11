@@ -26,7 +26,7 @@ import jakarta.persistence.UniqueConstraint;
  */
 @Entity
 @Table(
-        name = "TB_CURSO",
+        name = "TB_CURSO_ANA",
         uniqueConstraints = {
                 // CODIGO debe ser único
                 @UniqueConstraint(name = "UK_CURSO_CODIGO", columnNames = "CODIGO")

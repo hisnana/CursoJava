@@ -1,11 +1,13 @@
 package es.cursojava.hibernate.cursos.dao;
 
-import es.cursojava.hibernate.cursos.entity.Alumno;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
+import es.cursojava.hibernate.cursos.entity.Alumno;
+import es.cursojava.hibernate.cursos.entity.Aula;
 
 /**
  * DAO de la entidad Alumno.
@@ -125,5 +127,39 @@ public class AlumnoDAO {
                 .setParameter("cursoId", cursoId)
                 .uniqueResult();
         return count != null ? count : 0L;
+    }
+    
+    /**
+     * Devuelve el Aula en la que está matriculado el alumno cuyo nombre coincide.
+     * Asumimos que el nombre es único en este ejercicio (alumno100).
+     */
+    public Aula obtenerAulaDeAlumnoPorNombre(String nombreAlumno) {
+        log.debug("Buscando aula del alumno {}", nombreAlumno);
+
+        return session.createQuery(
+                        "SELECT al.curso.aula FROM Alumno al " +
+                        "WHERE al.nombre = :nombre",
+                        Aula.class
+                )
+                .setParameter("nombre", nombreAlumno)
+                .uniqueResult();
+    }
+    
+    /**
+     * Devuelve el alumno con su curso y aula cargados (JOIN FETCH),
+     * buscando por nombre.
+     */
+    public Alumno obtenerAlumnoConCursoYAulaPorNombre(String nombreAlumno) {
+        log.debug("Buscando alumno (con curso y aula) por nombre {}", nombreAlumno);
+
+        return session.createQuery(
+                        "SELECT al FROM Alumno al " +
+                        "JOIN FETCH al.curso c " +
+                        "JOIN FETCH c.aula a " +
+                        "WHERE al.nombre = :nombre",
+                        Alumno.class
+                )
+                .setParameter("nombre", nombreAlumno)
+                .uniqueResult();
     }
 }

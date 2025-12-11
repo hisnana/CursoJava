@@ -56,9 +56,41 @@ public class AppCargaFicheros {
             }
         }
 
-        // 2) Consulta: en qué aula está alumno100
+        
+        // 2) Consulta: ¿en qué aula está 'alumno100'?
         try (Session sesConsulta = UtilidadesHibernate.abrirSesion()) {
-            mostrarAulaDeAlumnoPorNombre(sesConsulta, "alumno100");
+            AlumnoDAO alumnoDAOConsulta = new AlumnoDAO(sesConsulta);
+
+            Aula aula = alumnoDAOConsulta.obtenerAulaDeAlumnoPorNombre("alumno100");
+
+            if (aula == null) {
+                log.warn("No se ha encontrado aula para el alumno alumno100");
+            } else {
+                log.info("El alumno alumno100 está en el aula {} (ubicación: {})",
+                        aula.getCodigoAula(),
+                        aula.getUbicacion());
+            }
+        }
+        
+        try (Session sesConsulta = UtilidadesHibernate.abrirSesion()) {
+            AlumnoDAO alumnoDAOConsulta = new AlumnoDAO(sesConsulta);
+
+            Alumno alumno = alumnoDAOConsulta
+                    .obtenerAlumnoConCursoYAulaPorNombre("alumno100");
+
+            if (alumno == null) {
+                log.warn("No se ha encontrado al alumno alumno100");
+            } else {
+                Curso curso = alumno.getCurso();
+                Aula aula = curso.getAula();
+
+                log.info("El alumno {} está matriculado en el curso {} ({}) y su aula es {} (ubicación: {})",
+                        alumno.getNombre(),
+                        curso.getCodigo(),
+                        curso.getNombre(),
+                        aula.getCodigoAula(),
+                        aula.getUbicacion());
+            }
         }
     }
 
@@ -155,6 +187,7 @@ public class AppCargaFicheros {
                 curso.setAula(aula);
 
                 cursoDAO.guardarCurso(curso);
+                log.info("Curso {} creado y asignado al aula {}", codigoCurso, codigoAula);
             }
         }
     }
@@ -174,10 +207,10 @@ public class AppCargaFicheros {
             while ((linea = br.readLine()) != null) {
                 if (linea.isBlank()) continue;
                 String[] partes = linea.split(";");
-                String nombre = partes[0].trim();
-                String email = partes[1].trim();
-                Integer edad = Integer.parseInt(partes[2].trim());
-                String codigoCurso = partes[3].trim();
+                String nombre       = partes[0].trim();
+                String email        = partes[1].trim();
+                Integer edad        = Integer.parseInt(partes[2].trim());
+                String codigoCurso  = partes[3].trim();
 
                 // ¿existe ya un alumno con ese email? (email es único)
                 Alumno existente = alumnoDAO.obtenerAlumnoPorEmail(email);
@@ -199,6 +232,7 @@ public class AppCargaFicheros {
                 alumno.setCurso(curso);
 
                 alumnoDAO.guardarAlumno(alumno);
+                log.info("Alumno {} asignado al curso {}", nombre, codigoCurso);
             }
         }
     }

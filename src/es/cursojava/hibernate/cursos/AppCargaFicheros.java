@@ -237,27 +237,4 @@ public class AppCargaFicheros {
         }
     }
 
-    // -------------------------------------------------
-    //  CONSULTA: ¿EN QUÉ AULA ESTÁ 'alumno100'?
-    // -------------------------------------------------
-    private static void mostrarAulaDeAlumnoPorNombre(Session session, String nombreAlumno) {
-        log.info("Buscando aula del alumno {}", nombreAlumno);
-
-        Aula aula = session.createQuery(
-                        "SELECT al.curso.aula FROM Alumno al " +
-                        "WHERE al.nombre = :nombre",
-                        Aula.class
-                )
-                .setParameter("nombre", nombreAlumno)
-                .uniqueResult();
-
-        if (aula == null) {
-            log.warn("No se encontró aula para el alumno {}", nombreAlumno);
-        } else {
-            log.info("El alumno {} está en el aula {} ({})",
-                    nombreAlumno,
-                    aula.getCodigoAula(),
-                    aula.getUbicacion());
-        }
-    }
 }

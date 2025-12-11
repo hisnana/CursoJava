@@ -1,26 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+<root level="DEBUG">
+    <appender-ref ref="CONSOLE"/>
+</root>
 
-    <!-- Consola normal para TU app -->
+    <!-- Consola para TU código -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>[%d{HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- (Opcional) Fichero solo para Hibernate -->
-    <appender name="HIBERNATE_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- Fichero solo para logs de Hibernate -->
+    <appender name="HIBERNATE_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/hibernate.log</file>
+        <append>true</append>
         <encoder>
             <pattern>[%d{HH:mm:ss}] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Logger de Hibernate: nada de DEBUG/INFO en consola -->
+    <!-- Hibernate: solo WARN/ERROR al fichero, nada en consola -->
     <logger name="org.hibernate" level="WARN" additivity="false">
         <appender-ref ref="HIBERNATE_FILE"/>
     </logger>
 
-    <!-- Tu código: consola bonita -->
+    <!-- Root: tu aplicación -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
     </root>

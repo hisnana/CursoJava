@@ -3,13 +3,13 @@ package es.cursojava.hibernate.cursos.dto;
 public class AulaDTO {
 
     private Long id;
-    private String codigoAula;
+    private Integer codigoAula;
     private Integer capacidad;
     private String ubicacion;
 
     public AulaDTO() {}
 
-    public AulaDTO(Long id, String codigoAula, Integer capacidad, String ubicacion) {
+    public AulaDTO(Long id, Integer codigoAula, Integer capacidad, String ubicacion) {
         this.id = id;
         this.codigoAula = codigoAula;
         this.capacidad = capacidad;
@@ -24,11 +24,11 @@ public class AulaDTO {
         this.id = id;
     }
 
-    public String getCodigoAula() {
+    public Integer getCodigoAula() {
         return codigoAula;
     }
 
-    public void setCodigoAula(String codigoAula) {
+    public void setCodigoAula(Integer codigoAula) {
         this.codigoAula = codigoAula;
     }
 

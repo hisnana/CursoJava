@@ -45,7 +45,7 @@ public class AppCursoAulas {
             cursoDTO.setFechaFin(LocalDate.of(2025, 3, 10));
 
             AulaDTO aulaDTO = new AulaDTO();
-            aulaDTO.setCodigoAula("AULA-101");
+            aulaDTO.setCodigoAula(101);
             aulaDTO.setCapacidad(20);
             aulaDTO.setUbicacion("Planta 1");
 

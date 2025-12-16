@@ -22,7 +22,7 @@ public class AppCargaFicheros {
         service.cargarDatosIniciales(rutaAulas, rutaCursosAula, rutaAlumnos);
 
         // 2) Consulta final del enunciado
-        service.mostrarCursoYAulaDeAlumno("alumno100");
+        service.mostrarCursoYAulaDeAlumno("alumno50");
 
         log.info("Fin de la aplicación");
     }
